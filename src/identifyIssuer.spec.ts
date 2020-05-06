@@ -1,4 +1,4 @@
-import { some, none } from 'fp-ts/lib/Option'
+import { some } from 'fp-ts/lib/Option'
 import { identifyIssuer } from './identifyIssuer'
 import { Issuer } from './types'
 
@@ -14,7 +14,16 @@ describe('identifyIssuer', () => {
 				companyName: 'Telia Sonera A/S',
 			}),
 		],
-		['8931089318104284409F', none], // Update of database required
+		[
+			'8931089318104284409F',
+			some<Issuer>({
+				companyName: 'KPN Telecom B.V., Card Services',
+				countryCode: 31,
+				countryName: 'Netherlands',
+				iin: 893108,
+				issuerIdentifierNumber: '08',
+			}),
+		],
 		[
 			'89882806660004909182',
 			some<Issuer>({
