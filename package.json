@@ -1,0 +1,98 @@
+{
+  "name": "e118-iin-list",
+  "version": "0.0.0-development",
+  "description": "List of issuer identifier numbers for the international telecommunication charge card (ITU-T E.118)",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "convert": "node dist/convert.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cellprobe/e118-iin-list.git"
+  },
+  "keywords": [
+    "cellprobe",
+    "e.118",
+    "ITU-T",
+    "IIN",
+    "ICCID",
+    "issuer"
+  ],
+  "author": "Nordic Semiconductor ASA | nordicsemi.no",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/cellprobe/e118-iin-list/issues"
+  },
+  "homepage": "https://github.com/cellprobe/e118-iin-list#readme",
+  "dependencies": {
+    "fp-ts": "^2.5.4"
+  },
+  "devDependencies": {
+    "@bifravst/code-style": "^7.1.10",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-angular": "^8.3.4",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.4",
+    "csv-parser": "^2.3.2",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e",
+      "pre-commit": "lint-staged && npx jest --onlyChanged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint --ext .js,.ts"
+    ],
+    "*.{md,json,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "release": {
+    "branches": [
+      "saga"
+    ],
+    "remoteTags": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "package-lock.json",
+    "dist",
+    "docs",
+    "LICENSE",
+    "README.md"
+  ],
+  "jest": {
+    "testURL": "http://localhost",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": ".+\\.spec\\.ts$",
+    "globals": {
+      "ts-jest": {
+        "diagnostics": true
+      }
+    }
+  }
+}
