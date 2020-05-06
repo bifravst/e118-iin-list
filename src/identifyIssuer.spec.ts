@@ -1,4 +1,4 @@
-import { some } from 'fp-ts/lib/Option'
+import { some, none } from 'fp-ts/lib/Option'
 import { identifyIssuer } from './identifyIssuer'
 import { Issuer } from './types'
 
@@ -37,5 +37,8 @@ describe('identifyIssuer', () => {
 		],
 	])('should identify the issuer', (iccid, issuer) => {
 		expect(identifyIssuer(iccid)).toEqual(issuer)
+	})
+	it('should not identify unknown issuers', () => {
+		expect(identifyIssuer('123456')).toEqual(none)
 	})
 })
