@@ -32,7 +32,7 @@ describe('identifyIssuer', () => {
 				issuerIdentifierNumber: '80',
 				countryName: 'Germany',
 				companyName: '1NCE GmbH',
-				companyURLs: ['https://1nce.com/'],
+				companyURLs: ['http://1nce.com'],
 			}),
 		],
 	])('should identify the issuer', (iccid, issuer) => {

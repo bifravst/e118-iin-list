@@ -9,8 +9,16 @@
 List of issuer identification numbers for the international telecommunication
 charge card (ITU-T E.118). Up-to-date with
 [Operational Bulletin No. 1195 (1.V.2020)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1195-2020)
-(data source as
-[Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing)).
+and also includes
+[E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
+(which has some overlapping entries).
+
+Data source as
+[Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing).
+
+> _Note:_ There is actually
+> [a database](https://www.itu.int/net/itu-t/inrdb/secured/e118iin.aspx) for
+> this information, but the access is restricted to ITU-T Sector Members. 🤷
 
 ## Motivation
 
@@ -81,6 +89,7 @@ Sources:
 
 - http://www.itu.int/pub/T-SP-E.118
 - https://www.itu.int/pub/T-SP-OB
+- http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883
 
 Process:
 
@@ -88,5 +97,7 @@ Process:
    and copy and past the table into a Google Spreadsheet
 2. Download the operational bulletins from https://www.itu.int/pub/T-SP-OB and
    incorporate the changes into the spreadsheet
-3. Export that to CSV and store it as `list.csv`
-4. Convert to JSON using `npm run convert`
+3. Export list of shared country codes (E.164) and filter out `CRS` records
+   (inactive), add to the spreadsheet
+4. Export that to CSV and store it as `list.csv`
+5. Convert to JSON using `npm run convert`
