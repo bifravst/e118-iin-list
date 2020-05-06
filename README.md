@@ -7,13 +7,17 @@
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
 List of issuer identification numbers for the international telecommunication
-charge card (ITU-T E.118).
+charge card (ITU-T E.118). Up-to-date with
+[Operational Bulletin No. 1195 (1.V.2020)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1195-2020)
+(data source as
+[Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing)).
 
-Motivation for this list: Since E.118's issuer identification number is of
-variable length (it can be 4–7 digits) an
-[ICCID](https://en.wikipedia.org/wiki/E.118#ICCID) (the serial number of SIM
-cards) needs to be matched against a list of known IINs in order to determine
-the SIM issuer.
+## Motivation
+
+Since E.118's issuer identification number is of variable length (it can be 4–7
+digits) an [ICCID](https://en.wikipedia.org/wiki/E.118#ICCID) (the serial number
+of SIM cards) needs to be matched against a list of known IINs in order to
+determine the SIM issuer.
 
 ## Usage
 
@@ -63,12 +67,13 @@ The maximum length of the visible card number (primary account number) shall be
 Sources:
 
 - http://www.itu.int/pub/T-SP-E.118
-- https://www.itu.int/pub/T-SP-OB.1183-2019
+- https://www.itu.int/pub/T-SP-OB
 
 Process:
 
-1. Download the latest Word Document from http://www.itu.int/pub/T-SP-E.118, and
-   copy and past the table into a
-   [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing).
-2. Export that to CSV and store it as `list.csv`
-3. Convert to JSON using `npm run convert`
+1. Download the latest Word Documents from http://www.itu.int/pub/T-SP-E.118,
+   and copy and past the table into a Google Spreadsheet
+2. Download the operational bulletins from https://www.itu.int/pub/T-SP-OB and
+   incorporate the changes into the spreadsheet
+3. Export that to CSV and store it as `list.csv`
+4. Convert to JSON using `npm run convert`

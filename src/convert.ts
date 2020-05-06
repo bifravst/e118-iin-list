@@ -41,8 +41,7 @@ fs.createReadStream('list.csv')
 					issuerIdentifierNumber,
 				] = IssuerIdentifierNumber[0].split(' ')
 				const iin = parseInt(IssuerIdentifierNumber[0].replace(/ /g, ''), 10)
-				if (list[iin]) throw new Error(`Duplicate IIN: ${iin}!`)
-				const emailRegEx = /e-mail: (.+)/i
+				const emailRegEx = /e-mail ?: ?(.+)/i
 				const companyURLs = Contact.reduce((urls, s) => {
 					const m = emailRegEx.exec(s)
 					if (!m) return urls
