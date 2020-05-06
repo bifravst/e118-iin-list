@@ -4,6 +4,7 @@
   "description": "List of issuer identifier numbers for the international telecommunication charge card (ITU-T E.118)",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "bin": "cli.js",
   "scripts": {
     "test": "jest",
     "convert": "node dist/convert.js"
@@ -75,7 +76,8 @@
     "dist",
     "docs",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "cli.js"
   ],
   "jest": {
     "testURL": "http://localhost",
