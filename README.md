@@ -7,7 +7,10 @@
 [![ESLint: TypeScript](https://img.shields.io/badge/ESLint-TypeScript-blue.svg)](https://github.com/typescript-eslint/typescript-eslint)
 
 List of issuer identification numbers for the international telecommunication
-charge card (ITU-T E.118). Up-to-date with
+charge card
+([ITU-T E.118](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items)).
+
+Up-to-date with
 [Operational Bulletin No. 1195 (1.V.2020)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1195-2020)
 and also includes
 [E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
