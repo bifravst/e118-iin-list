@@ -15,7 +15,17 @@ describe('identifyIssuer', () => {
 			}),
 		],
 		['8931089318104284409F', none], // Update of database required
-		['89882806660004909182', none], // Update of database required
+		[
+			'89882806660004909182',
+			some<Issuer>({
+				iin: 8988280,
+				countryCode: 882,
+				issuerIdentifierNumber: '80',
+				countryName: 'Germany',
+				companyName: '1NCE GmbH',
+				companyURLs: ['https://1nce.com/'],
+			}),
+		],
 	])('should identify the issuer', (iccid, issuer) => {
 		expect(identifyIssuer(iccid)).toEqual(issuer)
 	})
