@@ -7,7 +7,7 @@ const iccid = process.argv[process.argv.length - 1]
 
 const issuer = identifyIssuer(iccid)
 if (isSome(issuer)) {
-	console.log(issuer.value)
+	console.log(JSON.stringify(issuer.value, null, 2))
 } else {
 	console.error(`Could not identify "${iccid}"!`)
 	process.exit(1)

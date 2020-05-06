@@ -33,6 +33,19 @@ if (isSome(issuer)) {
 }
 ```
 
+### CLI
+
+You can identify issuers directly from your command line:
+
+    $ npx e118-iin-list 89450421180216254864
+    {
+      "iin": 894504,
+      "countryCode": 45,
+      "issuerIdentifierNumber": "04",
+      "countryName": "Denmark",
+      "companyName": "Telia Sonera A/S"
+    }
+
 ## ITU-T Recommendation E.118 Card numbering structure ([Source](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items))
 
 The numbering of the card to be issued by OAs shall be as follows based on
