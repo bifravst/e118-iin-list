@@ -54,14 +54,14 @@ fs.createReadStream('list.csv')
 				}, undefined as undefined | string[])
 				return {
 					...list,
-					[key]: {
+					[key]: [
 						iin,
-						countryCode: parseInt(countryCode, 10),
 						issuerIdentifierNumber,
-						countryName: CountryGeographicalarea[0],
-						companyName: CompanyNameAddress[0],
-						...(companyURLs && { companyURLs }),
-					},
+						parseInt(countryCode, 10),
+						CountryGeographicalarea[0],
+						CompanyNameAddress[0],
+						companyURLs ?? [],
+					],
 				}
 			},
 			{} as IssuerList,
@@ -70,6 +70,7 @@ fs.createReadStream('list.csv')
 			target,
 			prettier.format(
 				[
+					`/* Auto-generated file. Do not change! */`,
 					`import {IssuerList} from './types';`,
 					`export const iinRegEx = /^89(${Object.keys(list).join('|')})/;`,
 					`export const e118IINList: IssuerList = ${JSON.stringify(

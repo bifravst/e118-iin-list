@@ -8,5 +8,13 @@ import { iinRegEx, e118IINList } from './list'
 export const identifyIssuer = (iccid: string): Option<Issuer> => {
 	const iinMatch = iinRegEx.exec(iccid)
 	if (!iinMatch) return none
-	return some(e118IINList[iinMatch[1]])
+	const issuer = e118IINList[iinMatch[1]]
+	return some({
+		iin: issuer[0],
+		issuerIdentifierNumber: issuer[1],
+		countryCode: issuer[2],
+		countryName: issuer[3],
+		companyName: issuer[4],
+		...(issuer[5].length && { companyURLs: issuer[5] }),
+	})
 }

@@ -1,5 +1,6 @@
 export type Issuer = {
 	iin: number
+	issuerIdentifierNumber: string
 	countryCode: number
 	countryName: string
 	companyName: string
@@ -7,7 +8,11 @@ export type Issuer = {
 	 * Extracted from the contact emails
 	 */
 	companyURLs?: readonly string[]
-	issuerIdentifierNumber: string
 }
 
-export type IssuerList = Readonly<Record<string, Issuer>>
+export type IssuerList = Readonly<
+	Record<
+		string,
+		readonly [number, string, number, string, string, readonly string[]]
+	>
+>
