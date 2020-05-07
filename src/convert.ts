@@ -41,6 +41,7 @@ fs.createReadStream('list.csv')
 					issuerIdentifierNumber,
 				] = IssuerIdentifierNumber[0].split(' ')
 				const iin = parseInt(IssuerIdentifierNumber[0].replace(/ /g, ''), 10)
+				const key = `${countryCode}${issuerIdentifierNumber}`
 				const emailRegEx = /e-mail ?: ?(.+)/i
 				const companyURLs = Contact.reduce((urls, s) => {
 					const m = emailRegEx.exec(s)
@@ -53,7 +54,7 @@ fs.createReadStream('list.csv')
 				}, undefined as undefined | string[])
 				return {
 					...list,
-					[iin]: {
+					[key]: {
 						iin,
 						countryCode: parseInt(countryCode, 10),
 						issuerIdentifierNumber,
@@ -70,7 +71,7 @@ fs.createReadStream('list.csv')
 			prettier.format(
 				[
 					`import {IssuerList} from './types';`,
-					`export const iinRegEx = /^(${Object.keys(list).join('|')})/;`,
+					`export const iinRegEx = /^89(${Object.keys(list).join('|')})/;`,
 					`export const e118IINList: IssuerList = ${JSON.stringify(
 						list,
 						null,

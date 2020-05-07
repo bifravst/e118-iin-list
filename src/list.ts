@@ -1,23 +1,23 @@
 import { IssuerList } from './types'
 
-export const iinRegEx = /^(891000|891001|891002|891003|891004|891005|891006|891007|891008|891009|891010|891011|891012|891013|891014|891015|891016|891017|891018|891019|891020|891021|891022|891023|891024|891025|891026|891027|891028|891029|891030|891031|891032|891033|891034|891035|891036|891037|891038|891039|891041|891042|891043|891044|891045|891046|891047|891048|891049|891050|891051|891053|891080|891090|891091|891111|891123|891130|891160|891170|891200|891210|891211|891220|891221|891222|891223|891224|891226|891227|891228|891229|891230|891232|891234|891235|891236|891240|891246|891248|891250|891253|891258|891260|891266|891270|891272|891273|891276|891277|891278|891279|891282|891283|891284|891288|891300|891302|891310|891311|891318|891321|891333|891340|891348|891350|891351|891357|891362|891366|891369|891370|891371|891377|891378|891382|891400|891432|891433|891444|891450|891456|891460|891464|891470|891474|891480|891482|891483|891486|891487|891488|891489|891490|891503|891505|891530|891555|891580|891582|891593|891610|891625|891626|891628|891629|891635|891638|891650|891652|891654|891660|891663|891666|891669|891678|891680|891682|891687|891688|891692|891696|891698|891699|891710|891724|891727|891763|891777|891781|891782|891784|891786|891789|891792|891798|891800|891808|891809|891821|891822|891824|891835|891837|891852|891853|891866|891867|891868|891869|891872|891877|891878|891884|891888|891891|891895|891918|891930|891937|891948|891950|891988|891999|892002|892701|892738|893001|893002|893005|893009|893010|893011|893100|893101|893102|893103|893105|893107|893108|893109|893110|893111|893115|893116|893117|893118|893120|893124|893126|893129|893131|893132|893144|893168|893189|893200|893201|893202|893203|893204|893205|893207|893208|893301|893320|893322|893323|893324|893325|893326|893401|893402|893403|893404|893405|893406|893407|893411|893412|893416|893418|893421|893423|893425|893429|893434|893456|893457|893620|893630|893631|893632|893901|893908|893910|893933|893988|893999|894001|894002|894003|894010|894100|894101|894102|894103|894104|894123|894124|894125|894126|894129|894130|894131|894301|894303|894305|894307|894308|894310|894312|894313|894325|894351|894400|894401|894402|894403|894404|894405|894406|894407|894408|894410|894411|894412|894413|894414|894415|894417|894418|894419|894420|894422|894423|894424|894428|894429|894430|894433|894434|894435|894436|894437|894438|894439|894440|894441|894442|894443|894444|894445|894446|894447|894448|894449|894453|894455|894476|894477|894478|894481|894484|894485|894486|894487|894488|894489|894490|894501|894504|894505|894506|894601|894603|894607|894608|894609|894610|894611|894612|894614|894617|894620|894627|894631|894670|894671|894700|894701|894706|894707|894708|894709|894801|894802|894819|894901|894902|894903|894920|894921|894922|894923|894926|894931|894932|894935|894936|894937|894938|894939|895151|895201|895202|895203|895204|895301|895400|895454|895505|895515|895516|895523|895524|895526|895802|895804|895806|896000|896001|896018|896019|896088|896100|896101|896102|896103|896106|896112|896114|896121|896123|896150|896161|896162|896188|896200|896201|896300|896301|896305|896363|896400|896402|896403|896411|896415|896424|896500|896501|896502|896503|896505|896510|896601|896602|896610|898100|898101|898102|898103|898104|898105|898106|898107|898108|898109|898110|898111|898112|898113|898120|898130|898131|898165|898170|898171|898201|898205|898206|898211|898230|898401|898402|898600|898816|898817|898818|898819|899001|899002|899101|899105|899109|899110|899111|899114|899121|899130|899168|899201|899203|899204|899206|899207|899301|899402|899403|899405|899659|899711|899811|899814|8921301|8921800|8922002|8922003|8922004|8922202|8922203|8922302|8922401|8922501|8922502|8922602|8922603|8922702|8922905|8923001|8923002|8923003|8923101|8923104|8923134|8923233|8923240|8923302|8923309|8923501|8923502|8923801|8923802|8923902|8923912|8924001|8924103|8924201|8924301|8924302|8924384|8924389|8924402|8924501|8924502|8924509|8924801|8924810|8924901|8924905|8924999|8925000|8925014|8925017|8925101|8925284|8925285|8925402|8925403|8925404|8925405|8925406|8925407|8925410|8925505|8925707|8925804|8926003|8926102|8926401|8926422|8926433|8926502|8926611|8926701|8926702|8926704|8926901|8929101|8929786|8929801|8929802|8929901|8935001|8935009|8935101|8935103|8935104|8935106|8935107|8935112|8935180|8935200|8935201|8935202|8935207|8935210|8935277|8935281|8935299|8935301|8935302|8935303|8935304|8935311|8935315|8935316|8935400|8935402|8935403|8935404|8935501|8935502|8935503|8935504|8935601|8935611|8935621|8935677|8935702|8935710|8935720|8935722|8935789|8935801|8935802|8935803|8935804|8935805|8935806|8935807|8935809|8935811|8935812|8935901|8935905|8935920|8935922|8935923|8937001|8937002|8937003|8937101|8937201|8937202|8937203|8937204|8937206|8937301|8937302|8937303|8937401|8937404|8937405|8937501|8937502|8937503|8937603|8938001|8938002|8938003|8938101|8938103|8938105|8938200|8938201|8938203|8938591|8938598|8938640|8938641|8938664|8938670|8938701|8938703|8938705|8938901|8942001|8942004|8942005|8942020|8942031|8942098|8942101|8942102|8942103|8942301|8942302|8942305|8942306|8942307|8942310|8950001|8950167|8950168|8950601|8950701|8950801|8957002|8957123|8959001|8959003|8959101|8959102|8959202|8959301|8959501|8959502|8959505|8959800|8959801|8959900|8959978|8959991|8959996|8960153|8967210|8967502|8967503|8967601|8967801|8967805|8967901|8967902|8968000|8968001|8968099|8968502|8968701|8968901|8968915|8969101|8969201|8985001|8985200|8985201|8985203|8985204|8985206|8985207|8985210|8985211|8985212|8985216|8985218|8985219|8985221|8985224|8985230|8985231|8985234|8985235|8985268|8985269|8985277|8985280|8985300|8985301|8985303|8985501|8985608|8987099|8988210|8988212|8988213|8988215|8988216|8988222|8988223|8988228|8988231|8988232|8988233|8988234|8988235|8988236|8988237|8988239|8988241|8988245|8988246|8988247|8988248|8988249|8988250|8988280|8988297|8988298|8988299|8988301|8988303|8988304|8988305|8988306|8996001|8996101|8996103|8996105|8996277|8996405|8996420|8996430|8996440|8996504|8996800|8997202|8997203|8997208|8997250|8997301|8997302|8997400|8997511|8997577|8997606|8997702|8999401|8999403|8999404|8999405|8999406|8999501|8999601|8999701|8999801|8999804|89883100|89883110|89883120|89883130|89883140|89883150|89883160|89883170|89883180|89883190|89883200|89883210|89883220|89883230|89883240|89883250|89883260|89883270|89883280|89883290|89883300|89883310|898835100|898835110|898835120|898835130|898835140|898835150|898835160|898835170|898835180)/
+export const iinRegEx = /^89(1000|1001|1002|1003|1004|1005|1006|1007|1008|1009|1010|1011|1012|1013|1014|1015|1016|1017|1018|1019|1020|1021|1022|1023|1024|1025|1026|1027|1028|1029|1030|1031|1032|1033|1034|1035|1036|1037|1038|1039|1041|1042|1043|1044|1045|1046|1047|1048|1049|1050|1051|1053|1080|1090|1091|1111|1123|1130|1160|1170|1200|1210|1211|1220|1221|1222|1223|1224|1226|1227|1228|1229|1230|1232|1234|1235|1236|1240|1246|1248|1250|1253|1258|1260|1266|1270|1272|1273|1276|1277|1278|1279|1282|1283|1284|1288|1300|1302|1310|1311|1318|1321|1333|1340|1348|1350|1351|1357|1362|1366|1369|1370|1371|1377|1378|1382|1400|1432|1433|1444|1450|1456|1460|1464|1470|1474|1480|1482|1483|1486|1487|1488|1489|1490|1503|1505|1530|1555|1580|1582|1593|1610|1625|1626|1628|1629|1635|1638|1650|1652|1654|1660|1663|1666|1669|1678|1680|1682|1687|1688|1692|1696|1698|1699|1710|1724|1727|1763|1777|1781|1782|1784|1786|1789|1792|1798|1800|1808|1809|1821|1822|1824|1835|1837|1852|1853|1866|1867|1868|1869|1872|1877|1878|1884|1888|1891|1895|1918|1930|1937|1948|1950|1988|1999|2002|2701|2738|3001|3002|3005|3009|3010|3011|3100|3101|3102|3103|3105|3107|3108|3109|3110|3111|3115|3116|3117|3118|3120|3124|3126|3129|3131|3132|3144|3168|3189|3200|3201|3202|3203|3204|3205|3207|3208|3301|3320|3322|3323|3324|3325|3326|3401|3402|3403|3404|3405|3406|3407|3411|3412|3416|3418|3421|3423|3425|3429|3434|3456|3457|3620|3630|3631|3632|3901|3908|3910|3933|3988|3999|4001|4002|4003|4010|4100|4101|4102|4103|4104|4123|4124|4125|4126|4129|4130|4131|4301|4303|4305|4307|4308|4310|4312|4313|4325|4351|4400|4401|4402|4403|4404|4405|4406|4407|4408|4410|4411|4412|4413|4414|4415|4417|4418|4419|4420|4422|4423|4424|4428|4429|4430|4433|4434|4435|4436|4437|4438|4439|4440|4441|4442|4443|4444|4445|4446|4447|4448|4449|4453|4455|4476|4477|4478|4481|4484|4485|4486|4487|4488|4489|4490|4501|4504|4505|4506|4601|4603|4607|4608|4609|4610|4611|4612|4614|4617|4620|4627|4631|4670|4671|4700|4701|4706|4707|4708|4709|4801|4802|4819|4901|4902|4903|4920|4921|4922|4923|4926|4931|4932|4935|4936|4937|4938|4939|5151|5201|5202|5203|5204|5301|5400|5454|5505|5515|5516|5523|5524|5526|5802|5804|5806|6000|6001|6018|6019|6088|6100|6101|6102|6103|6106|6112|6114|6121|6123|6150|6161|6162|6188|6200|6201|6300|6301|6305|6363|6400|6402|6403|6411|6415|6424|6500|6501|6502|6503|6505|6510|6601|6602|6610|8100|8101|8102|8103|8104|8105|8106|8107|8108|8109|8110|8111|8112|8113|8120|8130|8131|8165|8170|8171|8201|8205|8206|8211|8230|8401|8402|8600|8816|8817|8818|8819|9001|9002|9101|9105|9109|9110|9111|9114|9121|9130|9168|9201|9203|9204|9206|9207|9301|9402|9403|9405|9659|9711|9811|9814|21301|21800|22002|22003|22004|22202|22203|22302|22401|22501|22502|22602|22603|22702|22905|23001|23002|23003|23101|23104|23134|23233|23240|23302|23309|23501|23502|23801|23802|23902|23912|24001|24103|24201|24301|24302|24384|24389|24402|24501|24502|24509|24801|24810|24901|24905|24999|25000|25014|25017|25101|25284|25285|25402|25403|25404|25405|25406|25407|25410|25505|25707|25804|26003|26102|26401|26422|26433|26502|26611|26701|26702|26704|26901|29101|29786|29801|29802|29901|35001|35009|35101|35103|35104|35106|35107|35112|35180|35200|35201|35202|35207|35210|35277|35281|35299|35301|35302|35303|35304|35311|35315|35316|35400|35402|35403|35404|35501|35502|35503|35504|35601|35611|35621|35677|35702|35710|35720|35722|35789|35801|35802|35803|35804|35805|35806|35807|35809|35811|35812|35901|35905|35920|35922|35923|37001|37002|37003|37101|37201|37202|37203|37204|37206|37301|37302|37303|37401|37404|37405|37501|37502|37503|37603|38001|38002|38003|38101|38103|38105|38200|38201|38203|38591|38598|38640|38641|38664|38670|38701|38703|38705|38901|42001|42004|42005|42020|42031|42098|42101|42102|42103|42301|42302|42305|42306|42307|42310|50001|50167|50168|50601|50701|50801|57002|57123|59001|59003|59101|59102|59202|59301|59501|59502|59505|59800|59801|59900|59978|59991|59996|60153|67210|67502|67503|67601|67801|67805|67901|67902|68000|68001|68099|68502|68701|68901|68915|69101|69201|85001|85200|85201|85203|85204|85206|85207|85210|85211|85212|85216|85218|85219|85221|85224|85230|85231|85234|85235|85268|85269|85277|85280|85300|85301|85303|85501|85608|87099|88210|88212|88213|88215|88216|88222|88223|88228|88231|88232|88233|88234|88235|88236|88237|88239|88241|88245|88246|88247|88248|88249|88250|88280|88297|88298|88299|88301|88303|88304|88305|88306|96001|96101|96103|96105|96277|96405|96420|96430|96440|96504|96800|97202|97203|97208|97250|97301|97302|97400|97511|97577|97606|97702|99401|99403|99404|99405|99406|99501|99601|99701|99801|99804|883100|883110|883120|883130|883140|883150|883160|883170|883180|883190|883200|883210|883220|883230|883240|883250|883260|883270|883280|883290|883300|883310|8835100|8835110|8835120|8835130|8835140|8835150|8835160|8835170|8835180)/
 
 export const e118IINList: IssuerList = {
-	'891000': {
+	'1000': {
 		iin: 891000,
 		countryCode: 1,
 		issuerIdentifierNumber: '000',
 		countryName: 'United States',
 		companyName: 'Whibey Telephone Company',
 	},
-	'891001': {
+	'1001': {
 		iin: 891001,
 		countryCode: 1,
 		issuerIdentifierNumber: '001',
 		countryName: 'United States',
 		companyName: 'Hat Island Telephone Company',
 	},
-	'891002': {
+	'1002': {
 		iin: 891002,
 		countryCode: 1,
 		issuerIdentifierNumber: '002',
@@ -25,7 +25,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tenzing Communications, Inc.',
 		companyURLs: ['http://tenzing.com'],
 	},
-	'891003': {
+	'1003': {
 		iin: 891003,
 		countryCode: 1,
 		issuerIdentifierNumber: '003',
@@ -33,7 +33,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Highland Cellular Inc.',
 		companyURLs: ['http://cellularoneweb.com'],
 	},
-	'891004': {
+	'1004': {
 		iin: 891004,
 		countryCode: 1,
 		issuerIdentifierNumber: '004',
@@ -41,14 +41,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Endless Mountains Wireless LLC',
 		companyURLs: ['http://cox.net'],
 	},
-	'891005': {
+	'1005': {
 		iin: 891005,
 		countryCode: 1,
 		issuerIdentifierNumber: '005',
 		countryName: 'United States',
 		companyName: 'San Marcos Telephone Company Inc.',
 	},
-	'891006': {
+	'1006': {
 		iin: 891006,
 		countryCode: 1,
 		issuerIdentifierNumber: '006',
@@ -56,14 +56,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Duocash Inc.',
 		companyURLs: ['http://duocash.com'],
 	},
-	'891007': {
+	'1007': {
 		iin: 891007,
 		countryCode: 1,
 		issuerIdentifierNumber: '007',
 		countryName: 'Canada',
 		companyName: 'Telebec Ltée',
 	},
-	'891008': {
+	'1008': {
 		iin: 891008,
 		countryCode: 1,
 		issuerIdentifierNumber: '008',
@@ -71,7 +71,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wave Runner LLC',
 		companyURLs: ['http://choicephone.com'],
 	},
-	'891009': {
+	'1009': {
 		iin: 891009,
 		countryCode: 1,
 		issuerIdentifierNumber: '009',
@@ -79,7 +79,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NEP Cellcorp Inc.',
 		companyURLs: ['http://nep.net'],
 	},
-	'891010': {
+	'1010': {
 		iin: 891010,
 		countryCode: 1,
 		issuerIdentifierNumber: '010',
@@ -87,84 +87,84 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and Wireless (Anguilla) Ltd.',
 		companyURLs: ['http://cwc.com'],
 	},
-	'891011': {
+	'1011': {
 		iin: 891011,
 		countryCode: 1,
 		issuerIdentifierNumber: '011',
 		countryName: 'Antigua and Barbuda',
 		companyName: 'Cable and Wireless (W.I.) Ltd.',
 	},
-	'891012': {
+	'1012': {
 		iin: 891012,
 		countryCode: 1,
 		issuerIdentifierNumber: '012',
 		countryName: 'Barbados',
 		companyName: 'Barbados Telephone Company Ltd. (BARTEL)',
 	},
-	'891013': {
+	'1013': {
 		iin: 891013,
 		countryCode: 1,
 		issuerIdentifierNumber: '013',
 		countryName: 'Bermuda',
 		companyName: 'Cable and Wireless plc',
 	},
-	'891014': {
+	'1014': {
 		iin: 891014,
 		countryCode: 1,
 		issuerIdentifierNumber: '014',
 		countryName: 'British Virgin Islands',
 		companyName: 'Cable and Wireless (W.I.) Ltd.',
 	},
-	'891015': {
+	'1015': {
 		iin: 891015,
 		countryCode: 1,
 		issuerIdentifierNumber: '015',
 		countryName: 'Cayman Islands',
 		companyName: 'Cable and Wireless (C.I.) Ltd.',
 	},
-	'891016': {
+	'1016': {
 		iin: 891016,
 		countryCode: 1,
 		issuerIdentifierNumber: '016',
 		countryName: 'Dominica',
 		companyName: 'Telecommunications of Dominica Ltd.',
 	},
-	'891017': {
+	'1017': {
 		iin: 891017,
 		countryCode: 1,
 		issuerIdentifierNumber: '017',
 		countryName: 'Grenada',
 		companyName: 'Grenada Telecommunications Ltd. (GRENTEL)',
 	},
-	'891018': {
+	'1018': {
 		iin: 891018,
 		countryCode: 1,
 		issuerIdentifierNumber: '018',
 		countryName: 'Jamaica',
 		companyName: 'Cable and Wireless Jamaica Ltd',
 	},
-	'891019': {
+	'1019': {
 		iin: 891019,
 		countryCode: 1,
 		issuerIdentifierNumber: '019',
 		countryName: 'Montserrat',
 		companyName: 'Cable and Wireless (W.I.) Ltd.',
 	},
-	'891020': {
+	'1020': {
 		iin: 891020,
 		countryCode: 1,
 		issuerIdentifierNumber: '020',
 		countryName: 'Saint Kitts and Nevis',
 		companyName: 'Cable & Wireless St. Kitts and Nevis Ltd.',
 	},
-	'891021': {
+	'1021': {
 		iin: 891021,
 		countryCode: 1,
 		issuerIdentifierNumber: '021',
 		countryName: 'Saint Lucia',
 		companyName: 'Cable and Wireless (St. Lucia) Ltd.',
 	},
-	'891022': {
+	'1022': {
 		iin: 891022,
 		countryCode: 1,
 		issuerIdentifierNumber: '022',
@@ -172,7 +172,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and Wireless (St. Vincent & The Grenadines) Limited',
 		companyURLs: ['http://cwc.com'],
 	},
-	'891023': {
+	'1023': {
 		iin: 891023,
 		countryCode: 1,
 		issuerIdentifierNumber: '023',
@@ -181,14 +181,14 @@ export const e118IINList: IssuerList = {
 			'Telecommunications Services of Trinidad and Tobago Ltd.(TSTT)',
 		companyURLs: ['http://tstt.co.tt'],
 	},
-	'891024': {
+	'1024': {
 		iin: 891024,
 		countryCode: 1,
 		issuerIdentifierNumber: '024',
 		countryName: 'Turks and Caicos Islands',
 		companyName: 'Cable and Wireless (W.I.) Ltd.',
 	},
-	'891025': {
+	'1025': {
 		iin: 891025,
 		countryCode: 1,
 		issuerIdentifierNumber: '025',
@@ -196,7 +196,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PTI',
 		companyURLs: ['http://ptihq.com'],
 	},
-	'891026': {
+	'1026': {
 		iin: 891026,
 		countryCode: 1,
 		issuerIdentifierNumber: '026',
@@ -204,7 +204,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GCI Communications Corp',
 		companyURLs: ['http://gci.com'],
 	},
-	'891027': {
+	'1027': {
 		iin: 891027,
 		countryCode: 1,
 		issuerIdentifierNumber: '027',
@@ -212,7 +212,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'TerreStar Networks Inc.',
 		companyURLs: ['http://caledwards.com'],
 	},
-	'891028': {
+	'1028': {
 		iin: 891028,
 		countryCode: 1,
 		issuerIdentifierNumber: '028',
@@ -220,7 +220,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Globe Wireless',
 		companyURLs: ['http://globewireless.com'],
 	},
-	'891029': {
+	'1029': {
 		iin: 891029,
 		countryCode: 1,
 		issuerIdentifierNumber: '029',
@@ -228,7 +228,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lycatel LLC',
 		companyURLs: ['http://lycamobile.com'],
 	},
-	'891030': {
+	'1030': {
 		iin: 891030,
 		countryCode: 1,
 		issuerIdentifierNumber: '030',
@@ -236,7 +236,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom North America Mobile Inc',
 		companyURLs: ['http://telne.com'],
 	},
-	'891031': {
+	'1031': {
 		iin: 891031,
 		countryCode: 1,
 		issuerIdentifierNumber: '031',
@@ -244,7 +244,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vivaro Corporation',
 		companyURLs: ['http://stiprepaid.com'],
 	},
-	'891032': {
+	'1032': {
 		iin: 891032,
 		countryCode: 1,
 		issuerIdentifierNumber: '032',
@@ -252,7 +252,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Geneseo Communications Inc.',
 		companyURLs: ['http://geneseo.net'],
 	},
-	'891033': {
+	'1033': {
 		iin: 891033,
 		countryCode: 1,
 		issuerIdentifierNumber: '033',
@@ -260,7 +260,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mortorola Solutions Inc',
 		companyURLs: ['http://motorolasolutions.com'],
 	},
-	'891034': {
+	'1034': {
 		iin: 891034,
 		countryCode: 1,
 		issuerIdentifierNumber: '034',
@@ -268,7 +268,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'IDT Telecom Inc',
 		companyURLs: ['http://idt.net'],
 	},
-	'891035': {
+	'1035': {
 		iin: 891035,
 		countryCode: 1,
 		issuerIdentifierNumber: '035',
@@ -276,14 +276,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bragg Communications Inc',
 		companyURLs: ['http://corp.eastlink.ca'],
 	},
-	'891036': {
+	'1036': {
 		iin: 891036,
 		countryCode: 1,
 		issuerIdentifierNumber: '036',
 		countryName: 'United States',
 		companyName: 'Long Distance Savers',
 	},
-	'891037': {
+	'1037': {
 		iin: 891037,
 		countryCode: 1,
 		issuerIdentifierNumber: '037',
@@ -291,7 +291,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'First Networks Operation Inc.',
 		companyURLs: ['http://firstnetworks.ca'],
 	},
-	'891038': {
+	'1038': {
 		iin: 891038,
 		countryCode: 1,
 		issuerIdentifierNumber: '038',
@@ -299,7 +299,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Paygo Mobile Llc',
 		companyURLs: ['http://paygomobile.com'],
 	},
-	'891039': {
+	'1039': {
 		iin: 891039,
 		countryCode: 1,
 		issuerIdentifierNumber: '039',
@@ -307,7 +307,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Aspider Solutions',
 		companyURLs: ['http://aspidersolutions.com'],
 	},
-	'891041': {
+	'1041': {
 		iin: 891041,
 		countryCode: 1,
 		issuerIdentifierNumber: '041',
@@ -315,7 +315,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Gigsky Inc.',
 		companyURLs: ['http://gigsky.com'],
 	},
-	'891042': {
+	'1042': {
 		iin: 891042,
 		countryCode: 1,
 		issuerIdentifierNumber: '042',
@@ -323,7 +323,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NetGenuity',
 		companyURLs: ['http://persistent-telecom.net'],
 	},
-	'891043': {
+	'1043': {
 		iin: 891043,
 		countryCode: 1,
 		issuerIdentifierNumber: '043',
@@ -331,7 +331,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Gila Electronics of Arizona LLC',
 		companyURLs: ['http://gldlholdings.com'],
 	},
-	'891044': {
+	'1044': {
 		iin: 891044,
 		countryCode: 1,
 		issuerIdentifierNumber: '044',
@@ -339,7 +339,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Gigsky Mobile LLC',
 		companyURLs: ['http://gigsky.com'],
 	},
-	'891045': {
+	'1045': {
 		iin: 891045,
 		countryCode: 1,
 		issuerIdentifierNumber: '045',
@@ -347,7 +347,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Codetel, LLC',
 		companyURLs: ['http://macate.com'],
 	},
-	'891046': {
+	'1046': {
 		iin: 891046,
 		countryCode: 1,
 		issuerIdentifierNumber: '046',
@@ -355,7 +355,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hewlett-Packard Communications Services, LLC',
 		companyURLs: ['http://hpe.com'],
 	},
-	'891047': {
+	'1047': {
 		iin: 891047,
 		countryCode: 1,
 		issuerIdentifierNumber: '047',
@@ -363,7 +363,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Qualcomm',
 		companyURLs: ['http://qti.qualcomm.com'],
 	},
-	'891048': {
+	'1048': {
 		iin: 891048,
 		countryCode: 1,
 		issuerIdentifierNumber: '048',
@@ -371,7 +371,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Docomo Pacific, Inc.',
 		companyURLs: ['http://docomopacific.com'],
 	},
-	'891049': {
+	'1049': {
 		iin: 891049,
 		countryCode: 1,
 		issuerIdentifierNumber: '049',
@@ -379,7 +379,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'OptimERA Inc.',
 		companyURLs: ['http://optimerawifi.com'],
 	},
-	'891050': {
+	'1050': {
 		iin: 891050,
 		countryCode: 1,
 		issuerIdentifierNumber: '050',
@@ -387,7 +387,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Digicel Jamaica Ltd',
 		companyURLs: ['http://digicelgroup.com'],
 	},
-	'891051': {
+	'1051': {
 		iin: 891051,
 		countryCode: 1,
 		issuerIdentifierNumber: '051',
@@ -395,7 +395,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Dish Network',
 		companyURLs: ['http://dish.com'],
 	},
-	'891053': {
+	'1053': {
 		iin: 891053,
 		countryCode: 1,
 		issuerIdentifierNumber: '053',
@@ -403,7 +403,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Shuttle Wireless Solutions, Inc.',
 		companyURLs: ['http://morganlewis.com'],
 	},
-	'891080': {
+	'1080': {
 		iin: 891080,
 		countryCode: 1,
 		issuerIdentifierNumber: '080',
@@ -411,7 +411,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Corr Wireless Communications',
 		companyURLs: ['http://corrwireless.net'],
 	},
-	'891090': {
+	'1090': {
 		iin: 891090,
 		countryCode: 1,
 		issuerIdentifierNumber: '090',
@@ -419,7 +419,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Siouxland PCS, Inc.',
 		companyURLs: ['http://exchange.iowaone.net'],
 	},
-	'891091': {
+	'1091': {
 		iin: 891091,
 		countryCode: 1,
 		issuerIdentifierNumber: '091',
@@ -427,21 +427,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Allied Wireless Communications Corporation',
 		companyURLs: ['http://atni.com'],
 	},
-	'891111': {
+	'1111': {
 		iin: 891111,
 		countryCode: 1,
 		issuerIdentifierNumber: '111',
 		countryName: 'United States',
 		companyName: 'Citizen Utilities Company',
 	},
-	'891123': {
+	'1123': {
 		iin: 891123,
 		countryCode: 1,
 		issuerIdentifierNumber: '123',
 		countryName: 'United States',
 		companyName: 'ATC',
 	},
-	'891130': {
+	'1130': {
 		iin: 891130,
 		countryCode: 1,
 		issuerIdentifierNumber: '130',
@@ -449,7 +449,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Antigua Public Utilities Authority (APUA)',
 		companyURLs: ['http://apua.ag'],
 	},
-	'891160': {
+	'1160': {
 		iin: 891160,
 		countryCode: 1,
 		issuerIdentifierNumber: '160',
@@ -457,7 +457,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891170': {
+	'1170': {
 		iin: 891170,
 		countryCode: 1,
 		issuerIdentifierNumber: '170',
@@ -465,14 +465,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tampnet INC',
 		companyURLs: ['http://tampnet.com'],
 	},
-	'891200': {
+	'1200': {
 		iin: 891200,
 		countryCode: 1,
 		issuerIdentifierNumber: '200',
 		countryName: 'United States',
 		companyName: 'BellSouth Services',
 	},
-	'891210': {
+	'1210': {
 		iin: 891210,
 		countryCode: 1,
 		issuerIdentifierNumber: '210',
@@ -480,35 +480,35 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891211': {
+	'1211': {
 		iin: 891211,
 		countryCode: 1,
 		issuerIdentifierNumber: '211',
 		countryName: 'United States',
 		companyName: 'RCI Corporation',
 	},
-	'891220': {
+	'1220': {
 		iin: 891220,
 		countryCode: 1,
 		issuerIdentifierNumber: '220',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac telephone Company of Washington',
 	},
-	'891221': {
+	'1221': {
 		iin: 891221,
 		countryCode: 1,
 		issuerIdentifierNumber: '221',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of Maryland',
 	},
-	'891222': {
+	'1222': {
 		iin: 891222,
 		countryCode: 1,
 		issuerIdentifierNumber: '222',
 		countryName: 'United States',
 		companyName: 'MCI WorldCom',
 	},
-	'891223': {
+	'1223': {
 		iin: 891223,
 		countryCode: 1,
 		issuerIdentifierNumber: '223',
@@ -516,42 +516,42 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telus Communications Company',
 		companyURLs: ['http://telus.com'],
 	},
-	'891224': {
+	'1224': {
 		iin: 891224,
 		countryCode: 1,
 		issuerIdentifierNumber: '224',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of West Virginia',
 	},
-	'891226': {
+	'1226': {
 		iin: 891226,
 		countryCode: 1,
 		issuerIdentifierNumber: '226',
 		countryName: 'United States',
 		companyName: 'Diamond State Telephone Company',
 	},
-	'891227': {
+	'1227': {
 		iin: 891227,
 		countryCode: 1,
 		issuerIdentifierNumber: '227',
 		countryName: 'United States',
 		companyName: 'Bell of Pennsylvania',
 	},
-	'891228': {
+	'1228': {
 		iin: 891228,
 		countryCode: 1,
 		issuerIdentifierNumber: '228',
 		countryName: 'Canada',
 		companyName: 'British Columbia Telephone Company Ltd.',
 	},
-	'891229': {
+	'1229': {
 		iin: 891229,
 		countryCode: 1,
 		issuerIdentifierNumber: '229',
 		countryName: 'United States',
 		companyName: 'New Jersey Bell Telephone Company',
 	},
-	'891230': {
+	'1230': {
 		iin: 891230,
 		countryCode: 1,
 		issuerIdentifierNumber: '230',
@@ -559,35 +559,35 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891232': {
+	'1232': {
 		iin: 891232,
 		countryCode: 1,
 		issuerIdentifierNumber: '232',
 		countryName: 'Bermuda',
 		companyName: 'The Bermuda Telephone Company Ltd.',
 	},
-	'891234': {
+	'1234': {
 		iin: 891234,
 		countryCode: 1,
 		issuerIdentifierNumber: '234',
 		countryName: 'United States',
 		companyName: 'Southern New England Telephone',
 	},
-	'891235': {
+	'1235': {
 		iin: 891235,
 		countryCode: 1,
 		issuerIdentifierNumber: '235',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of Virginia',
 	},
-	'891236': {
+	'1236': {
 		iin: 891236,
 		countryCode: 1,
 		issuerIdentifierNumber: '236',
 		countryName: 'Canada',
 		companyName: 'Bell Canada',
 	},
-	'891240': {
+	'1240': {
 		iin: 891240,
 		countryCode: 1,
 		issuerIdentifierNumber: '240',
@@ -595,21 +595,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891246': {
+	'1246': {
 		iin: 891246,
 		countryCode: 1,
 		issuerIdentifierNumber: '246',
 		countryName: 'United States',
 		companyName: 'China Telephone Company',
 	},
-	'891248': {
+	'1248': {
 		iin: 891248,
 		countryCode: 1,
 		issuerIdentifierNumber: '248',
 		countryName: 'Canada',
 		companyName: 'Telus Communications Inc.',
 	},
-	'891250': {
+	'1250': {
 		iin: 891250,
 		countryCode: 1,
 		issuerIdentifierNumber: '250',
@@ -617,7 +617,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ALO Mobile Inc',
 		companyURLs: ['http://alomobile.ca'],
 	},
-	'891253': {
+	'1253': {
 		iin: 891253,
 		countryCode: 1,
 		issuerIdentifierNumber: '253',
@@ -625,14 +625,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'AT&T',
 		companyURLs: ['http://att.com'],
 	},
-	'891258': {
+	'1258': {
 		iin: 891258,
 		countryCode: 1,
 		issuerIdentifierNumber: '258',
 		countryName: 'Canada',
 		companyName: 'Telus Communications Inc.',
 	},
-	'891260': {
+	'1260': {
 		iin: 891260,
 		countryCode: 1,
 		issuerIdentifierNumber: '260',
@@ -640,14 +640,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891266': {
+	'1266': {
 		iin: 891266,
 		countryCode: 1,
 		issuerIdentifierNumber: '266',
 		countryName: 'United States',
 		companyName: 'Com Systems',
 	},
-	'891270': {
+	'1270': {
 		iin: 891270,
 		countryCode: 1,
 		issuerIdentifierNumber: '270',
@@ -655,28 +655,28 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891272': {
+	'1272': {
 		iin: 891272,
 		countryCode: 1,
 		issuerIdentifierNumber: '272',
 		countryName: 'United States',
 		companyName: 'Bell of Pennsylvania',
 	},
-	'891273': {
+	'1273': {
 		iin: 891273,
 		countryCode: 1,
 		issuerIdentifierNumber: '273',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac telephone Company of Washington',
 	},
-	'891276': {
+	'1276': {
 		iin: 891276,
 		countryCode: 1,
 		issuerIdentifierNumber: '276',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of Maryland',
 	},
-	'891277': {
+	'1277': {
 		iin: 891277,
 		countryCode: 1,
 		issuerIdentifierNumber: '277',
@@ -684,42 +684,42 @@ export const e118IINList: IssuerList = {
 		companyName: 'Saskatchewan Telecommunications',
 		companyURLs: ['http://sasktel.com'],
 	},
-	'891278': {
+	'1278': {
 		iin: 891278,
 		countryCode: 1,
 		issuerIdentifierNumber: '278',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of Virginia',
 	},
-	'891279': {
+	'1279': {
 		iin: 891279,
 		countryCode: 1,
 		issuerIdentifierNumber: '279',
 		countryName: 'United States',
 		companyName: 'Chesapeake & Potomac Telephone Company of West Virginia',
 	},
-	'891282': {
+	'1282': {
 		iin: 891282,
 		countryCode: 1,
 		issuerIdentifierNumber: '282',
 		countryName: 'Bahamas',
 		companyName: 'Bahamas Telecommunications Company Ltd.',
 	},
-	'891283': {
+	'1283': {
 		iin: 891283,
 		countryCode: 1,
 		issuerIdentifierNumber: '283',
 		countryName: 'Puerto Rico',
 		companyName: 'AT&T',
 	},
-	'891284': {
+	'1284': {
 		iin: 891284,
 		countryCode: 1,
 		issuerIdentifierNumber: '284',
 		countryName: 'United States Virgin Islands',
 		companyName: 'AT&T of the Virgin Islands',
 	},
-	'891288': {
+	'1288': {
 		iin: 891288,
 		countryCode: 1,
 		issuerIdentifierNumber: '288',
@@ -727,14 +727,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'AT&T',
 		companyURLs: ['http://att.com'],
 	},
-	'891300': {
+	'1300': {
 		iin: 891300,
 		countryCode: 1,
 		issuerIdentifierNumber: '300',
 		countryName: 'United States',
 		companyName: 'BellSouth Services',
 	},
-	'891302': {
+	'1302': {
 		iin: 891302,
 		countryCode: 1,
 		issuerIdentifierNumber: '302',
@@ -742,7 +742,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ECOTEL inc.',
 		companyURLs: ['http://ecotelecom.ca'],
 	},
-	'891310': {
+	'1310': {
 		iin: 891310,
 		countryCode: 1,
 		issuerIdentifierNumber: '310',
@@ -750,7 +750,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891311': {
+	'1311': {
 		iin: 891311,
 		countryCode: 1,
 		issuerIdentifierNumber: '311',
@@ -758,28 +758,28 @@ export const e118IINList: IssuerList = {
 		companyName: 'Farmers Cellular Telephone Inc.',
 		companyURLs: ['http://farmerswireless.com'],
 	},
-	'891318': {
+	'1318': {
 		iin: 891318,
 		countryCode: 1,
 		issuerIdentifierNumber: '318',
 		countryName: 'United States',
 		companyName: 'Long Distance Savers',
 	},
-	'891321': {
+	'1321': {
 		iin: 891321,
 		countryCode: 1,
 		issuerIdentifierNumber: '321',
 		countryName: 'United States',
 		companyName: 'US Intelco Networks Inc.',
 	},
-	'891333': {
+	'1333': {
 		iin: 891333,
 		countryCode: 1,
 		issuerIdentifierNumber: '333',
 		countryName: 'United States',
 		companyName: 'Sprint Corporation',
 	},
-	'891340': {
+	'1340': {
 		iin: 891340,
 		countryCode: 1,
 		issuerIdentifierNumber: '340',
@@ -787,7 +787,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Westlink Communications LLC',
 		companyURLs: ['http://pioncomm.net'],
 	},
-	'891348': {
+	'1348': {
 		iin: 891348,
 		countryCode: 1,
 		issuerIdentifierNumber: '348',
@@ -795,14 +795,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Caribbean Cellular Telephone d.b.a. CCT Boatphone',
 		companyURLs: ['http://bvicellular.com'],
 	},
-	'891350': {
+	'1350': {
 		iin: 891350,
 		countryCode: 1,
 		issuerIdentifierNumber: '350',
 		countryName: 'United States',
 		companyName: 'Com Systems',
 	},
-	'891351': {
+	'1351': {
 		iin: 891351,
 		countryCode: 1,
 		issuerIdentifierNumber: '351',
@@ -810,35 +810,35 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bermuda Digital Communications Ltd',
 		companyURLs: ['http://cellone.bm'],
 	},
-	'891357': {
+	'1357': {
 		iin: 891357,
 		countryCode: 1,
 		issuerIdentifierNumber: '357',
 		countryName: 'United States',
 		companyName: 'Eastern Telecommunication Services Company',
 	},
-	'891362': {
+	'1362': {
 		iin: 891362,
 		countryCode: 1,
 		issuerIdentifierNumber: '362',
 		countryName: 'United States',
 		companyName: 'Dobson Telephone Company Inc.',
 	},
-	'891366': {
+	'1366': {
 		iin: 891366,
 		countryCode: 1,
 		issuerIdentifierNumber: '366',
 		countryName: 'United States',
 		companyName: 'Telecom USA',
 	},
-	'891369': {
+	'1369': {
 		iin: 891369,
 		countryCode: 1,
 		issuerIdentifierNumber: '369',
 		countryName: 'Canada',
 		companyName: 'Bell Canada',
 	},
-	'891370': {
+	'1370': {
 		iin: 891370,
 		countryCode: 1,
 		issuerIdentifierNumber: '370',
@@ -846,7 +846,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Microcell Solutions Inc.',
 		companyURLs: ['http://microcell.ca'],
 	},
-	'891371': {
+	'1371': {
 		iin: 891371,
 		countryCode: 1,
 		issuerIdentifierNumber: '371',
@@ -854,7 +854,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Commnet Wireless LLC',
 		companyURLs: ['http://atni.com'],
 	},
-	'891377': {
+	'1377': {
 		iin: 891377,
 		countryCode: 1,
 		issuerIdentifierNumber: '377',
@@ -862,49 +862,49 @@ export const e118IINList: IssuerList = {
 		companyName: 'Docomo Pacific, Inc.',
 		companyURLs: ['http://docomopacific.com'],
 	},
-	'891378': {
+	'1378': {
 		iin: 891378,
 		countryCode: 1,
 		issuerIdentifierNumber: '378',
 		countryName: 'United States',
 		companyName: 'Diamond State Telephone Company',
 	},
-	'891382': {
+	'1382': {
 		iin: 891382,
 		countryCode: 1,
 		issuerIdentifierNumber: '382',
 		countryName: 'United States',
 		companyName: 'Dobson Telephone Company Inc.',
 	},
-	'891400': {
+	'1400': {
 		iin: 891400,
 		countryCode: 1,
 		issuerIdentifierNumber: '400',
 		countryName: 'United States',
 		companyName: 'Telus Communications Inc.',
 	},
-	'891432': {
+	'1432': {
 		iin: 891432,
 		countryCode: 1,
 		issuerIdentifierNumber: '432',
 		countryName: 'United States',
 		companyName: 'LiTel Telecommunications Corporation',
 	},
-	'891433': {
+	'1433': {
 		iin: 891433,
 		countryCode: 1,
 		issuerIdentifierNumber: '433',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891444': {
+	'1444': {
 		iin: 891444,
 		countryCode: 1,
 		issuerIdentifierNumber: '444',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891450': {
+	'1450': {
 		iin: 891450,
 		countryCode: 1,
 		issuerIdentifierNumber: '450',
@@ -912,14 +912,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'North East Colorado Cellular Inc.',
 		companyURLs: ['http://viaero.com'],
 	},
-	'891456': {
+	'1456': {
 		iin: 891456,
 		countryCode: 1,
 		issuerIdentifierNumber: '456',
 		countryName: 'Canada',
 		companyName: 'Manitoba Telecom Services',
 	},
-	'891460': {
+	'1460': {
 		iin: 891460,
 		countryCode: 1,
 		issuerIdentifierNumber: '460',
@@ -927,14 +927,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wireless Communications Ventures dba NewCore Wireless',
 		companyURLs: ['http://corewg.com'],
 	},
-	'891464': {
+	'1464': {
 		iin: 891464,
 		countryCode: 1,
 		issuerIdentifierNumber: '464',
 		countryName: 'United States',
 		companyName: 'Vyvx Telecom Inc.',
 	},
-	'891470': {
+	'1470': {
 		iin: 891470,
 		countryCode: 1,
 		issuerIdentifierNumber: '470',
@@ -942,14 +942,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ntelos, Inc.',
 		companyURLs: ['http://ntelos.com'],
 	},
-	'891474': {
+	'1474': {
 		iin: 891474,
 		countryCode: 1,
 		issuerIdentifierNumber: '474',
 		countryName: 'United States',
 		companyName: 'Pine Tree Tel & Tel Company',
 	},
-	'891480': {
+	'1480': {
 		iin: 891480,
 		countryCode: 1,
 		issuerIdentifierNumber: '480',
@@ -957,49 +957,49 @@ export const e118IINList: IssuerList = {
 		companyName: 'Verizon Wireless',
 		companyURLs: ['http://hq.verizonwireless.com'],
 	},
-	'891482': {
+	'1482': {
 		iin: 891482,
 		countryCode: 1,
 		issuerIdentifierNumber: '482',
 		countryName: 'Canada',
 		companyName: 'Island Tel',
 	},
-	'891483': {
+	'1483': {
 		iin: 891483,
 		countryCode: 1,
 		issuerIdentifierNumber: '483',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891486': {
+	'1486': {
 		iin: 891486,
 		countryCode: 1,
 		issuerIdentifierNumber: '486',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891487': {
+	'1487': {
 		iin: 891487,
 		countryCode: 1,
 		issuerIdentifierNumber: '487',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891488': {
+	'1488': {
 		iin: 891488,
 		countryCode: 1,
 		issuerIdentifierNumber: '488',
 		countryName: 'United States',
 		companyName: 'ITT-US Transmission Systems Inc.',
 	},
-	'891489': {
+	'1489': {
 		iin: 891489,
 		countryCode: 1,
 		issuerIdentifierNumber: '489',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891490': {
+	'1490': {
 		iin: 891490,
 		countryCode: 1,
 		issuerIdentifierNumber: '490',
@@ -1007,21 +1007,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Freedom Mobile Inc.',
 		companyURLs: ['http://sjrb.ca'],
 	},
-	'891503': {
+	'1503': {
 		iin: 891503,
 		countryCode: 1,
 		issuerIdentifierNumber: '503',
 		countryName: 'United States',
 		companyName: 'Fone America Incoporated',
 	},
-	'891505': {
+	'1505': {
 		iin: 891505,
 		countryCode: 1,
 		issuerIdentifierNumber: '505',
 		countryName: 'United States',
 		companyName: 'San Marcos Long Distance',
 	},
-	'891530': {
+	'1530': {
 		iin: 891530,
 		countryCode: 1,
 		issuerIdentifierNumber: '530',
@@ -1029,14 +1029,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wireless Communications Ventures dba NewCore Wireless',
 		companyURLs: ['http://corewg.com'],
 	},
-	'891555': {
+	'1555': {
 		iin: 891555,
 		countryCode: 1,
 		issuerIdentifierNumber: '555',
 		countryName: 'United States',
 		companyName: 'Creative Communications',
 	},
-	'891580': {
+	'1580': {
 		iin: 891580,
 		countryCode: 1,
 		issuerIdentifierNumber: '580',
@@ -1044,21 +1044,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile USA',
 		companyURLs: ['http://t-mobile.com'],
 	},
-	'891582': {
+	'1582': {
 		iin: 891582,
 		countryCode: 1,
 		issuerIdentifierNumber: '582',
 		countryName: 'Jamaica',
 		companyName: 'Cable and Wireless Jamaica Ltd',
 	},
-	'891593': {
+	'1593': {
 		iin: 891593,
 		countryCode: 1,
 		issuerIdentifierNumber: '593',
 		countryName: 'Canada',
 		companyName: 'Island Tel',
 	},
-	'891610': {
+	'1610': {
 		iin: 891610,
 		countryCode: 1,
 		issuerIdentifierNumber: '610',
@@ -1066,70 +1066,70 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ntelos, Inc.',
 		companyURLs: ['http://ntelos.com'],
 	},
-	'891625': {
+	'1625': {
 		iin: 891625,
 		countryCode: 1,
 		issuerIdentifierNumber: '625',
 		countryName: 'United States',
 		companyName: 'Operator Assistance Network',
 	},
-	'891626': {
+	'1626': {
 		iin: 891626,
 		countryCode: 1,
 		issuerIdentifierNumber: '626',
 		countryName: 'United States',
 		companyName: 'Operator Assistance Network',
 	},
-	'891628': {
+	'1628': {
 		iin: 891628,
 		countryCode: 1,
 		issuerIdentifierNumber: '628',
 		countryName: 'Canada',
 		companyName: 'New Brunswick Telephone Company Ltd.',
 	},
-	'891629': {
+	'1629': {
 		iin: 891629,
 		countryCode: 1,
 		issuerIdentifierNumber: '629',
 		countryName: 'Canada',
 		companyName: 'New Brunswick Telephone Company Ltd.',
 	},
-	'891635': {
+	'1635': {
 		iin: 891635,
 		countryCode: 1,
 		issuerIdentifierNumber: '635',
 		countryName: 'Canada',
 		companyName: 'Newfoundland Telephone Company Ltd.',
 	},
-	'891638': {
+	'1638': {
 		iin: 891638,
 		countryCode: 1,
 		issuerIdentifierNumber: '638',
 		countryName: 'United States',
 		companyName: 'New England Telephone & Telegraph Company',
 	},
-	'891650': {
+	'1650': {
 		iin: 891650,
 		countryCode: 1,
 		issuerIdentifierNumber: '650',
 		countryName: 'Dominican Rep.',
 		companyName: 'Verizon Dominicana',
 	},
-	'891652': {
+	'1652': {
 		iin: 891652,
 		countryCode: 1,
 		issuerIdentifierNumber: '652',
 		countryName: 'United States',
 		companyName: 'New Jersey Bell Telephone Company',
 	},
-	'891654': {
+	'1654': {
 		iin: 891654,
 		countryCode: 1,
 		issuerIdentifierNumber: '654',
 		countryName: 'Canada',
 		companyName: 'British Columbia Telephone Company Ltd.',
 	},
-	'891660': {
+	'1660': {
 		iin: 891660,
 		countryCode: 1,
 		issuerIdentifierNumber: '660',
@@ -1137,35 +1137,35 @@ export const e118IINList: IssuerList = {
 		companyName: 'Allstream Business Inc.',
 		companyURLs: ['http://allstream.com'],
 	},
-	'891663': {
+	'1663': {
 		iin: 891663,
 		countryCode: 1,
 		issuerIdentifierNumber: '663',
 		countryName: 'United States',
 		companyName: 'McLoud Telephone Company Inc.',
 	},
-	'891666': {
+	'1666': {
 		iin: 891666,
 		countryCode: 1,
 		issuerIdentifierNumber: '666',
 		countryName: 'United States',
 		companyName: 'McLoud Telephone Company Inc.',
 	},
-	'891669': {
+	'1669': {
 		iin: 891669,
 		countryCode: 1,
 		issuerIdentifierNumber: '669',
 		countryName: 'United States',
 		companyName: 'Steelville Telephone Exchange Inc.',
 	},
-	'891678': {
+	'1678': {
 		iin: 891678,
 		countryCode: 1,
 		issuerIdentifierNumber: '678',
 		countryName: 'United States',
 		companyName: 'African Communications Group, Inc.',
 	},
-	'891680': {
+	'1680': {
 		iin: 891680,
 		countryCode: 1,
 		issuerIdentifierNumber: '680',
@@ -1173,70 +1173,70 @@ export const e118IINList: IssuerList = {
 		companyName: 'GreenFly LLC',
 		companyURLs: ['http://gmail.com'],
 	},
-	'891682': {
+	'1682': {
 		iin: 891682,
 		countryCode: 1,
 		issuerIdentifierNumber: '682',
 		countryName: 'Canada',
 		companyName: 'Newfoundland Telephone Company Ltd.',
 	},
-	'891687': {
+	'1687': {
 		iin: 891687,
 		countryCode: 1,
 		issuerIdentifierNumber: '687',
 		countryName: 'Canada',
 		companyName: 'Manitoba Telecom Services',
 	},
-	'891688': {
+	'1688': {
 		iin: 891688,
 		countryCode: 1,
 		issuerIdentifierNumber: '688',
 		countryName: 'Canada',
 		companyName: 'Maritime Telegraph and Telephone Company Ltd.',
 	},
-	'891692': {
+	'1692': {
 		iin: 891692,
 		countryCode: 1,
 		issuerIdentifierNumber: '692',
 		countryName: 'United States',
 		companyName: 'NorthWestern Bell Telephone Company',
 	},
-	'891696': {
+	'1696': {
 		iin: 891696,
 		countryCode: 1,
 		issuerIdentifierNumber: '696',
 		countryName: 'United States',
 		companyName: 'Nynex Corporation',
 	},
-	'891698': {
+	'1698': {
 		iin: 891698,
 		countryCode: 1,
 		issuerIdentifierNumber: '698',
 		countryName: 'United States',
 		companyName: 'New York Telephone Company',
 	},
-	'891699': {
+	'1699': {
 		iin: 891699,
 		countryCode: 1,
 		issuerIdentifierNumber: '699',
 		countryName: 'Canada',
 		companyName: 'Maritime Telegraph and Telephone Company Ltd.',
 	},
-	'891710': {
+	'1710': {
 		iin: 891710,
 		countryCode: 1,
 		issuerIdentifierNumber: '710',
 		countryName: 'United States',
 		companyName: 'Missouri Telephone Company',
 	},
-	'891724': {
+	'1724': {
 		iin: 891724,
 		countryCode: 1,
 		issuerIdentifierNumber: '724',
 		countryName: 'United States',
 		companyName: 'RCI Corporation',
 	},
-	'891727': {
+	'1727': {
 		iin: 891727,
 		countryCode: 1,
 		issuerIdentifierNumber: '727',
@@ -1244,147 +1244,147 @@ export const e118IINList: IssuerList = {
 		companyName: 'Saskatchewan Telecommunications',
 		companyURLs: ['http://sasktel.com'],
 	},
-	'891763': {
+	'1763': {
 		iin: 891763,
 		countryCode: 1,
 		issuerIdentifierNumber: '763',
 		countryName: 'United States',
 		companyName: 'Southern New England Telephone',
 	},
-	'891777': {
+	'1777': {
 		iin: 891777,
 		countryCode: 1,
 		issuerIdentifierNumber: '777',
 		countryName: 'United States',
 		companyName: 'XEL Communications Inc.',
 	},
-	'891781': {
+	'1781': {
 		iin: 891781,
 		countryCode: 1,
 		issuerIdentifierNumber: '781',
 		countryName: 'United States',
 		companyName: 'Pacific Bell',
 	},
-	'891782': {
+	'1782': {
 		iin: 891782,
 		countryCode: 1,
 		issuerIdentifierNumber: '782',
 		countryName: 'United States',
 		companyName: 'Rochester Telephone Corporation',
 	},
-	'891784': {
+	'1784': {
 		iin: 891784,
 		countryCode: 1,
 		issuerIdentifierNumber: '784',
 		countryName: 'United States',
 		companyName: 'Pacific Bell',
 	},
-	'891786': {
+	'1786': {
 		iin: 891786,
 		countryCode: 1,
 		issuerIdentifierNumber: '786',
 		countryName: 'United States',
 		companyName: 'Standish Telephone Company',
 	},
-	'891789': {
+	'1789': {
 		iin: 891789,
 		countryCode: 1,
 		issuerIdentifierNumber: '789',
 		countryName: 'Canada',
 		companyName: 'Bell Canada',
 	},
-	'891792': {
+	'1792': {
 		iin: 891792,
 		countryCode: 1,
 		issuerIdentifierNumber: '792',
 		countryName: 'United States',
 		companyName: 'SouthWestern Bell Telephone Company',
 	},
-	'891798': {
+	'1798': {
 		iin: 891798,
 		countryCode: 1,
 		issuerIdentifierNumber: '798',
 		countryName: 'United States',
 		companyName: 'SouthWestern Bell Telephone Company',
 	},
-	'891800': {
+	'1800': {
 		iin: 891800,
 		countryCode: 1,
 		issuerIdentifierNumber: '800',
 		countryName: 'United States',
 		companyName: 'XEL Communications Inc.',
 	},
-	'891808': {
+	'1808': {
 		iin: 891808,
 		countryCode: 1,
 		issuerIdentifierNumber: '808',
 		countryName: 'United States',
 		companyName: 'Verizon Communications Corporation',
 	},
-	'891809': {
+	'1809': {
 		iin: 891809,
 		countryCode: 1,
 		issuerIdentifierNumber: '809',
 		countryName: 'Puerto Rico',
 		companyName: 'Puerto Rico Telephone Company (PTRC)',
 	},
-	'891821': {
+	'1821': {
 		iin: 891821,
 		countryCode: 1,
 		issuerIdentifierNumber: '821',
 		countryName: 'Canada',
 		companyName: 'Tata Communications Canada ULC',
 	},
-	'891822': {
+	'1822': {
 		iin: 891822,
 		countryCode: 1,
 		issuerIdentifierNumber: '822',
 		countryName: 'United States',
 		companyName: 'NorthWestern Bell Telephone Company',
 	},
-	'891824': {
+	'1824': {
 		iin: 891824,
 		countryCode: 1,
 		issuerIdentifierNumber: '824',
 		countryName: 'United States',
 		companyName: 'Teleport Communications',
 	},
-	'891835': {
+	'1835': {
 		iin: 891835,
 		countryCode: 1,
 		issuerIdentifierNumber: '835',
 		countryName: 'Canada',
 		companyName: 'Quebec Telephone',
 	},
-	'891837': {
+	'1837': {
 		iin: 891837,
 		countryCode: 1,
 		issuerIdentifierNumber: '837',
 		countryName: 'Canada',
 		companyName: 'Quebec Telephone',
 	},
-	'891852': {
+	'1852': {
 		iin: 891852,
 		countryCode: 1,
 		issuerIdentifierNumber: '852',
 		countryName: 'United States',
 		companyName: 'Telecom USA',
 	},
-	'891853': {
+	'1853': {
 		iin: 891853,
 		countryCode: 1,
 		issuerIdentifierNumber: '853',
 		countryName: 'Puerto Rico',
 		companyName: 'Telefónica Larga Distancia, Inc. (TLDI)',
 	},
-	'891866': {
+	'1866': {
 		iin: 891866,
 		countryCode: 1,
 		issuerIdentifierNumber: '866',
 		countryName: 'United States',
 		companyName: 'Alascom Inc.',
 	},
-	'891867': {
+	'1867': {
 		iin: 891867,
 		countryCode: 1,
 		issuerIdentifierNumber: '867',
@@ -1392,133 +1392,133 @@ export const e118IINList: IssuerList = {
 		companyName: 'Transaction Network Services Inc.',
 		companyURLs: ['http://blacknose.com'],
 	},
-	'891868': {
+	'1868': {
 		iin: 891868,
 		countryCode: 1,
 		issuerIdentifierNumber: '868',
 		countryName: 'United States',
 		companyName: 'Eastern New Mexico Telephone Cooperative',
 	},
-	'891869': {
+	'1869': {
 		iin: 891869,
 		countryCode: 1,
 		issuerIdentifierNumber: '869',
 		countryName: 'Canada',
 		companyName: 'Unitel Communications Inc.',
 	},
-	'891872': {
+	'1872': {
 		iin: 891872,
 		countryCode: 1,
 		issuerIdentifierNumber: '872',
 		countryName: 'United States',
 		companyName: 'Pacific Northwest Bell Telephone Company',
 	},
-	'891877': {
+	'1877': {
 		iin: 891877,
 		countryCode: 1,
 		issuerIdentifierNumber: '877',
 		countryName: 'United States',
 		companyName: 'Sprint Corporation',
 	},
-	'891878': {
+	'1878': {
 		iin: 891878,
 		countryCode: 1,
 		issuerIdentifierNumber: '878',
 		countryName: 'United States',
 		companyName: 'TRT International Inc.',
 	},
-	'891884': {
+	'1884': {
 		iin: 891884,
 		countryCode: 1,
 		issuerIdentifierNumber: '884',
 		countryName: 'United States',
 		companyName: 'Teleport Communications',
 	},
-	'891888': {
+	'1888': {
 		iin: 891888,
 		countryCode: 1,
 		issuerIdentifierNumber: '888',
 		countryName: 'United States',
 		companyName: 'ITT-US Transmission Systems Inc.',
 	},
-	'891891': {
+	'1891': {
 		iin: 891891,
 		countryCode: 1,
 		issuerIdentifierNumber: '891',
 		countryName: 'United States',
 		companyName: 'Rochester Telephone Corporation',
 	},
-	'891895': {
+	'1895': {
 		iin: 891895,
 		countryCode: 1,
 		issuerIdentifierNumber: '895',
 		countryName: 'Canada',
 		companyName: 'International Telecommunications Services Inc.',
 	},
-	'891918': {
+	'1918': {
 		iin: 891918,
 		countryCode: 1,
 		issuerIdentifierNumber: '918',
 		countryName: 'United States',
 		companyName: 'Atlas Telephone Company, Inc.',
 	},
-	'891930': {
+	'1930': {
 		iin: 891930,
 		countryCode: 1,
 		issuerIdentifierNumber: '930',
 		countryName: 'Canada',
 		companyName: 'Northwestel Inc.',
 	},
-	'891937': {
+	'1937': {
 		iin: 891937,
 		countryCode: 1,
 		issuerIdentifierNumber: '937',
 		countryName: 'United States',
 		companyName: 'Panhandle Telephone Cooperative Inc.',
 	},
-	'891948': {
+	'1948': {
 		iin: 891948,
 		countryCode: 1,
 		issuerIdentifierNumber: '948',
 		countryName: 'United States',
 		companyName: 'XIT Rural Telephone Cooperative Inc.',
 	},
-	'891950': {
+	'1950': {
 		iin: 891950,
 		countryCode: 1,
 		issuerIdentifierNumber: '950',
 		countryName: 'United States',
 		companyName: 'MCI WorldCom',
 	},
-	'891988': {
+	'1988': {
 		iin: 891988,
 		countryCode: 1,
 		issuerIdentifierNumber: '988',
 		countryName: 'United States',
 		companyName: 'XIT Telecommunications & Technology Inc.',
 	},
-	'891999': {
+	'1999': {
 		iin: 891999,
 		countryCode: 1,
 		issuerIdentifierNumber: '999',
 		countryName: 'United States',
 		companyName: 'Creative Communications',
 	},
-	'892002': {
+	'2002': {
 		iin: 892002,
 		countryCode: 20,
 		issuerIdentifierNumber: '02',
 		countryName: 'Egypt',
 		companyName: 'Vodafone Egypt Telecommunications S.A.E.',
 	},
-	'892701': {
+	'2701': {
 		iin: 892701,
 		countryCode: 27,
 		issuerIdentifierNumber: '01',
 		countryName: 'South Africa',
 		companyName: 'Mobile Telephone Networks (MTN) Pty Ltd',
 	},
-	'892738': {
+	'2738': {
 		iin: 892738,
 		countryCode: 27,
 		issuerIdentifierNumber: '38',
@@ -1526,7 +1526,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Rain Networks (Pty) Ltd',
 		companyURLs: ['http://rain.co.za'],
 	},
-	'893001': {
+	'3001': {
 		iin: 893001,
 		countryCode: 30,
 		issuerIdentifierNumber: '01',
@@ -1534,7 +1534,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'COSMOTE',
 		companyURLs: ['http://cosmote.gr'],
 	},
-	'893002': {
+	'3002': {
 		iin: 893002,
 		countryCode: 30,
 		issuerIdentifierNumber: '02',
@@ -1542,7 +1542,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'OTE S.A.',
 		companyURLs: ['http://ote.gr'],
 	},
-	'893005': {
+	'3005': {
 		iin: 893005,
 		countryCode: 30,
 		issuerIdentifierNumber: '05',
@@ -1550,7 +1550,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'893009': {
+	'3009': {
 		iin: 893009,
 		countryCode: 30,
 		issuerIdentifierNumber: '09',
@@ -1558,7 +1558,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'WIND Hellas',
 		companyURLs: ['http://wind.gr'],
 	},
-	'893010': {
+	'3010': {
 		iin: 893010,
 		countryCode: 30,
 		issuerIdentifierNumber: '10',
@@ -1566,7 +1566,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'WIND Hellas',
 		companyURLs: ['http://wind.gr'],
 	},
-	'893011': {
+	'3011': {
 		iin: 893011,
 		countryCode: 30,
 		issuerIdentifierNumber: '11',
@@ -1574,14 +1574,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Forthnet S.A.',
 		companyURLs: ['http://forthnet.gr'],
 	},
-	'893100': {
+	'3100': {
 		iin: 893100,
 		countryCode: 31,
 		issuerIdentifierNumber: '00',
 		countryName: 'Netherlands',
 		companyName: 'KPN Telecom B.V., Card Services',
 	},
-	'893101': {
+	'3101': {
 		iin: 893101,
 		countryCode: 31,
 		issuerIdentifierNumber: '01',
@@ -1589,7 +1589,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ACN Europe B.V.',
 		companyURLs: ['http://acneuro.com'],
 	},
-	'893102': {
+	'3102': {
 		iin: 893102,
 		countryCode: 31,
 		issuerIdentifierNumber: '02',
@@ -1597,7 +1597,7 @@ export const e118IINList: IssuerList = {
 		companyName: '6GMobile B.V.',
 		companyURLs: ['http://6gmobile.com'],
 	},
-	'893103': {
+	'3103': {
 		iin: 893103,
 		countryCode: 31,
 		issuerIdentifierNumber: '03',
@@ -1605,7 +1605,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Blyk N.V.',
 		companyURLs: ['http://blyk.com'],
 	},
-	'893105': {
+	'3105': {
 		iin: 893105,
 		countryCode: 31,
 		issuerIdentifierNumber: '05',
@@ -1613,7 +1613,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elephant Talk Communication Holding AG',
 		companyURLs: ['http://elephanttalk.com'],
 	},
-	'893107': {
+	'3107': {
 		iin: 893107,
 		countryCode: 31,
 		issuerIdentifierNumber: '07',
@@ -1621,14 +1621,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Teleena Nederlands',
 		companyURLs: ['http://teleena.com'],
 	},
-	'893108': {
+	'3108': {
 		iin: 893108,
 		countryCode: 31,
 		issuerIdentifierNumber: '08',
 		countryName: 'Netherlands',
 		companyName: 'KPN Telecom B.V., Card Services',
 	},
-	'893109': {
+	'3109': {
 		iin: 893109,
 		countryCode: 31,
 		issuerIdentifierNumber: '09',
@@ -1636,14 +1636,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lycamobile Netherlands',
 		companyURLs: ['http://lycamobile.com'],
 	},
-	'893110': {
+	'3110': {
 		iin: 893110,
 		countryCode: 31,
 		issuerIdentifierNumber: '10',
 		countryName: 'Netherlands',
 		companyName: 'KPN Telecom B.V., Card Services',
 	},
-	'893111': {
+	'3111': {
 		iin: 893111,
 		countryCode: 31,
 		issuerIdentifierNumber: '11',
@@ -1651,7 +1651,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Greenet Netwerk B.V.',
 		companyURLs: ['http://greenet.nl'],
 	},
-	'893115': {
+	'3115': {
 		iin: 893115,
 		countryCode: 31,
 		issuerIdentifierNumber: '15',
@@ -1659,14 +1659,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ziggo B.V.',
 		companyURLs: ['http://office.ziggo.nl'],
 	},
-	'893116': {
+	'3116': {
 		iin: 893116,
 		countryCode: 31,
 		issuerIdentifierNumber: '16',
 		countryName: 'Netherlands',
 		companyName: 'Brucop Netherlands B.V.',
 	},
-	'893117': {
+	'3117': {
 		iin: 893117,
 		countryCode: 31,
 		issuerIdentifierNumber: '17',
@@ -1674,7 +1674,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GloTell B.V.',
 		companyURLs: ['http://glotell.nl'],
 	},
-	'893118': {
+	'3118': {
 		iin: 893118,
 		countryCode: 31,
 		issuerIdentifierNumber: '18',
@@ -1682,14 +1682,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'UPC NL',
 		companyURLs: ['http://upc.nl'],
 	},
-	'893120': {
+	'3120': {
 		iin: 893120,
 		countryCode: 31,
 		issuerIdentifierNumber: '20',
 		countryName: 'Netherlands',
 		companyName: 'T-Mobile (ex-Dutchtone N.V.)',
 	},
-	'893124': {
+	'3124': {
 		iin: 893124,
 		countryCode: 31,
 		issuerIdentifierNumber: '24',
@@ -1697,14 +1697,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Private Mobility Nederland B.V.',
 		companyURLs: ['http://privatemobility.nl'],
 	},
-	'893126': {
+	'3126': {
 		iin: 893126,
 		countryCode: 31,
 		issuerIdentifierNumber: '26',
 		countryName: 'Netherlands',
 		companyName: 'Telfort B.V.',
 	},
-	'893129': {
+	'3129': {
 		iin: 893129,
 		countryCode: 31,
 		issuerIdentifierNumber: '29',
@@ -1712,7 +1712,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tismi B.V.',
 		companyURLs: ['http://tismi.com'],
 	},
-	'893131': {
+	'3131': {
 		iin: 893131,
 		countryCode: 31,
 		issuerIdentifierNumber: '31',
@@ -1720,7 +1720,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Voiceworks B.V.',
 		companyURLs: ['http://voiceworks.com'],
 	},
-	'893132': {
+	'3132': {
 		iin: 893132,
 		countryCode: 31,
 		issuerIdentifierNumber: '32',
@@ -1728,14 +1728,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wyless Nederlands B.V.',
 		companyURLs: ['http://korewireless.com'],
 	},
-	'893144': {
+	'3144': {
 		iin: 893144,
 		countryCode: 31,
 		issuerIdentifierNumber: '44',
 		countryName: 'Netherlands',
 		companyName: 'Vodafone Libertel B.V.',
 	},
-	'893168': {
+	'3168': {
 		iin: 893168,
 		countryCode: 31,
 		issuerIdentifierNumber: '68',
@@ -1743,7 +1743,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Roamware (Netherlands) B.V.',
 		companyURLs: ['http://roamware.com'],
 	},
-	'893189': {
+	'3189': {
 		iin: 893189,
 		countryCode: 31,
 		issuerIdentifierNumber: '89',
@@ -1751,7 +1751,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AGMS Nederland B.V.',
 		companyURLs: ['http://att.com'],
 	},
-	'893200': {
+	'3200': {
 		iin: 893200,
 		countryCode: 32,
 		issuerIdentifierNumber: '00',
@@ -1759,7 +1759,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Proximus NV van publiek recht',
 		companyURLs: ['http://proximus.com'],
 	},
-	'893201': {
+	'3201': {
 		iin: 893201,
 		countryCode: 32,
 		issuerIdentifierNumber: '01',
@@ -1767,7 +1767,7 @@ export const e118IINList: IssuerList = {
 		companyName:
 			'Society for Worldwide interbank Financial Telecommunications (SWIFT)',
 	},
-	'893202': {
+	'3202': {
 		iin: 893202,
 		countryCode: 32,
 		issuerIdentifierNumber: '02',
@@ -1775,7 +1775,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Belgium N.V.',
 		companyURLs: ['http://orange.com'],
 	},
-	'893203': {
+	'3203': {
 		iin: 893203,
 		countryCode: 32,
 		issuerIdentifierNumber: '03',
@@ -1783,7 +1783,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenet Group BVBA',
 		companyURLs: ['http://telenetgroup.be'],
 	},
-	'893204': {
+	'3204': {
 		iin: 893204,
 		countryCode: 32,
 		issuerIdentifierNumber: '04',
@@ -1791,7 +1791,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Belgacom International Carrier Services S.A. (BICS SA)',
 		companyURLs: ['http://bics.com'],
 	},
-	'893205': {
+	'3205': {
 		iin: 893205,
 		countryCode: 32,
 		issuerIdentifierNumber: '05',
@@ -1799,7 +1799,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NETHYS',
 		companyURLs: ['http://staff.voo.be'],
 	},
-	'893207': {
+	'3207': {
 		iin: 893207,
 		countryCode: 32,
 		issuerIdentifierNumber: '07',
@@ -1807,7 +1807,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenet BVBA',
 		companyURLs: ['http://telenetgroup.be'],
 	},
-	'893208': {
+	'3208': {
 		iin: 893208,
 		countryCode: 32,
 		issuerIdentifierNumber: '08',
@@ -1815,14 +1815,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Voxbone SA',
 		companyURLs: ['http://ic.voxbone.com'],
 	},
-	'893301': {
+	'3301': {
 		iin: 893301,
 		countryCode: 33,
 		issuerIdentifierNumber: '01',
 		countryName: 'France',
 		companyName: 'France Telecom',
 	},
-	'893320': {
+	'3320': {
 		iin: 893320,
 		countryCode: 33,
 		issuerIdentifierNumber: '20',
@@ -1830,7 +1830,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bouygues Telecom',
 		companyURLs: ['http://bouyguestelecom.fr'],
 	},
-	'893322': {
+	'3322': {
 		iin: 893322,
 		countryCode: 33,
 		issuerIdentifierNumber: '22',
@@ -1838,7 +1838,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Transatel',
 		companyURLs: ['http://transatel.com'],
 	},
-	'893323': {
+	'3323': {
 		iin: 893323,
 		countryCode: 33,
 		issuerIdentifierNumber: '23',
@@ -1846,7 +1846,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Gemalto SA',
 		companyURLs: ['http://gemalto.com'],
 	},
-	'893324': {
+	'3324': {
 		iin: 893324,
 		countryCode: 33,
 		issuerIdentifierNumber: '24',
@@ -1854,7 +1854,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Oberthur Technologies',
 		companyURLs: ['http://oberthur.com'],
 	},
-	'893325': {
+	'3325': {
 		iin: 893325,
 		countryCode: 33,
 		issuerIdentifierNumber: '25',
@@ -1862,7 +1862,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MOBIQUITHINGS',
 		companyURLs: ['http://sierrawireless.com'],
 	},
-	'893326': {
+	'3326': {
 		iin: 893326,
 		countryCode: 33,
 		issuerIdentifierNumber: '26',
@@ -1870,7 +1870,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Thales SA',
 		companyURLs: ['http://thalesgroup.com'],
 	},
-	'893401': {
+	'3401': {
 		iin: 893401,
 		countryCode: 34,
 		issuerIdentifierNumber: '01',
@@ -1878,7 +1878,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ORANGE ESPAGNE, S.A.U.',
 		companyURLs: ['http://orange.com'],
 	},
-	'893402': {
+	'3402': {
 		iin: 893402,
 		countryCode: 34,
 		issuerIdentifierNumber: '02',
@@ -1886,7 +1886,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Euskaltel, SA',
 		companyURLs: ['http://euskaltel.com'],
 	},
-	'893403': {
+	'3403': {
 		iin: 893403,
 		countryCode: 34,
 		issuerIdentifierNumber: '03',
@@ -1894,7 +1894,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefónica Móviles España, SAU',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'893404': {
+	'3404': {
 		iin: 893404,
 		countryCode: 34,
 		issuerIdentifierNumber: '04',
@@ -1902,7 +1902,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Xfera Móviles, S.A.',
 		companyURLs: ['http://masmovil.com'],
 	},
-	'893405': {
+	'3405': {
 		iin: 893405,
 		countryCode: 34,
 		issuerIdentifierNumber: '05',
@@ -1910,7 +1910,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecor SA',
 		companyURLs: ['http://elcorteingles.es'],
 	},
-	'893406': {
+	'3406': {
 		iin: 893406,
 		countryCode: 34,
 		issuerIdentifierNumber: '06',
@@ -1918,7 +1918,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'R Cable y Telecomunicaciones Galicia, SA',
 		companyURLs: ['http://mundo-r.net'],
 	},
-	'893407': {
+	'3407': {
 		iin: 893407,
 		countryCode: 34,
 		issuerIdentifierNumber: '07',
@@ -1926,7 +1926,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefónica Móviles España, SAU',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'893411': {
+	'3411': {
 		iin: 893411,
 		countryCode: 34,
 		issuerIdentifierNumber: '11',
@@ -1934,7 +1934,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Valid Soluciones Tecnológicas S.A.U.',
 		companyURLs: ['http://valid.com.es'],
 	},
-	'893412': {
+	'3412': {
 		iin: 893412,
 		countryCode: 34,
 		issuerIdentifierNumber: '12',
@@ -1942,7 +1942,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PROCONO S.A.',
 		companyURLs: ['http://ptvtelecom.com'],
 	},
-	'893416': {
+	'3416': {
 		iin: 893416,
 		countryCode: 34,
 		issuerIdentifierNumber: '16',
@@ -1950,7 +1950,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecable de Asturias, SAU',
 		companyURLs: ['http://telecable.com'],
 	},
-	'893418': {
+	'3418': {
 		iin: 893418,
 		countryCode: 34,
 		issuerIdentifierNumber: '18',
@@ -1958,7 +1958,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone ONO, SAU',
 		companyURLs: ['http://corp.vodafone.es'],
 	},
-	'893421': {
+	'3421': {
 		iin: 893421,
 		countryCode: 34,
 		issuerIdentifierNumber: '21',
@@ -1966,7 +1966,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ORANGE ESPAGNE, S.A.U.',
 		companyURLs: ['http://orange.com'],
 	},
-	'893423': {
+	'3423': {
 		iin: 893423,
 		countryCode: 34,
 		issuerIdentifierNumber: '23',
@@ -1974,7 +1974,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Alta Tecnologia en Comunicacions, S.L.',
 		companyURLs: ['http://altecom.net'],
 	},
-	'893425': {
+	'3425': {
 		iin: 893425,
 		countryCode: 34,
 		issuerIdentifierNumber: '25',
@@ -1982,7 +1982,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'R Cable y Telecomunicaciones Galicia, SA',
 		companyURLs: ['http://mundo-r.net'],
 	},
-	'893429': {
+	'3429': {
 		iin: 893429,
 		countryCode: 34,
 		issuerIdentifierNumber: '29',
@@ -1990,7 +1990,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'IBERFIBRA GESTIÓN DE REDES DE BANDA ANCHA, S.A',
 		companyURLs: ['http://iberfibra.com'],
 	},
-	'893434': {
+	'3434': {
 		iin: 893434,
 		countryCode: 34,
 		issuerIdentifierNumber: '34',
@@ -1998,7 +1998,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefónica de España S.A.',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'893456': {
+	'3456': {
 		iin: 893456,
 		countryCode: 34,
 		issuerIdentifierNumber: '56',
@@ -2006,7 +2006,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone España S.A.',
 		companyURLs: ['http://corp.vodafone.es'],
 	},
-	'893457': {
+	'3457': {
 		iin: 893457,
 		countryCode: 34,
 		issuerIdentifierNumber: '57',
@@ -2014,21 +2014,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Enabler España, S.L.',
 		companyURLs: ['http://corp.vodafone.es'],
 	},
-	'893620': {
+	'3620': {
 		iin: 893620,
 		countryCode: 36,
 		issuerIdentifierNumber: '20',
 		countryName: 'Hungary',
 		companyName: 'Telenor Hungary Ltd',
 	},
-	'893630': {
+	'3630': {
 		iin: 893630,
 		countryCode: 36,
 		issuerIdentifierNumber: '30',
 		countryName: 'Hungary',
 		companyName: 'WESTEL 900 Mobil Távközlési Rt.',
 	},
-	'893631': {
+	'3631': {
 		iin: 893631,
 		countryCode: 36,
 		issuerIdentifierNumber: '31',
@@ -2036,7 +2036,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'UPC MAGYARORSZÀG KFT.',
 		companyURLs: ['http://upc.hu'],
 	},
-	'893632': {
+	'3632': {
 		iin: 893632,
 		countryCode: 36,
 		issuerIdentifierNumber: '32',
@@ -2044,7 +2044,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MVM NET Ltd',
 		companyURLs: ['http://mvmnet.hu'],
 	},
-	'893901': {
+	'3901': {
 		iin: 893901,
 		countryCode: 39,
 		issuerIdentifierNumber: '01',
@@ -2052,7 +2052,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom Italia S.p.A.',
 		companyURLs: ['http://telecomitalia.it'],
 	},
-	'893908': {
+	'3908': {
 		iin: 893908,
 		countryCode: 39,
 		issuerIdentifierNumber: '08',
@@ -2060,7 +2060,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'FastWeb S.p.A.',
 		companyURLs: ['http://fastweb.it'],
 	},
-	'893910': {
+	'3910': {
 		iin: 893910,
 		countryCode: 39,
 		issuerIdentifierNumber: '10',
@@ -2068,7 +2068,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Omnitel S.p.A.',
 		companyURLs: ['http://pocert.vodafone.it'],
 	},
-	'893933': {
+	'3933': {
 		iin: 893933,
 		countryCode: 39,
 		issuerIdentifierNumber: '33',
@@ -2076,7 +2076,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PostePay S.p.A.',
 		companyURLs: ['http://postepay.it'],
 	},
-	'893988': {
+	'3988': {
 		iin: 893988,
 		countryCode: 39,
 		issuerIdentifierNumber: '88',
@@ -2084,7 +2084,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wind Tre S.p.A.',
 		companyURLs: ['http://pec.windtre.it'],
 	},
-	'893999': {
+	'3999': {
 		iin: 893999,
 		countryCode: 39,
 		issuerIdentifierNumber: '99',
@@ -2092,7 +2092,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wind Tre S.p.A.',
 		companyURLs: ['http://pec.windtre.it'],
 	},
-	'894001': {
+	'4001': {
 		iin: 894001,
 		countryCode: 40,
 		issuerIdentifierNumber: '01',
@@ -2100,7 +2100,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Romania S.A.',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'894002': {
+	'4002': {
 		iin: 894002,
 		countryCode: 40,
 		issuerIdentifierNumber: '02',
@@ -2108,7 +2108,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SC Telekom Romania Communications S.A.',
 		companyURLs: ['http://telekom.ro'],
 	},
-	'894003': {
+	'4003': {
 		iin: 894003,
 		countryCode: 40,
 		issuerIdentifierNumber: '03',
@@ -2116,7 +2116,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SC Telekom Romania Communications S.A.',
 		companyURLs: ['http://telekom.ro'],
 	},
-	'894010': {
+	'4010': {
 		iin: 894010,
 		countryCode: 40,
 		issuerIdentifierNumber: '10',
@@ -2124,7 +2124,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Romania',
 		companyURLs: ['http://orange.com'],
 	},
-	'894100': {
+	'4100': {
 		iin: 894100,
 		countryCode: 41,
 		issuerIdentifierNumber: '00',
@@ -2132,7 +2132,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Swisscom',
 		companyURLs: ['http://swisscom.com'],
 	},
-	'894101': {
+	'4101': {
 		iin: 894101,
 		countryCode: 41,
 		issuerIdentifierNumber: '01',
@@ -2140,7 +2140,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Swisscom',
 		companyURLs: ['http://swisscom.com'],
 	},
-	'894102': {
+	'4102': {
 		iin: 894102,
 		countryCode: 41,
 		issuerIdentifierNumber: '02',
@@ -2148,7 +2148,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Sunrise Communications AG',
 		companyURLs: ['http://sunrise.net'],
 	},
-	'894103': {
+	'4103': {
 		iin: 894103,
 		countryCode: 41,
 		issuerIdentifierNumber: '03',
@@ -2156,7 +2156,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Salt Mobile SA',
 		companyURLs: ['http://salt.ch'],
 	},
-	'894104': {
+	'4104': {
 		iin: 894104,
 		countryCode: 41,
 		issuerIdentifierNumber: '04',
@@ -2164,7 +2164,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'relario AG',
 		companyURLs: ['http://relario.com'],
 	},
-	'894123': {
+	'4123': {
 		iin: 894123,
 		countryCode: 41,
 		issuerIdentifierNumber: '23',
@@ -2172,7 +2172,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Die Schweizerische Post AG Information Technology Services',
 		companyURLs: ['http://post.ch'],
 	},
-	'894124': {
+	'4124': {
 		iin: 894124,
 		countryCode: 41,
 		issuerIdentifierNumber: '24',
@@ -2180,7 +2180,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lycatel GmbH',
 		companyURLs: ['http://lycatel.ch'],
 	},
-	'894125': {
+	'4125': {
 		iin: 894125,
 		countryCode: 41,
 		issuerIdentifierNumber: '25',
@@ -2188,7 +2188,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'UPC Schweiz GmbH',
 		companyURLs: ['http://upc.ch'],
 	},
-	'894126': {
+	'4126': {
 		iin: 894126,
 		countryCode: 41,
 		issuerIdentifierNumber: '26',
@@ -2196,7 +2196,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'WeMobile SA',
 		companyURLs: ['http://wemobile.ch'],
 	},
-	'894129': {
+	'4129': {
 		iin: 894129,
 		countryCode: 41,
 		issuerIdentifierNumber: '29',
@@ -2204,7 +2204,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Beeone Communications SA',
 		companyURLs: ['http://beeone.ch'],
 	},
-	'894130': {
+	'4130': {
 		iin: 894130,
 		countryCode: 41,
 		issuerIdentifierNumber: '30',
@@ -2212,7 +2212,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'STMicroelectronics International NV',
 		companyURLs: ['http://st.com'],
 	},
-	'894131': {
+	'4131': {
 		iin: 894131,
 		countryCode: 41,
 		issuerIdentifierNumber: '31',
@@ -2220,7 +2220,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom26 AG',
 		companyURLs: ['http://telecom26.ch'],
 	},
-	'894301': {
+	'4301': {
 		iin: 894301,
 		countryCode: 43,
 		issuerIdentifierNumber: '01',
@@ -2228,7 +2228,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'A1 Telekom Austria AG',
 		companyURLs: ['http://a1.at'],
 	},
-	'894303': {
+	'4303': {
 		iin: 894303,
 		countryCode: 43,
 		issuerIdentifierNumber: '03',
@@ -2236,7 +2236,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T Mobile Austria GmbH',
 		companyURLs: ['http://t-mobile.at'],
 	},
-	'894305': {
+	'4305': {
 		iin: 894305,
 		countryCode: 43,
 		issuerIdentifierNumber: '05',
@@ -2244,7 +2244,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison Drei Austria GmbH',
 		companyURLs: ['http://drei.com'],
 	},
-	'894307': {
+	'4307': {
 		iin: 894307,
 		countryCode: 43,
 		issuerIdentifierNumber: '07',
@@ -2252,7 +2252,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T Mobile Austria GmbH',
 		companyURLs: ['http://t-mobile.at'],
 	},
-	'894308': {
+	'4308': {
 		iin: 894308,
 		countryCode: 43,
 		issuerIdentifierNumber: '08',
@@ -2260,7 +2260,7 @@ export const e118IINList: IssuerList = {
 		companyName: '3G Mobile Telecommunications GmbH',
 		companyURLs: ['http://3gmobile.at'],
 	},
-	'894310': {
+	'4310': {
 		iin: 894310,
 		countryCode: 43,
 		issuerIdentifierNumber: '10',
@@ -2268,7 +2268,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison Drei Austria GmbH',
 		companyURLs: ['http://drei.com'],
 	},
-	'894312': {
+	'4312': {
 		iin: 894312,
 		countryCode: 43,
 		issuerIdentifierNumber: '12',
@@ -2276,7 +2276,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'A1 Telekom Austria AG',
 		companyURLs: ['http://a1.at'],
 	},
-	'894313': {
+	'4313': {
 		iin: 894313,
 		countryCode: 43,
 		issuerIdentifierNumber: '13',
@@ -2284,7 +2284,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T Mobile Austria GmbH',
 		companyURLs: ['http://t-mobile.at'],
 	},
-	'894325': {
+	'4325': {
 		iin: 894325,
 		countryCode: 43,
 		issuerIdentifierNumber: '25',
@@ -2292,7 +2292,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Citycom Telekommunikation GmbH',
 		companyURLs: ['http://'],
 	},
-	'894351': {
+	'4351': {
 		iin: 894351,
 		countryCode: 43,
 		issuerIdentifierNumber: '51',
@@ -2300,21 +2300,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'NXP Semiconductors Austria GmbH',
 		companyURLs: ['http://nxp.com'],
 	},
-	'894400': {
+	'4400': {
 		iin: 894400,
 		countryCode: 44,
 		issuerIdentifierNumber: '00',
 		countryName: 'United Kingdom',
 		companyName: 'British Telecommunications plc (British Telecom)',
 	},
-	'894401': {
+	'4401': {
 		iin: 894401,
 		countryCode: 44,
 		issuerIdentifierNumber: '01',
 		countryName: 'United Kingdom',
 		companyName: 'British Telecommunications plc (British Telecom)',
 	},
-	'894402': {
+	'4402': {
 		iin: 894402,
 		countryCode: 44,
 		issuerIdentifierNumber: '02',
@@ -2322,7 +2322,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ARINC',
 		companyURLs: ['http://arinc.com'],
 	},
-	'894403': {
+	'4403': {
 		iin: 894403,
 		countryCode: 44,
 		issuerIdentifierNumber: '03',
@@ -2330,7 +2330,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Marathon Telecom Limited',
 		companyURLs: ['http://marathontelecom.net'],
 	},
-	'894404': {
+	'4404': {
 		iin: 894404,
 		countryCode: 44,
 		issuerIdentifierNumber: '04',
@@ -2338,14 +2338,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'FMS Solutions Ltd',
 		companyURLs: ['http://yahoo.co.uk'],
 	},
-	'894405': {
+	'4405': {
 		iin: 894405,
 		countryCode: 44,
 		issuerIdentifierNumber: '05',
 		countryName: 'United Kingdom',
 		companyName: 'BT Skyphone',
 	},
-	'894406': {
+	'4406': {
 		iin: 894406,
 		countryCode: 44,
 		issuerIdentifierNumber: '06',
@@ -2353,7 +2353,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Valuedial Ltd',
 		companyURLs: ['http://valuedial.co.uk'],
 	},
-	'894407': {
+	'4407': {
 		iin: 894407,
 		countryCode: 44,
 		issuerIdentifierNumber: '07',
@@ -2361,7 +2361,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Teleena UK Limited',
 		companyURLs: ['http://teleena.com'],
 	},
-	'894408': {
+	'4408': {
 		iin: 894408,
 		countryCode: 44,
 		issuerIdentifierNumber: '08',
@@ -2369,7 +2369,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Localphone Ltd',
 		companyURLs: ['http://localphone.com'],
 	},
-	'894410': {
+	'4410': {
 		iin: 894410,
 		countryCode: 44,
 		issuerIdentifierNumber: '10',
@@ -2377,21 +2377,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone plc',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'894411': {
+	'4411': {
 		iin: 894411,
 		countryCode: 44,
 		issuerIdentifierNumber: '11',
 		countryName: 'United Kingdom',
 		companyName: 'Telecom Securicor Cellular Radio Ltd',
 	},
-	'894412': {
+	'4412': {
 		iin: 894412,
 		countryCode: 44,
 		issuerIdentifierNumber: '12',
 		countryName: 'United Kingdom',
 		companyName: 'Hutchison Microtel',
 	},
-	'894413': {
+	'4413': {
 		iin: 894413,
 		countryCode: 44,
 		issuerIdentifierNumber: '13',
@@ -2399,7 +2399,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tismi B.V.',
 		companyURLs: ['http://tismi.com'],
 	},
-	'894414': {
+	'4414': {
 		iin: 894414,
 		countryCode: 44,
 		issuerIdentifierNumber: '14',
@@ -2407,7 +2407,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Broadsword Network Ltd',
 		companyURLs: ['http://nowmobile.co.uk'],
 	},
-	'894415': {
+	'4415': {
 		iin: 894415,
 		countryCode: 44,
 		issuerIdentifierNumber: '15',
@@ -2415,7 +2415,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mapesbury Communications Ltd',
 		companyURLs: ['http://mapesbury.com'],
 	},
-	'894417': {
+	'4417': {
 		iin: 894417,
 		countryCode: 44,
 		issuerIdentifierNumber: '17',
@@ -2423,7 +2423,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CreditCall Communications Ltd.',
 		companyURLs: ['http://creditcall.co.uk'],
 	},
-	'894418': {
+	'4418': {
 		iin: 894418,
 		countryCode: 44,
 		issuerIdentifierNumber: '18',
@@ -2431,7 +2431,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and Wireless Isle of Man Ltd',
 		companyURLs: ['http://surecw.com'],
 	},
-	'894419': {
+	'4419': {
 		iin: 894419,
 		countryCode: 44,
 		issuerIdentifierNumber: '19',
@@ -2439,7 +2439,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Home Office',
 		companyURLs: ['http://homeoffice.gov.uk'],
 	},
-	'894420': {
+	'4420': {
 		iin: 894420,
 		countryCode: 44,
 		issuerIdentifierNumber: '20',
@@ -2447,14 +2447,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison 3G UK Limited',
 		companyURLs: ['http://three.co.uk'],
 	},
-	'894422': {
+	'4422': {
 		iin: 894422,
 		countryCode: 44,
 		issuerIdentifierNumber: '22',
 		countryName: 'United Kingdom',
 		companyName: 'Cable & Wireless Communications plc',
 	},
-	'894423': {
+	'4423': {
 		iin: 894423,
 		countryCode: 44,
 		issuerIdentifierNumber: '23',
@@ -2462,7 +2462,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Virgin Mobile Telecommunications Ltd',
 		companyURLs: ['http://virginmobile.co.uk'],
 	},
-	'894424': {
+	'4424': {
 		iin: 894424,
 		countryCode: 44,
 		issuerIdentifierNumber: '24',
@@ -2470,7 +2470,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Asda Stores Ltd',
 		companyURLs: ['http://asda.co.uk'],
 	},
-	'894428': {
+	'4428': {
 		iin: 894428,
 		countryCode: 44,
 		issuerIdentifierNumber: '28',
@@ -2478,7 +2478,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tesco Mobile Ltd',
 		companyURLs: ['http://tesco.com'],
 	},
-	'894429': {
+	'4429': {
 		iin: 894429,
 		countryCode: 44,
 		issuerIdentifierNumber: '29',
@@ -2486,28 +2486,28 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile Billing & Service GmbH',
 		companyURLs: ['http://t-mobile.at'],
 	},
-	'894430': {
+	'4430': {
 		iin: 894430,
 		countryCode: 44,
 		issuerIdentifierNumber: '30',
 		countryName: 'United Kingdom',
 		companyName: 'Mercury Personal Communications',
 	},
-	'894433': {
+	'4433': {
 		iin: 894433,
 		countryCode: 44,
 		issuerIdentifierNumber: '33',
 		countryName: 'United Kingdom',
 		companyName: 'Cable & Wireless Guernsey Ltd',
 	},
-	'894434': {
+	'4434': {
 		iin: 894434,
 		countryCode: 44,
 		issuerIdentifierNumber: '34',
 		countryName: 'United Kingdom',
 		companyName: 'Tribandglobal Ltd.',
 	},
-	'894435': {
+	'4435': {
 		iin: 894435,
 		countryCode: 44,
 		issuerIdentifierNumber: '35',
@@ -2515,7 +2515,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tesco Mobile Communications Ltd',
 		companyURLs: ['http://tesco.com'],
 	},
-	'894436': {
+	'4436': {
 		iin: 894436,
 		countryCode: 44,
 		issuerIdentifierNumber: '36',
@@ -2523,7 +2523,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and Wireless Jersey Ltd',
 		companyURLs: ['http://surecw.com'],
 	},
-	'894437': {
+	'4437': {
 		iin: 894437,
 		countryCode: 44,
 		issuerIdentifierNumber: '37',
@@ -2531,7 +2531,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable & Wireless Guernsey Ltd',
 		companyURLs: ['http://surecw.com'],
 	},
-	'894438': {
+	'4438': {
 		iin: 894438,
 		countryCode: 44,
 		issuerIdentifierNumber: '38',
@@ -2539,7 +2539,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Simwood eSMS Limited',
 		companyURLs: ['http://simwood.com'],
 	},
-	'894439': {
+	'4439': {
 		iin: 894439,
 		countryCode: 44,
 		issuerIdentifierNumber: '39',
@@ -2547,7 +2547,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefonica UK Limited',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'894440': {
+	'4440': {
 		iin: 894440,
 		countryCode: 44,
 		issuerIdentifierNumber: '40',
@@ -2555,7 +2555,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'British Telecommunications PLC',
 		companyURLs: ['http://bt.com'],
 	},
-	'894441': {
+	'4441': {
 		iin: 894441,
 		countryCode: 44,
 		issuerIdentifierNumber: '41',
@@ -2563,7 +2563,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lebara Mobile Limited',
 		companyURLs: ['http://lebara.com'],
 	},
-	'894442': {
+	'4442': {
 		iin: 894442,
 		countryCode: 44,
 		issuerIdentifierNumber: '42',
@@ -2571,7 +2571,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Sky UK Limited',
 		companyURLs: ['http://sky.uk'],
 	},
-	'894443': {
+	'4443': {
 		iin: 894443,
 		countryCode: 44,
 		issuerIdentifierNumber: '43',
@@ -2579,7 +2579,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Virgin Mobile Telecoms Limited',
 		companyURLs: ['http://virginmedia.co.uk'],
 	},
-	'894444': {
+	'4444': {
 		iin: 894444,
 		countryCode: 44,
 		issuerIdentifierNumber: '44',
@@ -2587,7 +2587,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AMSUK Limited',
 		companyURLs: ['http://att.com'],
 	},
-	'894445': {
+	'4445': {
 		iin: 894445,
 		countryCode: 44,
 		issuerIdentifierNumber: '45',
@@ -2595,7 +2595,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Arm',
 		companyURLs: ['http://arm.com'],
 	},
-	'894446': {
+	'4446': {
 		iin: 894446,
 		countryCode: 44,
 		issuerIdentifierNumber: '46',
@@ -2603,7 +2603,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cloud9 Mobile Communications Limited',
 		companyURLs: ['http://cloud9mobile.co.uk'],
 	},
-	'894447': {
+	'4447': {
 		iin: 894447,
 		countryCode: 44,
 		issuerIdentifierNumber: '47',
@@ -2611,7 +2611,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Truphone Limited',
 		companyURLs: ['http://truphone.com'],
 	},
-	'894448': {
+	'4448': {
 		iin: 894448,
 		countryCode: 44,
 		issuerIdentifierNumber: '48',
@@ -2619,7 +2619,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wavecrest Networks Ltd',
 		companyURLs: ['http://wavecrest.eu'],
 	},
-	'894449': {
+	'4449': {
 		iin: 894449,
 		countryCode: 44,
 		issuerIdentifierNumber: '49',
@@ -2627,21 +2627,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bluewave Communications Limited',
 		companyURLs: ['http://bwc.im'],
 	},
-	'894453': {
+	'4453': {
 		iin: 894453,
 		countryCode: 44,
 		issuerIdentifierNumber: '53',
 		countryName: 'United Kingdom',
 		companyName: 'Manx Telecom',
 	},
-	'894455': {
+	'4455': {
 		iin: 894455,
 		countryCode: 44,
 		issuerIdentifierNumber: '55',
 		countryName: 'United Kingdom',
 		companyName: 'Energis Communications Ltd',
 	},
-	'894476': {
+	'4476': {
 		iin: 894476,
 		countryCode: 44,
 		issuerIdentifierNumber: '76',
@@ -2649,14 +2649,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Jersey Telenet Ltd',
 		companyURLs: ['http://jerseytelenet.je'],
 	},
-	'894477': {
+	'4477': {
 		iin: 894477,
 		countryCode: 44,
 		issuerIdentifierNumber: '77',
 		countryName: 'United Kingdom',
 		companyName: 'Cable and Wireless plc',
 	},
-	'894478': {
+	'4478': {
 		iin: 894478,
 		countryCode: 44,
 		issuerIdentifierNumber: '78',
@@ -2664,7 +2664,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Opal Telecom Ltd',
 		companyURLs: ['http://opaltelecom.co.uk'],
 	},
-	'894481': {
+	'4481': {
 		iin: 894481,
 		countryCode: 44,
 		issuerIdentifierNumber: '81',
@@ -2672,21 +2672,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hay Systems Ltd',
 		companyURLs: ['http://haysystems.com'],
 	},
-	'894484': {
+	'4484': {
 		iin: 894484,
 		countryCode: 44,
 		issuerIdentifierNumber: '84',
 		countryName: 'United Kingdom',
 		companyName: 'Lycamobile UK Limited',
 	},
-	'894485': {
+	'4485': {
 		iin: 894485,
 		countryCode: 44,
 		issuerIdentifierNumber: '85',
 		countryName: 'United Kingdom',
 		companyName: 'Lycatel Distribution UK Limited',
 	},
-	'894486': {
+	'4486': {
 		iin: 894486,
 		countryCode: 44,
 		issuerIdentifierNumber: '86',
@@ -2694,7 +2694,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Zamir Telecom Ltd',
 		companyURLs: ['http://zamirtelecom.com'],
 	},
-	'894487': {
+	'4487': {
 		iin: 894487,
 		countryCode: 44,
 		issuerIdentifierNumber: '87',
@@ -2702,7 +2702,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Nowtel UK Ltd',
 		companyURLs: ['http://nowtel.co.uk'],
 	},
-	'894488': {
+	'4488': {
 		iin: 894488,
 		countryCode: 44,
 		issuerIdentifierNumber: '88',
@@ -2710,7 +2710,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tesco Stores Ltd',
 		companyURLs: ['http://tesco.com'],
 	},
-	'894489': {
+	'4489': {
 		iin: 894489,
 		countryCode: 44,
 		issuerIdentifierNumber: '89',
@@ -2718,7 +2718,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'In Touch Communication Services Ltd',
 		companyURLs: ['http://phonatetelecom.co.uk'],
 	},
-	'894490': {
+	'4490': {
 		iin: 894490,
 		countryCode: 44,
 		issuerIdentifierNumber: '90',
@@ -2726,21 +2726,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'epay Limited',
 		companyURLs: ['http://epayworldwide.com'],
 	},
-	'894501': {
+	'4501': {
 		iin: 894501,
 		countryCode: 45,
 		issuerIdentifierNumber: '01',
 		countryName: 'Denmark',
 		companyName: 'TDC Mobil A/S',
 	},
-	'894504': {
+	'4504': {
 		iin: 894504,
 		countryCode: 45,
 		issuerIdentifierNumber: '04',
 		countryName: 'Denmark',
 		companyName: 'Telia Sonera A/S',
 	},
-	'894505': {
+	'4505': {
 		iin: 894505,
 		countryCode: 45,
 		issuerIdentifierNumber: '05',
@@ -2748,7 +2748,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ice Danmark ApS',
 		companyURLs: ['http://ainmt.com'],
 	},
-	'894506': {
+	'4506': {
 		iin: 894506,
 		countryCode: 45,
 		issuerIdentifierNumber: '06',
@@ -2756,7 +2756,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hi3G Denmark ApS',
 		companyURLs: ['http://3.dk'],
 	},
-	'894601': {
+	'4601': {
 		iin: 894601,
 		countryCode: 46,
 		issuerIdentifierNumber: '01',
@@ -2764,7 +2764,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telia Sverige AB',
 		companyURLs: ['http://teliacompany.com'],
 	},
-	'894603': {
+	'4603': {
 		iin: 894603,
 		countryCode: 46,
 		issuerIdentifierNumber: '03',
@@ -2772,7 +2772,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Netett Sverige AB',
 		companyURLs: ['http://net1.se'],
 	},
-	'894607': {
+	'4607': {
 		iin: 894607,
 		countryCode: 46,
 		issuerIdentifierNumber: '07',
@@ -2780,7 +2780,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hi3G Access AB',
 		companyURLs: ['http://tre.se'],
 	},
-	'894608': {
+	'4608': {
 		iin: 894608,
 		countryCode: 46,
 		issuerIdentifierNumber: '08',
@@ -2788,7 +2788,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenor Sverige AB',
 		companyURLs: ['http://telenor.se'],
 	},
-	'894609': {
+	'4609': {
 		iin: 894609,
 		countryCode: 46,
 		issuerIdentifierNumber: '09',
@@ -2796,7 +2796,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Com4 Sweden AB',
 		companyURLs: ['http://com4.se'],
 	},
-	'894610': {
+	'4610': {
 		iin: 894610,
 		countryCode: 46,
 		issuerIdentifierNumber: '10',
@@ -2804,7 +2804,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Sverige AB',
 		companyURLs: ['http://tele2.com'],
 	},
-	'894611': {
+	'4611': {
 		iin: 894611,
 		countryCode: 46,
 		issuerIdentifierNumber: '11',
@@ -2812,7 +2812,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CLX Networks AB',
 		companyURLs: ['http://clxcommunications.com'],
 	},
-	'894612': {
+	'4612': {
 		iin: 894612,
 		countryCode: 46,
 		issuerIdentifierNumber: '12',
@@ -2820,7 +2820,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Fink Telecom Services',
 		companyURLs: ['http://fink-telecom.com'],
 	},
-	'894614': {
+	'4614': {
 		iin: 894614,
 		countryCode: 46,
 		issuerIdentifierNumber: '14',
@@ -2828,7 +2828,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Business AB',
 		companyURLs: ['http://tele2.com'],
 	},
-	'894617': {
+	'4617': {
 		iin: 894617,
 		countryCode: 46,
 		issuerIdentifierNumber: '17',
@@ -2836,7 +2836,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Götalandsnätet AB',
 		companyURLs: ['http://gotanet.se'],
 	},
-	'894620': {
+	'4620': {
 		iin: 894620,
 		countryCode: 46,
 		issuerIdentifierNumber: '20',
@@ -2844,7 +2844,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Sverige AB',
 		companyURLs: ['http://tele2.com'],
 	},
-	'894627': {
+	'4627': {
 		iin: 894627,
 		countryCode: 46,
 		issuerIdentifierNumber: '27',
@@ -2852,7 +2852,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GlobeTouch AB',
 		companyURLs: ['http://globetouch.com'],
 	},
-	'894631': {
+	'4631': {
 		iin: 894631,
 		countryCode: 46,
 		issuerIdentifierNumber: '31',
@@ -2860,7 +2860,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'RebTel Networks AB',
 		companyURLs: ['http://rebtel.com'],
 	},
-	'894670': {
+	'4670': {
 		iin: 894670,
 		countryCode: 46,
 		issuerIdentifierNumber: '70',
@@ -2868,7 +2868,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Sverige AB',
 		companyURLs: ['http://tele2.com'],
 	},
-	'894671': {
+	'4671': {
 		iin: 894671,
 		countryCode: 46,
 		issuerIdentifierNumber: '71',
@@ -2876,14 +2876,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Sverige AB',
 		companyURLs: ['http://tele2.com'],
 	},
-	'894700': {
+	'4700': {
 		iin: 894700,
 		countryCode: 47,
 		issuerIdentifierNumber: '00',
 		countryName: 'Norway',
 		companyName: 'Telenor AS',
 	},
-	'894701': {
+	'4701': {
 		iin: 894701,
 		countryCode: 47,
 		issuerIdentifierNumber: '01',
@@ -2891,7 +2891,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenor Mobile Aviation AS',
 		companyURLs: ['http://telenor.com'],
 	},
-	'894706': {
+	'4706': {
 		iin: 894706,
 		countryCode: 47,
 		issuerIdentifierNumber: '06',
@@ -2899,7 +2899,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'ICE Norge AS',
 		companyURLs: ['http://ainmt.com'],
 	},
-	'894707': {
+	'4707': {
 		iin: 894707,
 		countryCode: 47,
 		issuerIdentifierNumber: '07',
@@ -2907,14 +2907,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'ICE Communication Norge AS',
 		companyURLs: ['http://ainmt.com'],
 	},
-	'894708': {
+	'4708': {
 		iin: 894708,
 		countryCode: 47,
 		issuerIdentifierNumber: '08',
 		countryName: 'Norway',
 		companyName: 'Netcom GSM',
 	},
-	'894709': {
+	'4709': {
 		iin: 894709,
 		countryCode: 47,
 		issuerIdentifierNumber: '09',
@@ -2922,21 +2922,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Com4 AS',
 		companyURLs: ['http://com4.no'],
 	},
-	'894801': {
+	'4801': {
 		iin: 894801,
 		countryCode: 48,
 		issuerIdentifierNumber: '01',
 		countryName: 'Poland',
 		companyName: 'Polkomtel S.A.',
 	},
-	'894802': {
+	'4802': {
 		iin: 894802,
 		countryCode: 48,
 		issuerIdentifierNumber: '02',
 		countryName: 'Poland',
 		companyName: 'Polska telefonia Cyfrowa',
 	},
-	'894819': {
+	'4819': {
 		iin: 894819,
 		countryCode: 48,
 		issuerIdentifierNumber: '19',
@@ -2944,7 +2944,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Teleena Poland Ltd',
 		companyURLs: ['http://teleena.com'],
 	},
-	'894901': {
+	'4901': {
 		iin: 894901,
 		countryCode: 49,
 		issuerIdentifierNumber: '01',
@@ -2952,7 +2952,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Deutschland GmbH',
 		companyURLs: ['http://telekom.de'],
 	},
-	'894902': {
+	'4902': {
 		iin: 894902,
 		countryCode: 49,
 		issuerIdentifierNumber: '02',
@@ -2960,7 +2960,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Deutschland GmbH',
 		companyURLs: ['http://telekom.de'],
 	},
-	'894903': {
+	'4903': {
 		iin: 894903,
 		countryCode: 49,
 		issuerIdentifierNumber: '03',
@@ -2968,7 +2968,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Deutschland GmbH',
 		companyURLs: ['http://telekom.de'],
 	},
-	'894920': {
+	'4920': {
 		iin: 894920,
 		countryCode: 49,
 		issuerIdentifierNumber: '20',
@@ -2976,21 +2976,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone GmbH',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'894921': {
+	'4921': {
 		iin: 894921,
 		countryCode: 49,
 		issuerIdentifierNumber: '21',
 		countryName: 'Germany',
 		companyName: 'E-Plus Service GmbH',
 	},
-	'894922': {
+	'4922': {
 		iin: 894922,
 		countryCode: 49,
 		issuerIdentifierNumber: '22',
 		countryName: 'Germany',
 		companyName: 'Telefónica Germany GmbH & Co. OHG',
 	},
-	'894923': {
+	'4923': {
 		iin: 894923,
 		countryCode: 49,
 		issuerIdentifierNumber: '23',
@@ -2998,7 +2998,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AirData AG',
 		companyURLs: ['http://airdata.ag'],
 	},
-	'894926': {
+	'4926': {
 		iin: 894926,
 		countryCode: 49,
 		issuerIdentifierNumber: '26',
@@ -3006,7 +3006,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'VIOLA Kabelgesellschaft (Deutschland) mbH',
 		companyURLs: ['http://telekom.de'],
 	},
-	'894931': {
+	'4931': {
 		iin: 894931,
 		countryCode: 49,
 		issuerIdentifierNumber: '31',
@@ -3014,7 +3014,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Sipgate Wireless GmbH',
 		companyURLs: ['http://sipgate.de'],
 	},
-	'894932': {
+	'4932': {
 		iin: 894932,
 		countryCode: 49,
 		issuerIdentifierNumber: '32',
@@ -3022,7 +3022,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Giesecke & Devrient GmbH',
 		companyURLs: ['http://gi-de.com'],
 	},
-	'894935': {
+	'4935': {
 		iin: 894935,
 		countryCode: 49,
 		issuerIdentifierNumber: '35',
@@ -3030,7 +3030,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Voiceworks GmbH',
 		companyURLs: ['http://voiceworks.com'],
 	},
-	'894936': {
+	'4936': {
 		iin: 894936,
 		countryCode: 49,
 		issuerIdentifierNumber: '36',
@@ -3038,7 +3038,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Drillisch Online AG',
 		companyURLs: ['http://drillisch.de'],
 	},
-	'894937': {
+	'4937': {
 		iin: 894937,
 		countryCode: 49,
 		issuerIdentifierNumber: '37',
@@ -3046,7 +3046,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'FEIG ELECTRONIC GmbH',
 		companyURLs: ['http://feig.de'],
 	},
-	'894938': {
+	'4938': {
 		iin: 894938,
 		countryCode: 49,
 		issuerIdentifierNumber: '38',
@@ -3054,7 +3054,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Giesecke+Devrient Mobile Security GmbH',
 		companyURLs: ['http://gi-de.com'],
 	},
-	'894939': {
+	'4939': {
 		iin: 894939,
 		countryCode: 49,
 		issuerIdentifierNumber: '39',
@@ -3062,21 +3062,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Workz Technology GmbH',
 		companyURLs: ['http://'],
 	},
-	'895151': {
+	'5151': {
 		iin: 895151,
 		countryCode: 51,
 		issuerIdentifierNumber: '51',
 		countryName: 'Peru',
 		companyName: 'Telefónica del Peru S.A.',
 	},
-	'895201': {
+	'5201': {
 		iin: 895201,
 		countryCode: 52,
 		issuerIdentifierNumber: '01',
 		countryName: 'Mexico',
 		companyName: 'Teléfonos de México S.A. de C.V.',
 	},
-	'895202': {
+	'5202': {
 		iin: 895202,
 		countryCode: 52,
 		issuerIdentifierNumber: '02',
@@ -3084,7 +3084,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Radiomóvil DIPSA, S.A. de C.V. (Telcel)',
 		companyURLs: ['http://mail.telcel.com'],
 	},
-	'895203': {
+	'5203': {
 		iin: 895203,
 		countryCode: 52,
 		issuerIdentifierNumber: '03',
@@ -3092,7 +3092,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PEGASO COMUNICACIONES Y SISTEMAS, S.A. DE C.V.',
 		companyURLs: ['http://telefonicamoviles.com'],
 	},
-	'895204': {
+	'5204': {
 		iin: 895204,
 		countryCode: 52,
 		issuerIdentifierNumber: '04',
@@ -3100,7 +3100,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'OXIO MOBILE, S.A. DE C.V.',
 		companyURLs: ['http://oxio.com'],
 	},
-	'895301': {
+	'5301': {
 		iin: 895301,
 		countryCode: 53,
 		issuerIdentifierNumber: '01',
@@ -3108,21 +3108,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Empresa de Telecomunicaciones de Cuba, S.A. (ETECSA)',
 		companyURLs: ['http://cubacel.cu'],
 	},
-	'895400': {
+	'5400': {
 		iin: 895400,
 		countryCode: 54,
 		issuerIdentifierNumber: '00',
 		countryName: 'Argentina',
 		companyName: 'Telecom Argentina S.A.',
 	},
-	'895454': {
+	'5454': {
 		iin: 895454,
 		countryCode: 54,
 		issuerIdentifierNumber: '54',
 		countryName: 'Argentina',
 		companyName: 'Telefónica de Argentina S.A.',
 	},
-	'895505': {
+	'5505': {
 		iin: 895505,
 		countryCode: 55,
 		issuerIdentifierNumber: '05',
@@ -3130,7 +3130,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Claro S/A',
 		companyURLs: ['http://starone.com.br'],
 	},
-	'895515': {
+	'5515': {
 		iin: 895515,
 		countryCode: 55,
 		issuerIdentifierNumber: '15',
@@ -3138,7 +3138,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Sercomtel Celular S/A',
 		companyURLs: ['http://sercomtel.net.br'],
 	},
-	'895516': {
+	'5516': {
 		iin: 895516,
 		countryCode: 55,
 		issuerIdentifierNumber: '16',
@@ -3146,7 +3146,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Oi Móvel S/A',
 		companyURLs: ['http://oi.net.br'],
 	},
-	'895523': {
+	'5523': {
 		iin: 895523,
 		countryCode: 55,
 		issuerIdentifierNumber: '23',
@@ -3154,7 +3154,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefônica Brasil S/A',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'895524': {
+	'5524': {
 		iin: 895524,
 		countryCode: 55,
 		issuerIdentifierNumber: '24',
@@ -3162,14 +3162,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Oi Móvel S/A',
 		companyURLs: ['http://oi.net.br'],
 	},
-	'895526': {
+	'5526': {
 		iin: 895526,
 		countryCode: 55,
 		issuerIdentifierNumber: '26',
 		countryName: 'Brazil',
 		companyName: 'IDT Brasil Telecomunicaçôes Ltda',
 	},
-	'895802': {
+	'5802': {
 		iin: 895802,
 		countryCode: 58,
 		issuerIdentifierNumber: '02',
@@ -3177,7 +3177,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Corporación Digitel C.A.',
 		companyURLs: ['http://digitel.com.ve'],
 	},
-	'895804': {
+	'5804': {
 		iin: 895804,
 		countryCode: 58,
 		issuerIdentifierNumber: '04',
@@ -3185,7 +3185,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefónica Venezolana, C.A.',
 		companyURLs: ['http://telefonica.com.ve'],
 	},
-	'895806': {
+	'5806': {
 		iin: 895806,
 		countryCode: 58,
 		issuerIdentifierNumber: '06',
@@ -3193,7 +3193,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecommunications Movilnet C.A.',
 		companyURLs: ['http://cantv.com.ve'],
 	},
-	'896000': {
+	'6000': {
 		iin: 896000,
 		countryCode: 60,
 		issuerIdentifierNumber: '00',
@@ -3201,7 +3201,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Malaysia Berhad (TM)',
 		companyURLs: ['http://tm.com.my'],
 	},
-	'896001': {
+	'6001': {
 		iin: 896001,
 		countryCode: 60,
 		issuerIdentifierNumber: '01',
@@ -3209,7 +3209,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Maxis Broadband Sdn Bhd',
 		companyURLs: ['http://maxis.com.my'],
 	},
-	'896018': {
+	'6018': {
 		iin: 896018,
 		countryCode: 60,
 		issuerIdentifierNumber: '18',
@@ -3217,7 +3217,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'U Mobile Sdn. Bhd.',
 		companyURLs: ['http://u.com.my'],
 	},
-	'896019': {
+	'6019': {
 		iin: 896019,
 		countryCode: 60,
 		issuerIdentifierNumber: '19',
@@ -3225,7 +3225,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Celcom Axiata Berhad',
 		companyURLs: ['http://celcom.com.my'],
 	},
-	'896088': {
+	'6088': {
 		iin: 896088,
 		countryCode: 60,
 		issuerIdentifierNumber: '88',
@@ -3233,21 +3233,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'TT dotCom Sdn. Bhd.',
 		companyURLs: ['http://time.com.my'],
 	},
-	'896100': {
+	'6100': {
 		iin: 896100,
 		countryCode: 61,
 		issuerIdentifierNumber: '00',
 		countryName: 'Australia',
 		companyName: 'Telstra Corporation Ltd.',
 	},
-	'896101': {
+	'6101': {
 		iin: 896101,
 		countryCode: 61,
 		issuerIdentifierNumber: '01',
 		countryName: 'Australia',
 		companyName: 'Telstra Corporation Ltd.',
 	},
-	'896102': {
+	'6102': {
 		iin: 896102,
 		countryCode: 61,
 		issuerIdentifierNumber: '02',
@@ -3255,7 +3255,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SingTel Optus Pty Limited',
 		companyURLs: ['http://optus.com.au'],
 	},
-	'896103': {
+	'6103': {
 		iin: 896103,
 		countryCode: 61,
 		issuerIdentifierNumber: '03',
@@ -3263,7 +3263,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Australia Ltd',
 		companyURLs: ['http://vodafone.com.au'],
 	},
-	'896106': {
+	'6106': {
 		iin: 896106,
 		countryCode: 61,
 		issuerIdentifierNumber: '06',
@@ -3271,7 +3271,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Hutchison Australia Pty Ltd',
 		companyURLs: ['http://vodafone.com.au'],
 	},
-	'896112': {
+	'6112': {
 		iin: 896112,
 		countryCode: 61,
 		issuerIdentifierNumber: '12',
@@ -3279,7 +3279,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SingTel Optus Pty Limited',
 		companyURLs: ['http://optus.com.au'],
 	},
-	'896114': {
+	'6114': {
 		iin: 896114,
 		countryCode: 61,
 		issuerIdentifierNumber: '14',
@@ -3287,7 +3287,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AAPT Ltd',
 		companyURLs: ['http://tpgtelecom.com.au'],
 	},
-	'896121': {
+	'6121': {
 		iin: 896121,
 		countryCode: 61,
 		issuerIdentifierNumber: '21',
@@ -3295,7 +3295,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SingTel Optus Pty Limited',
 		companyURLs: ['http://optus.com.au'],
 	},
-	'896123': {
+	'6123': {
 		iin: 896123,
 		countryCode: 61,
 		issuerIdentifierNumber: '23',
@@ -3303,7 +3303,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SingTel Optus Pty Limited',
 		companyURLs: ['http://optus.com.au'],
 	},
-	'896150': {
+	'6150': {
 		iin: 896150,
 		countryCode: 61,
 		issuerIdentifierNumber: '50',
@@ -3311,21 +3311,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Pivotel Group Pty Limited',
 		companyURLs: ['http://pivotel.com.au'],
 	},
-	'896161': {
+	'6161': {
 		iin: 896161,
 		countryCode: 61,
 		issuerIdentifierNumber: '61',
 		countryName: 'Australia',
 		companyName: 'Telstra Corporation Ltd.',
 	},
-	'896162': {
+	'6162': {
 		iin: 896162,
 		countryCode: 61,
 		issuerIdentifierNumber: '62',
 		countryName: 'Australia',
 		companyName: 'Telstra Corporation Ltd.',
 	},
-	'896188': {
+	'6188': {
 		iin: 896188,
 		countryCode: 61,
 		issuerIdentifierNumber: '88',
@@ -3333,56 +3333,56 @@ export const e118IINList: IssuerList = {
 		companyName: 'Pivotel Group Pty Limited',
 		companyURLs: ['http://pivotel.com.au'],
 	},
-	'896200': {
+	'6200': {
 		iin: 896200,
 		countryCode: 62,
 		issuerIdentifierNumber: '00',
 		countryName: 'Indonesia',
 		companyName: 'PT Pasifik Satelit Nusantara',
 	},
-	'896201': {
+	'6201': {
 		iin: 896201,
 		countryCode: 62,
 		issuerIdentifierNumber: '01',
 		countryName: 'Indonesia',
 		companyName: 'PT Satelit Palapa Indonesia (PT Satelindo)',
 	},
-	'896300': {
+	'6300': {
 		iin: 896300,
 		countryCode: 63,
 		issuerIdentifierNumber: '00',
 		countryName: 'Philippines',
 		companyName: 'International Communications Corporation',
 	},
-	'896301': {
+	'6301': {
 		iin: 896301,
 		countryCode: 63,
 		issuerIdentifierNumber: '01',
 		countryName: 'Philippines',
 		companyName: 'Philippine Global Communications Inc. (Philcom)',
 	},
-	'896305': {
+	'6305': {
 		iin: 896305,
 		countryCode: 63,
 		issuerIdentifierNumber: '05',
 		countryName: 'Philippines',
 		companyName: 'Digital Telecommunications Phillipines, Inc.',
 	},
-	'896363': {
+	'6363': {
 		iin: 896363,
 		countryCode: 63,
 		issuerIdentifierNumber: '63',
 		countryName: 'Philippines',
 		companyName: 'Philippine Long Distance Telephone Company (PLDT)',
 	},
-	'896400': {
+	'6400': {
 		iin: 896400,
 		countryCode: 64,
 		issuerIdentifierNumber: '00',
 		countryName: 'New Zealand',
 		companyName: 'Spark NZ Limited',
 	},
-	'896402': {
+	'6402': {
 		iin: 896402,
 		countryCode: 64,
 		issuerIdentifierNumber: '02',
@@ -3390,14 +3390,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Compass Communications Ltd',
 		companyURLs: ['http://compass.net.nz'],
 	},
-	'896403': {
+	'6403': {
 		iin: 896403,
 		countryCode: 64,
 		issuerIdentifierNumber: '03',
 		countryName: 'New Zealand',
 		companyName: 'Telstra Clear Ltd',
 	},
-	'896411': {
+	'6411': {
 		iin: 896411,
 		countryCode: 64,
 		issuerIdentifierNumber: '11',
@@ -3405,7 +3405,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GoTalk Communications pty Ltd',
 		companyURLs: ['http://gotalk.com'],
 	},
-	'896415': {
+	'6415': {
 		iin: 896415,
 		countryCode: 64,
 		issuerIdentifierNumber: '15',
@@ -3413,7 +3413,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Next Generation Network Ltd',
 		companyURLs: ['http://smartpay.co.nz'],
 	},
-	'896424': {
+	'6424': {
 		iin: 896424,
 		countryCode: 64,
 		issuerIdentifierNumber: '24',
@@ -3421,14 +3421,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'NZ Communications Ltd',
 		companyURLs: ['http://nzcomms.co.nz'],
 	},
-	'896500': {
+	'6500': {
 		iin: 896500,
 		countryCode: 65,
 		issuerIdentifierNumber: '00',
 		countryName: 'Singapore',
 		companyName: 'Singapore Telecommunications Ltd (SingTel)',
 	},
-	'896501': {
+	'6501': {
 		iin: 896501,
 		countryCode: 65,
 		issuerIdentifierNumber: '01',
@@ -3436,7 +3436,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Singapore Telecommunications Ltd (SingTel)',
 		companyURLs: ['http://singtel.com'],
 	},
-	'896502': {
+	'6502': {
 		iin: 896502,
 		countryCode: 65,
 		issuerIdentifierNumber: '02',
@@ -3444,7 +3444,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Singapore Telecommunications Ltd (SingTel)',
 		companyURLs: ['http://singtel.com'],
 	},
-	'896503': {
+	'6503': {
 		iin: 896503,
 		countryCode: 65,
 		issuerIdentifierNumber: '03',
@@ -3452,7 +3452,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'M1 Limited',
 		companyURLs: ['http://m1.com.sg'],
 	},
-	'896505': {
+	'6505': {
 		iin: 896505,
 		countryCode: 65,
 		issuerIdentifierNumber: '05',
@@ -3460,7 +3460,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'StarHub Ltd',
 		companyURLs: ['http://starhub.com'],
 	},
-	'896510': {
+	'6510': {
 		iin: 896510,
 		countryCode: 65,
 		issuerIdentifierNumber: '10',
@@ -3468,14 +3468,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'TPG Telecom Pte Ltd',
 		companyURLs: ['http://tpgtelecom.com.au'],
 	},
-	'896601': {
+	'6601': {
 		iin: 896601,
 		countryCode: 66,
 		issuerIdentifierNumber: '01',
 		countryName: 'Thailand',
 		companyName: 'CAT Telecom Public Company Ltd.',
 	},
-	'896602': {
+	'6602': {
 		iin: 896602,
 		countryCode: 66,
 		issuerIdentifierNumber: '02',
@@ -3483,14 +3483,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'TOT Public Company Limited',
 		companyURLs: ['http://tot.co.th'],
 	},
-	'896610': {
+	'6610': {
 		iin: 896610,
 		countryCode: 66,
 		issuerIdentifierNumber: '10',
 		countryName: 'Thailand',
 		companyName: 'Wireless Communications Services',
 	},
-	'898100': {
+	'8100': {
 		iin: 898100,
 		countryCode: 81,
 		issuerIdentifierNumber: '00',
@@ -3498,7 +3498,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SoftBank Corp.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898101': {
+	'8101': {
 		iin: 898101,
 		countryCode: 81,
 		issuerIdentifierNumber: '01',
@@ -3506,7 +3506,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'KDDI Corporation',
 		companyURLs: ['http://kddi.com'],
 	},
-	'898102': {
+	'8102': {
 		iin: 898102,
 		countryCode: 81,
 		issuerIdentifierNumber: '02',
@@ -3514,7 +3514,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hanshin Cable Engineering Co. Ltd.',
 		companyURLs: ['http://hce.hanshin.co.jp'],
 	},
-	'898103': {
+	'8103': {
 		iin: 898103,
 		countryCode: 81,
 		issuerIdentifierNumber: '03',
@@ -3522,7 +3522,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Internet Initiative Japan Inc.',
 		companyURLs: ['http://iij.ad.jp'],
 	},
-	'898104': {
+	'8104': {
 		iin: 898104,
 		countryCode: 81,
 		issuerIdentifierNumber: '04',
@@ -3530,7 +3530,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SAKURA Internet Inc.',
 		companyURLs: ['http://sakura.ad.jp'],
 	},
-	'898105': {
+	'8105': {
 		iin: 898105,
 		countryCode: 81,
 		issuerIdentifierNumber: '05',
@@ -3538,7 +3538,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Japan Radio Co., Ltd.',
 		companyURLs: ['http://jrc.co.jp'],
 	},
-	'898106': {
+	'8106': {
 		iin: 898106,
 		countryCode: 81,
 		issuerIdentifierNumber: '06',
@@ -3546,7 +3546,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'LTE-X, Inc.',
 		companyURLs: ['http://lte-x.co.jp'],
 	},
-	'898107': {
+	'8107': {
 		iin: 898107,
 		countryCode: 81,
 		issuerIdentifierNumber: '07',
@@ -3554,7 +3554,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Panasonic System Solutions Japan Co. Ltd',
 		companyURLs: ['http://jp.panasonic.com', 'http://ml.jp.panasonic.com'],
 	},
-	'898108': {
+	'8108': {
 		iin: 898108,
 		countryCode: 81,
 		issuerIdentifierNumber: '08',
@@ -3562,7 +3562,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Marubeni Wireless Communications Inc.',
 		companyURLs: ['http://marubeni-wireless.com'],
 	},
-	'898109': {
+	'8109': {
 		iin: 898109,
 		countryCode: 81,
 		issuerIdentifierNumber: '09',
@@ -3570,7 +3570,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Rakuten Mobile Network, Inc.',
 		companyURLs: ['http://mail.rakuten.com'],
 	},
-	'898110': {
+	'8110': {
 		iin: 898110,
 		countryCode: 81,
 		issuerIdentifierNumber: '10',
@@ -3578,7 +3578,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NTT DOCOMO, INC.',
 		companyURLs: ['http://nttdocomo.com'],
 	},
-	'898111': {
+	'8111': {
 		iin: 898111,
 		countryCode: 81,
 		issuerIdentifierNumber: '11',
@@ -3586,7 +3586,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Fujitsu Limited',
 		companyURLs: ['http://dl.jp.fujitsu.com'],
 	},
-	'898112': {
+	'8112': {
 		iin: 898112,
 		countryCode: 81,
 		issuerIdentifierNumber: '12',
@@ -3594,7 +3594,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NTT Communications Corporation',
 		companyURLs: ['http://ntt.com'],
 	},
-	'898113': {
+	'8113': {
 		iin: 898113,
 		countryCode: 81,
 		issuerIdentifierNumber: '13',
@@ -3602,7 +3602,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'BB Backbone Corp.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898120': {
+	'8120': {
 		iin: 898120,
 		countryCode: 81,
 		issuerIdentifierNumber: '20',
@@ -3610,7 +3610,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SoftBank Corp.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898130': {
+	'8130': {
 		iin: 898130,
 		countryCode: 81,
 		issuerIdentifierNumber: '30',
@@ -3618,7 +3618,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'KDDI Corporation',
 		companyURLs: ['http://kddi.com'],
 	},
-	'898131': {
+	'8131': {
 		iin: 898131,
 		countryCode: 81,
 		issuerIdentifierNumber: '31',
@@ -3626,7 +3626,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'UQ Communications Inc.',
 		companyURLs: ['http://uqc.jp'],
 	},
-	'898165': {
+	'8165': {
 		iin: 898165,
 		countryCode: 81,
 		issuerIdentifierNumber: '65',
@@ -3634,7 +3634,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SoftBank Corp.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898170': {
+	'8170': {
 		iin: 898170,
 		countryCode: 81,
 		issuerIdentifierNumber: '70',
@@ -3642,7 +3642,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SoftBank Corp.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898171': {
+	'8171': {
 		iin: 898171,
 		countryCode: 81,
 		issuerIdentifierNumber: '71',
@@ -3650,7 +3650,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Wireless City Planning Inc.',
 		companyURLs: ['http://g.softbank.co.jp'],
 	},
-	'898201': {
+	'8201': {
 		iin: 898201,
 		countryCode: 82,
 		issuerIdentifierNumber: '01',
@@ -3658,7 +3658,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'KT Corporation',
 		companyURLs: ['http://kt.kr'],
 	},
-	'898205': {
+	'8205': {
 		iin: 898205,
 		countryCode: 82,
 		issuerIdentifierNumber: '05',
@@ -3666,7 +3666,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SK Telecom',
 		companyURLs: ['http://sk.com'],
 	},
-	'898206': {
+	'8206': {
 		iin: 898206,
 		countryCode: 82,
 		issuerIdentifierNumber: '06',
@@ -3674,7 +3674,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'LG Uplus Corporation',
 		companyURLs: ['http://lguplus.co.kr'],
 	},
-	'898211': {
+	'8211': {
 		iin: 898211,
 		countryCode: 82,
 		issuerIdentifierNumber: '11',
@@ -3682,7 +3682,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SK Telecom',
 		companyURLs: ['http://sk.com'],
 	},
-	'898230': {
+	'8230': {
 		iin: 898230,
 		countryCode: 82,
 		issuerIdentifierNumber: '30',
@@ -3690,56 +3690,56 @@ export const e118IINList: IssuerList = {
 		companyName: 'KT Corporation',
 		companyURLs: ['http://kt.com'],
 	},
-	'898401': {
+	'8401': {
 		iin: 898401,
 		countryCode: 84,
 		issuerIdentifierNumber: '01',
 		countryName: 'Viet Nam',
 		companyName: 'MOBIFONE CORPORATION (MOBIFONE)',
 	},
-	'898402': {
+	'8402': {
 		iin: 898402,
 		countryCode: 84,
 		issuerIdentifierNumber: '02',
 		countryName: 'Viet Nam',
 		companyName: 'VIETNAM POSTS AND TELECOMMUNICATIONS GROUP (VNPT)',
 	},
-	'898600': {
+	'8600': {
 		iin: 898600,
 		countryCode: 86,
 		issuerIdentifierNumber: '00',
 		countryName: 'China',
 		companyName: 'China Telecom',
 	},
-	'898816': {
+	'8816': {
 		iin: 898816,
 		countryCode: 881,
 		issuerIdentifierNumber: '6',
 		countryName: 'United States',
 		companyName: 'Iridium LLC',
 	},
-	'898817': {
+	'8817': {
 		iin: 898817,
 		countryCode: 881,
 		issuerIdentifierNumber: '7',
 		countryName: 'International Network',
 		companyName: 'Iridium Communications Inc.',
 	},
-	'898818': {
+	'8818': {
 		iin: 898818,
 		countryCode: 881,
 		issuerIdentifierNumber: '8',
 		countryName: 'International Network',
 		companyName: 'Globalstar',
 	},
-	'898819': {
+	'8819': {
 		iin: 898819,
 		countryCode: 881,
 		issuerIdentifierNumber: '9',
 		countryName: 'International Network',
 		companyName: 'Globalstar',
 	},
-	'899001': {
+	'9001': {
 		iin: 899001,
 		countryCode: 90,
 		issuerIdentifierNumber: '01',
@@ -3747,7 +3747,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Turkcell İletişim Hizmetleri AŞ',
 		companyURLs: ['http://turkcell.com.tr'],
 	},
-	'899002': {
+	'9002': {
 		iin: 899002,
 		countryCode: 90,
 		issuerIdentifierNumber: '02',
@@ -3755,49 +3755,49 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Telekomünikasyon AŞ',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'899101': {
+	'9101': {
 		iin: 899101,
 		countryCode: 91,
 		issuerIdentifierNumber: '01',
 		countryName: 'India',
 		companyName: 'Aircel Digilink India Ltd',
 	},
-	'899105': {
+	'9105': {
 		iin: 899105,
 		countryCode: 91,
 		issuerIdentifierNumber: '05',
 		countryName: 'India',
 		companyName: 'Fascel Ltd',
 	},
-	'899109': {
+	'9109': {
 		iin: 899109,
 		countryCode: 91,
 		issuerIdentifierNumber: '09',
 		countryName: 'India',
 		companyName: 'Reliance Telecom Ltd',
 	},
-	'899110': {
+	'9110': {
 		iin: 899110,
 		countryCode: 91,
 		issuerIdentifierNumber: '10',
 		countryName: 'India',
 		companyName: 'Bharti Mobile Ltd',
 	},
-	'899111': {
+	'9111': {
 		iin: 899111,
 		countryCode: 91,
 		issuerIdentifierNumber: '11',
 		countryName: 'India',
 		companyName: 'Sterling Cellular Ltd',
 	},
-	'899114': {
+	'9114': {
 		iin: 899114,
 		countryCode: 91,
 		issuerIdentifierNumber: '14',
 		countryName: 'India',
 		companyName: 'Spice Communications Ltd',
 	},
-	'899121': {
+	'9121': {
 		iin: 899121,
 		countryCode: 91,
 		issuerIdentifierNumber: '21',
@@ -3805,21 +3805,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'BPL Mobile Communications',
 		companyURLs: ['http://bpl-mobile.com'],
 	},
-	'899130': {
+	'9130': {
 		iin: 899130,
 		countryCode: 91,
 		issuerIdentifierNumber: '30',
 		countryName: 'India',
 		companyName: 'Hutchison Essar South Ltd',
 	},
-	'899168': {
+	'9168': {
 		iin: 899168,
 		countryCode: 91,
 		issuerIdentifierNumber: '68',
 		countryName: 'India',
 		companyName: 'Mahanagar Telephone Nigam Ltd',
 	},
-	'899201': {
+	'9201': {
 		iin: 899201,
 		countryCode: 92,
 		issuerIdentifierNumber: '01',
@@ -3827,7 +3827,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Jazz',
 		companyURLs: ['http://jazz.com.pk'],
 	},
-	'899203': {
+	'9203': {
 		iin: 899203,
 		countryCode: 92,
 		issuerIdentifierNumber: '03',
@@ -3835,7 +3835,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PAK Telecom Mobile Ltd. (UFONE)',
 		companyURLs: ['http://ufone.com'],
 	},
-	'899204': {
+	'9204': {
 		iin: 899204,
 		countryCode: 92,
 		issuerIdentifierNumber: '04',
@@ -3843,7 +3843,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CMPAK Ltd',
 		companyURLs: ['http://zong.com.pk'],
 	},
-	'899206': {
+	'9206': {
 		iin: 899206,
 		countryCode: 92,
 		issuerIdentifierNumber: '06',
@@ -3851,7 +3851,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenor Pakistan',
 		companyURLs: ['http://telenor.com.pk'],
 	},
-	'899207': {
+	'9207': {
 		iin: 899207,
 		countryCode: 92,
 		issuerIdentifierNumber: '07',
@@ -3859,7 +3859,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Jazz',
 		companyURLs: ['http://jazz.com.pk'],
 	},
-	'899301': {
+	'9301': {
 		iin: 899301,
 		countryCode: 93,
 		issuerIdentifierNumber: '01',
@@ -3867,21 +3867,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Afghan Wireless Communication Company (AWCC)',
 		companyURLs: ['http://afghan-wireless.com'],
 	},
-	'899402': {
+	'9402': {
 		iin: 899402,
 		countryCode: 94,
 		issuerIdentifierNumber: '02',
 		countryName: 'Sri Lanka',
 		companyName: 'Dialog Telekom Ltd',
 	},
-	'899403': {
+	'9403': {
 		iin: 899403,
 		countryCode: 94,
 		issuerIdentifierNumber: '03',
 		countryName: 'Sri Lanka',
 		companyName: 'Celltel Lanka Ltd.',
 	},
-	'899405': {
+	'9405': {
 		iin: 899405,
 		countryCode: 94,
 		issuerIdentifierNumber: '05',
@@ -3889,14 +3889,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bharti Airtel Lanka',
 		companyURLs: ['http://airtel.in'],
 	},
-	'899659': {
+	'9659': {
 		iin: 899659,
 		countryCode: 965,
 		issuerIdentifierNumber: '9',
 		countryName: 'Kuwait',
 		companyName: 'Zain (ex-Mobile Telecommunications Company)',
 	},
-	'899711': {
+	'9711': {
 		iin: 899711,
 		countryCode: 971,
 		issuerIdentifierNumber: '1',
@@ -3904,14 +3904,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'The Emirates Telecommunications Corporations Ltd.',
 		companyURLs: ['http://emirates.net.ae'],
 	},
-	'899811': {
+	'9811': {
 		iin: 899811,
 		countryCode: 98,
 		issuerIdentifierNumber: '11',
 		countryName: 'Iran (Islamic Republic of)',
 		companyName: 'Telecommunication Company of Iran (TCI)',
 	},
-	'899814': {
+	'9814': {
 		iin: 899814,
 		countryCode: 98,
 		issuerIdentifierNumber: '14',
@@ -3919,14 +3919,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Kish free-zone organisation (KFZO), Payem Kish',
 		companyURLs: ['http://yahoo.com'],
 	},
-	'8921301': {
+	'21301': {
 		iin: 8921301,
 		countryCode: 213,
 		issuerIdentifierNumber: '01',
 		countryName: 'Algeria',
 		companyName: 'ATM Mobilis (Algérie Telecom spa)',
 	},
-	'8921800': {
+	'21800': {
 		iin: 8921800,
 		countryCode: 218,
 		issuerIdentifierNumber: '00',
@@ -3934,7 +3934,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Libyana Mobile Phone',
 		companyURLs: ['http://lttnet.net'],
 	},
-	'8922002': {
+	'22002': {
 		iin: 8922002,
 		countryCode: 220,
 		issuerIdentifierNumber: '02',
@@ -3942,7 +3942,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Africell Gambia',
 		companyURLs: ['http://africell.gm'],
 	},
-	'8922003': {
+	'22003': {
 		iin: 8922003,
 		countryCode: 220,
 		issuerIdentifierNumber: '03',
@@ -3950,7 +3950,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Comium Gambia Limited',
 		companyURLs: ['http://comium.gm'],
 	},
-	'8922004': {
+	'22004': {
 		iin: 8922004,
 		countryCode: 220,
 		issuerIdentifierNumber: '04',
@@ -3958,21 +3958,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Qcell Limited',
 		companyURLs: ['http://qcell.gm'],
 	},
-	'8922202': {
+	'22202': {
 		iin: 8922202,
 		countryCode: 222,
 		issuerIdentifierNumber: '02',
 		countryName: 'Mauritania',
 		companyName: 'Mauritel Mobiles',
 	},
-	'8922203': {
+	'22203': {
 		iin: 8922203,
 		countryCode: 222,
 		issuerIdentifierNumber: '03',
 		countryName: 'Mauritania',
 		companyName: 'La Mauritano - Tunisienne de Télécommunications (MATTEL)',
 	},
-	'8922302': {
+	'22302': {
 		iin: 8922302,
 		countryCode: 223,
 		issuerIdentifierNumber: '02',
@@ -3980,7 +3980,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ikatel',
 		companyURLs: ['http://ikatel.net'],
 	},
-	'8922401': {
+	'22401': {
 		iin: 8922401,
 		countryCode: 224,
 		issuerIdentifierNumber: '01',
@@ -3988,14 +3988,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Guinée',
 		companyURLs: ['http://yahoo.fr'],
 	},
-	'8922501': {
+	'22501': {
 		iin: 8922501,
 		countryCode: 225,
 		issuerIdentifierNumber: '01',
 		countryName: "Côte d'Ivoire",
 		companyName: 'Comstar S.A.',
 	},
-	'8922502': {
+	'22502': {
 		iin: 8922502,
 		countryCode: 225,
 		issuerIdentifierNumber: '02',
@@ -4003,21 +4003,21 @@ export const e118IINList: IssuerList = {
 		companyName: "Atlantique Telecom Côte d'Ivoire",
 		companyURLs: ['http://moov.com'],
 	},
-	'8922602': {
+	'22602': {
 		iin: 8922602,
 		countryCode: 226,
 		issuerIdentifierNumber: '02',
 		countryName: 'Burkina Faso',
 		companyName: 'Celtel Burkina SA',
 	},
-	'8922603': {
+	'22603': {
 		iin: 8922603,
 		countryCode: 226,
 		issuerIdentifierNumber: '03',
 		countryName: 'Burkina Faso',
 		companyName: 'Telecel Faso',
 	},
-	'8922702': {
+	'22702': {
 		iin: 8922702,
 		countryCode: 227,
 		issuerIdentifierNumber: '02',
@@ -4025,14 +4025,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Celtel Niger S.A.',
 		companyURLs: ['http://msi-cellular.com'],
 	},
-	'8922905': {
+	'22905': {
 		iin: 8922905,
 		countryCode: 229,
 		issuerIdentifierNumber: '05',
 		countryName: 'Benin',
 		companyName: 'Glomobile Benin Ltd',
 	},
-	'8923001': {
+	'23001': {
 		iin: 8923001,
 		countryCode: 230,
 		issuerIdentifierNumber: '01',
@@ -4040,7 +4040,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mauritius Telecom Ltd',
 		companyURLs: ['http://telecom.mu'],
 	},
-	'8923002': {
+	'23002': {
 		iin: 8923002,
 		countryCode: 230,
 		issuerIdentifierNumber: '02',
@@ -4048,7 +4048,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Emtel Ltd',
 		companyURLs: ['http://emtel.com'],
 	},
-	'8923003': {
+	'23003': {
 		iin: 8923003,
 		countryCode: 230,
 		issuerIdentifierNumber: '03',
@@ -4056,7 +4056,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mahanagar Telephone (Mauritius) Ltd',
 		companyURLs: ['http://mtmltd.net'],
 	},
-	'8923101': {
+	'23101': {
 		iin: 8923101,
 		countryCode: 231,
 		issuerIdentifierNumber: '01',
@@ -4064,7 +4064,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lonestar Communication Corporation',
 		companyURLs: ['http://mtn.com'],
 	},
-	'8923104': {
+	'23104': {
 		iin: 8923104,
 		countryCode: 231,
 		issuerIdentifierNumber: '04',
@@ -4072,7 +4072,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Novafone Inc.',
 		companyURLs: ['http://mtn.com'],
 	},
-	'8923134': {
+	'23134': {
 		iin: 8923134,
 		countryCode: 231,
 		issuerIdentifierNumber: '34',
@@ -4080,7 +4080,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Liberia',
 		companyURLs: ['http://orange.com'],
 	},
-	'8923233': {
+	'23233': {
 		iin: 8923233,
 		countryCode: 232,
 		issuerIdentifierNumber: '33',
@@ -4088,7 +4088,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Comium (Sierra Leone) Ltd',
 		companyURLs: ['http://comium.com'],
 	},
-	'8923240': {
+	'23240': {
 		iin: 8923240,
 		countryCode: 232,
 		issuerIdentifierNumber: '40',
@@ -4096,21 +4096,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Datatel Network GSM (SL) Ltd',
 		companyURLs: ['http://datatelsl.net'],
 	},
-	'8923302': {
+	'23302': {
 		iin: 8923302,
 		countryCode: 233,
 		issuerIdentifierNumber: '02',
 		countryName: 'Ghana',
 		companyName: 'Ghana Telecommunications Co. Ltd.',
 	},
-	'8923309': {
+	'23309': {
 		iin: 8923309,
 		countryCode: 233,
 		issuerIdentifierNumber: '09',
 		countryName: 'Ghana',
 		companyName: 'ACG Telesystems Ghana Ltd.',
 	},
-	'8923501': {
+	'23501': {
 		iin: 8923501,
 		countryCode: 235,
 		issuerIdentifierNumber: '01',
@@ -4118,14 +4118,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Airtel Tchad S.A',
 		companyURLs: ['http://td.airtel.com'],
 	},
-	'8923502': {
+	'23502': {
 		iin: 8923502,
 		countryCode: 235,
 		issuerIdentifierNumber: '02',
 		countryName: 'Chad',
 		companyName: 'Tchad Mobile - Libertis',
 	},
-	'8923801': {
+	'23801': {
 		iin: 8923801,
 		countryCode: 238,
 		issuerIdentifierNumber: '01',
@@ -4133,7 +4133,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CV Móvel, S.A.',
 		companyURLs: ['http://cvt.cv'],
 	},
-	'8923802': {
+	'23802': {
 		iin: 8923802,
 		countryCode: 238,
 		issuerIdentifierNumber: '02',
@@ -4141,7 +4141,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'UNITEL T+ TELECOMUNICAÇÕES, SOCIEDADE UNIPESSOAL, SA',
 		companyURLs: ['http://uniteltmais.cv'],
 	},
-	'8923902': {
+	'23902': {
 		iin: 8923902,
 		countryCode: 239,
 		issuerIdentifierNumber: '02',
@@ -4149,14 +4149,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'UNITEL STP',
 		companyURLs: ['http://unitel.st'],
 	},
-	'8923912': {
+	'23912': {
 		iin: 8923912,
 		countryCode: 239,
 		issuerIdentifierNumber: '12',
 		countryName: 'Sao Tome and Principe',
 		companyName: 'Companhia Santomese de Telecomunicações, SARL (CST)',
 	},
-	'8924001': {
+	'24001': {
 		iin: 8924001,
 		countryCode: 240,
 		issuerIdentifierNumber: '01',
@@ -4165,21 +4165,21 @@ export const e118IINList: IssuerList = {
 			'Guinea Ecuatorial de Telecomunicaciones Sociedad Anónima (GETESA)',
 		companyURLs: ['http://getesa.gq'],
 	},
-	'8924103': {
+	'24103': {
 		iin: 8924103,
 		countryCode: 241,
 		issuerIdentifierNumber: '03',
 		countryName: 'Gabon',
 		companyName: 'Celtel Gabon S.A.',
 	},
-	'8924201': {
+	'24201': {
 		iin: 8924201,
 		countryCode: 242,
 		issuerIdentifierNumber: '01',
 		countryName: 'Congo',
 		companyName: 'Celtel Congo S.A.',
 	},
-	'8924301': {
+	'24301': {
 		iin: 8924301,
 		countryCode: 243,
 		issuerIdentifierNumber: '01',
@@ -4187,14 +4187,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodacom Congo RDC sprl',
 		companyURLs: ['http://vodacom.cd'],
 	},
-	'8924302': {
+	'24302': {
 		iin: 8924302,
 		countryCode: 243,
 		issuerIdentifierNumber: '02',
 		countryName: 'Dem. Rep. of the Congo',
 		companyName: 'Celtel Congo (RDC) sprl',
 	},
-	'8924384': {
+	'24384': {
 		iin: 8924384,
 		countryCode: 243,
 		issuerIdentifierNumber: '84',
@@ -4202,7 +4202,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Congo-Chine Telecom s.a.r.l.',
 		companyURLs: ['http://ic.cd'],
 	},
-	'8924389': {
+	'24389': {
 		iin: 8924389,
 		countryCode: 243,
 		issuerIdentifierNumber: '89',
@@ -4210,7 +4210,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Sait Telecom',
 		companyURLs: ['http://prophost.eunet.be'],
 	},
-	'8924402': {
+	'24402': {
 		iin: 8924402,
 		countryCode: 244,
 		issuerIdentifierNumber: '02',
@@ -4218,7 +4218,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Unitel sarl',
 		companyURLs: ['http://unitel.co.ao'],
 	},
-	'8924501': {
+	'24501': {
 		iin: 8924501,
 		countryCode: 245,
 		issuerIdentifierNumber: '01',
@@ -4226,7 +4226,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Guinétel S.A.',
 		companyURLs: ['http://mail.gtelecom.gw'],
 	},
-	'8924502': {
+	'24502': {
 		iin: 8924502,
 		countryCode: 245,
 		issuerIdentifierNumber: '02',
@@ -4234,14 +4234,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Spacetel Guinea-Bissau S.A.',
 		companyURLs: ['http://investholding.com'],
 	},
-	'8924509': {
+	'24509': {
 		iin: 8924509,
 		countryCode: 245,
 		issuerIdentifierNumber: '09',
 		countryName: 'Guinea-Bissau',
 		companyName: 'Guiné Telecom - Companhia de Telecomunicaçôes de GuinéBissau',
 	},
-	'8924801': {
+	'24801': {
 		iin: 8924801,
 		countryCode: 248,
 		issuerIdentifierNumber: '01',
@@ -4249,7 +4249,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and wireless (Seychelles) Ltd',
 		companyURLs: ['http://cwseychelles.com'],
 	},
-	'8924810': {
+	'24810': {
 		iin: 8924810,
 		countryCode: 248,
 		issuerIdentifierNumber: '10',
@@ -4257,14 +4257,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Airtel Seychelles Ltd',
 		companyURLs: ['http://sc.airtel.com'],
 	},
-	'8924901': {
+	'24901': {
 		iin: 8924901,
 		countryCode: 249,
 		issuerIdentifierNumber: '01',
 		countryName: 'Sudan',
 		companyName: 'Sudan Telecom Company Ltd (Sudatel)',
 	},
-	'8924905': {
+	'24905': {
 		iin: 8924905,
 		countryCode: 249,
 		issuerIdentifierNumber: '05',
@@ -4272,7 +4272,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Network of the World Ltd (NOW)',
 		companyURLs: ['http://mdc.com'],
 	},
-	'8924999': {
+	'24999': {
 		iin: 8924999,
 		countryCode: 249,
 		issuerIdentifierNumber: '99',
@@ -4280,7 +4280,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTN Sudan',
 		companyURLs: ['http://mtn.sd'],
 	},
-	'8925000': {
+	'25000': {
 		iin: 8925000,
 		countryCode: 250,
 		issuerIdentifierNumber: '00',
@@ -4288,7 +4288,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTN Rwandacell sarl',
 		companyURLs: ['http://rwcell.com'],
 	},
-	'8925014': {
+	'25014': {
 		iin: 8925014,
 		countryCode: 250,
 		issuerIdentifierNumber: '14',
@@ -4296,7 +4296,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AIRTEL RWANDA Ltd',
 		companyURLs: ['http://rw.airtel.com'],
 	},
-	'8925017': {
+	'25017': {
 		iin: 8925017,
 		countryCode: 250,
 		issuerIdentifierNumber: '17',
@@ -4304,7 +4304,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Olleh Rwanda Networks (ORN)',
 		companyURLs: ['http://orn.rw'],
 	},
-	'8925101': {
+	'25101': {
 		iin: 8925101,
 		countryCode: 251,
 		issuerIdentifierNumber: '01',
@@ -4312,7 +4312,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ethiopian Telecommunications Corporation (ETC)',
 		companyURLs: ['http://ethionet.et'],
 	},
-	'8925284': {
+	'25284': {
 		iin: 8925284,
 		countryCode: 252,
 		issuerIdentifierNumber: '84',
@@ -4320,7 +4320,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NOMAD TELECOM LTD',
 		companyURLs: ['http://gmail.com'],
 	},
-	'8925285': {
+	'25285': {
 		iin: 8925285,
 		countryCode: 252,
 		issuerIdentifierNumber: '85',
@@ -4328,7 +4328,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NABAADTELCOM',
 		companyURLs: ['http://gmail.com'],
 	},
-	'8925402': {
+	'25402': {
 		iin: 8925402,
 		countryCode: 254,
 		issuerIdentifierNumber: '02',
@@ -4336,7 +4336,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Safaricom Limited',
 		companyURLs: ['http://safaricom.co.ke'],
 	},
-	'8925403': {
+	'25403': {
 		iin: 8925403,
 		countryCode: 254,
 		issuerIdentifierNumber: '03',
@@ -4344,7 +4344,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Airtel Networks Kenya Limited',
 		companyURLs: ['http://ke.airtel.com'],
 	},
-	'8925404': {
+	'25404': {
 		iin: 8925404,
 		countryCode: 254,
 		issuerIdentifierNumber: '04',
@@ -4352,7 +4352,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mobile Pay Kenya Limited',
 		companyURLs: ['http://tangaza.co.ke'],
 	},
-	'8925405': {
+	'25405': {
 		iin: 8925405,
 		countryCode: 254,
 		issuerIdentifierNumber: '05',
@@ -4360,7 +4360,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Airtel Networks Kenya Limited',
 		companyURLs: ['http://ke.airtel.com'],
 	},
-	'8925406': {
+	'25406': {
 		iin: 8925406,
 		countryCode: 254,
 		issuerIdentifierNumber: '06',
@@ -4368,7 +4368,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Finserve Kenya Limited',
 		companyURLs: ['http://equitybank.co.ke'],
 	},
-	'8925407': {
+	'25407': {
 		iin: 8925407,
 		countryCode: 254,
 		issuerIdentifierNumber: '07',
@@ -4376,7 +4376,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telkom Kenya Limited',
 		companyURLs: ['http://telkom.co.ke'],
 	},
-	'8925410': {
+	'25410': {
 		iin: 8925410,
 		countryCode: 254,
 		issuerIdentifierNumber: '10',
@@ -4384,7 +4384,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Jamii Telecommunications Limited',
 		companyURLs: ['http://jtl.co.ke'],
 	},
-	'8925505': {
+	'25505': {
 		iin: 8925505,
 		countryCode: 255,
 		issuerIdentifierNumber: '05',
@@ -4392,7 +4392,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Celtel Tanzania Ltd.',
 		companyURLs: ['http://yahoo.com'],
 	},
-	'8925707': {
+	'25707': {
 		iin: 8925707,
 		countryCode: 257,
 		issuerIdentifierNumber: '07',
@@ -4400,7 +4400,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lacell SU',
 		companyURLs: ['http://lacellsu.com'],
 	},
-	'8925804': {
+	'25804': {
 		iin: 8925804,
 		countryCode: 258,
 		issuerIdentifierNumber: '04',
@@ -4408,7 +4408,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'VM Sarl',
 		companyURLs: ['http://vodacom.co.za'],
 	},
-	'8926003': {
+	'26003': {
 		iin: 8926003,
 		countryCode: 260,
 		issuerIdentifierNumber: '03',
@@ -4416,14 +4416,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Zambia Telecommunications Company Ltd (ZAMTEL)',
 		companyURLs: ['http://zamtel.co.zm'],
 	},
-	'8926102': {
+	'26102': {
 		iin: 8926102,
 		countryCode: 261,
 		issuerIdentifierNumber: '02',
 		countryName: 'Madagascar',
 		companyName: 'Orange Madagascar',
 	},
-	'8926401': {
+	'26401': {
 		iin: 8926401,
 		countryCode: 264,
 		issuerIdentifierNumber: '01',
@@ -4431,7 +4431,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mobile Telecommunications Ltd.',
 		companyURLs: ['http://mtc.com.na'],
 	},
-	'8926422': {
+	'26422': {
 		iin: 8926422,
 		countryCode: 264,
 		issuerIdentifierNumber: '22',
@@ -4439,7 +4439,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Paratus Telecommunications (Pty) Ltd',
 		companyURLs: ['http://paratus.africa'],
 	},
-	'8926433': {
+	'26433': {
 		iin: 8926433,
 		countryCode: 264,
 		issuerIdentifierNumber: '33',
@@ -4448,14 +4448,14 @@ export const e118IINList: IssuerList = {
 			'Mobile Telephone Networks Business Solutions (Namibia) (Pty) Ltd',
 		companyURLs: ['http://mtn.com'],
 	},
-	'8926502': {
+	'26502': {
 		iin: 8926502,
 		countryCode: 265,
 		issuerIdentifierNumber: '02',
 		countryName: 'Malawi',
 		companyName: 'Celtel Malawi Ltd.',
 	},
-	'8926611': {
+	'26611': {
 		iin: 8926611,
 		countryCode: 266,
 		issuerIdentifierNumber: '11',
@@ -4463,7 +4463,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele-Com Mobile',
 		companyURLs: ['http://tcl.ca.ls'],
 	},
-	'8926701': {
+	'26701': {
 		iin: 8926701,
 		countryCode: 267,
 		issuerIdentifierNumber: '01',
@@ -4471,7 +4471,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mascom Wireless (Pty) Ltd',
 		companyURLs: ['http://mascom.bw'],
 	},
-	'8926702': {
+	'26702': {
 		iin: 8926702,
 		countryCode: 267,
 		issuerIdentifierNumber: '02',
@@ -4479,7 +4479,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Botswana (Pty) Ltd',
 		companyURLs: ['http://orange.com'],
 	},
-	'8926704': {
+	'26704': {
 		iin: 8926704,
 		countryCode: 267,
 		issuerIdentifierNumber: '04',
@@ -4487,7 +4487,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Botswana Telecommunications Corporation (Ltd)',
 		companyURLs: ['http://btc.bw'],
 	},
-	'8926901': {
+	'26901': {
 		iin: 8926901,
 		countryCode: 269,
 		issuerIdentifierNumber: '01',
@@ -4495,7 +4495,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Société nationale des télécommunications (Comores Telecom)',
 		companyURLs: ['http://snpt.km'],
 	},
-	'8929101': {
+	'29101': {
 		iin: 8929101,
 		countryCode: 291,
 		issuerIdentifierNumber: '01',
@@ -4503,14 +4503,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Eritrea Telecommunication Services Corporation (EriTel)',
 		companyURLs: ['http://tse.com.er'],
 	},
-	'8929786': {
+	'29786': {
 		iin: 8929786,
 		countryCode: 297,
 		issuerIdentifierNumber: '86',
 		countryName: 'Aruba',
 		companyName: 'SETAR, Servicio di Telecomunicacion di Aruba',
 	},
-	'8929801': {
+	'29801': {
 		iin: 8929801,
 		countryCode: 298,
 		issuerIdentifierNumber: '01',
@@ -4518,7 +4518,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Faroese Telecom',
 		companyURLs: ['http://ft.fo'],
 	},
-	'8929802': {
+	'29802': {
 		iin: 8929802,
 		countryCode: 298,
 		issuerIdentifierNumber: '02',
@@ -4526,7 +4526,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'P/F Hey',
 		companyURLs: ['http://hey.fo'],
 	},
-	'8929901': {
+	'29901': {
 		iin: 8929901,
 		countryCode: 299,
 		issuerIdentifierNumber: '01',
@@ -4534,7 +4534,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'TELE Greenland A/S',
 		companyURLs: ['http://telepost.gl'],
 	},
-	'8935001': {
+	'35001': {
 		iin: 8935001,
 		countryCode: 350,
 		issuerIdentifierNumber: '01',
@@ -4542,7 +4542,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GIBTELECOM Ltd',
 		companyURLs: ['http://gibtele.com'],
 	},
-	'8935009': {
+	'35009': {
 		iin: 8935009,
 		countryCode: 350,
 		issuerIdentifierNumber: '09',
@@ -4550,7 +4550,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Eazi Telecom Ltd (trading as “Limba”)',
 		companyURLs: ['http://limbatelecom.com'],
 	},
-	'8935101': {
+	'35101': {
 		iin: 8935101,
 		countryCode: 351,
 		issuerIdentifierNumber: '01',
@@ -4558,7 +4558,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Portugal - Comunicações Pessoais, S.A.',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'8935103': {
+	'35103': {
 		iin: 8935103,
 		countryCode: 351,
 		issuerIdentifierNumber: '03',
@@ -4566,7 +4566,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'NOS Comunicações, S.A.',
 		companyURLs: ['http://nos.pt'],
 	},
-	'8935104': {
+	'35104': {
 		iin: 8935104,
 		countryCode: 351,
 		issuerIdentifierNumber: '04',
@@ -4574,7 +4574,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Lycamobile Portugal, Lda',
 		companyURLs: ['http://lycamobile.pt'],
 	},
-	'8935106': {
+	'35106': {
 		iin: 8935106,
 		countryCode: 351,
 		issuerIdentifierNumber: '06',
@@ -4582,7 +4582,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MEO - Serviços de Comunicações e Multimédia, S.A.',
 		companyURLs: ['http://telecom.pt'],
 	},
-	'8935107': {
+	'35107': {
 		iin: 8935107,
 		countryCode: 351,
 		issuerIdentifierNumber: '07',
@@ -4590,7 +4590,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Mundio Mobile (Portugal) Limited',
 		companyURLs: ['http://mundio.com'],
 	},
-	'8935112': {
+	'35112': {
 		iin: 8935112,
 		countryCode: 351,
 		issuerIdentifierNumber: '12',
@@ -4598,7 +4598,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Infraestruturas de Portugal SA',
 		companyURLs: ['http://infraestruturasdeportugal.pt'],
 	},
-	'8935180': {
+	'35180': {
 		iin: 8935180,
 		countryCode: 351,
 		issuerIdentifierNumber: '80',
@@ -4606,7 +4606,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MEO - Serviços de Comunicações e Multimédia, S.A.',
 		companyURLs: ['http://telecom.pt'],
 	},
-	'8935200': {
+	'35200': {
 		iin: 8935200,
 		countryCode: 352,
 		issuerIdentifierNumber: '00',
@@ -4614,7 +4614,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'POST Luxembourg',
 		companyURLs: ['http://post.lu'],
 	},
-	'8935201': {
+	'35201': {
 		iin: 8935201,
 		countryCode: 352,
 		issuerIdentifierNumber: '01',
@@ -4622,7 +4622,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'POST Luxembourg',
 		companyURLs: ['http://post.lu'],
 	},
-	'8935202': {
+	'35202': {
 		iin: 8935202,
 		countryCode: 352,
 		issuerIdentifierNumber: '02',
@@ -4630,7 +4630,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTX Connect S.à r.l.',
 		companyURLs: ['http://mtxc.eu'],
 	},
-	'8935207': {
+	'35207': {
 		iin: 8935207,
 		countryCode: 352,
 		issuerIdentifierNumber: '07',
@@ -4638,7 +4638,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bouygues Telecom',
 		companyURLs: ['http://bouyguestelecom.fr'],
 	},
-	'8935210': {
+	'35210': {
 		iin: 8935210,
 		countryCode: 352,
 		issuerIdentifierNumber: '10',
@@ -4646,7 +4646,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Join Experience S.A.',
 		companyURLs: ['http://joinwireless.lu'],
 	},
-	'8935277': {
+	'35277': {
 		iin: 8935277,
 		countryCode: 352,
 		issuerIdentifierNumber: '77',
@@ -4654,7 +4654,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tango S.A.',
 		companyURLs: ['http://tele2.com'],
 	},
-	'8935281': {
+	'35281': {
 		iin: 8935281,
 		countryCode: 352,
 		issuerIdentifierNumber: '81',
@@ -4662,7 +4662,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'e-LUX Mobile Telecommunication Services S.A.',
 		companyURLs: ['http://eluxmobile.com', 'http://caldia.lu'],
 	},
-	'8935299': {
+	'35299': {
 		iin: 8935299,
 		countryCode: 352,
 		issuerIdentifierNumber: '99',
@@ -4670,14 +4670,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Voxmobile',
 		companyURLs: ['http://voxmobile.lu'],
 	},
-	'8935301': {
+	'35301': {
 		iin: 8935301,
 		countryCode: 353,
 		issuerIdentifierNumber: '01',
 		countryName: 'Ireland',
 		companyName: 'Vodaphone GSM Network',
 	},
-	'8935302': {
+	'35302': {
 		iin: 8935302,
 		countryCode: 353,
 		issuerIdentifierNumber: '02',
@@ -4685,14 +4685,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telefónica Ireland Ltd',
 		companyURLs: ['http://o2.com'],
 	},
-	'8935303': {
+	'35303': {
 		iin: 8935303,
 		countryCode: 353,
 		issuerIdentifierNumber: '03',
 		countryName: 'Ireland',
 		companyName: 'Meteor Mobile Communications',
 	},
-	'8935304': {
+	'35304': {
 		iin: 8935304,
 		countryCode: 353,
 		issuerIdentifierNumber: '04',
@@ -4700,7 +4700,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'IDT Card Services Ireland Ltd',
 		companyURLs: ['http://idteurope.com'],
 	},
-	'8935311': {
+	'35311': {
 		iin: 8935311,
 		countryCode: 353,
 		issuerIdentifierNumber: '11',
@@ -4708,14 +4708,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Liffey Telecom Ltd',
 		companyURLs: ['http://o2.com'],
 	},
-	'8935315': {
+	'35315': {
 		iin: 8935315,
 		countryCode: 353,
 		issuerIdentifierNumber: '15',
 		countryName: 'Ireland',
 		companyName: 'Virgin Media',
 	},
-	'8935316': {
+	'35316': {
 		iin: 8935316,
 		countryCode: 353,
 		issuerIdentifierNumber: '16',
@@ -4723,7 +4723,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CARPHONE WAREHOUSE IRELAND MOBILE LIMITED',
 		companyURLs: ['http://cpwplc.com'],
 	},
-	'8935400': {
+	'35400': {
 		iin: 8935400,
 		countryCode: 354,
 		issuerIdentifierNumber: '00',
@@ -4731,7 +4731,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Síminn hf.',
 		companyURLs: ['http://siminn.is'],
 	},
-	'8935402': {
+	'35402': {
 		iin: 8935402,
 		countryCode: 354,
 		issuerIdentifierNumber: '02',
@@ -4739,14 +4739,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Fjarskipti hf',
 		companyURLs: ['http://vodafone.is'],
 	},
-	'8935403': {
+	'35403': {
 		iin: 8935403,
 		countryCode: 354,
 		issuerIdentifierNumber: '03',
 		countryName: 'Iceland',
 		companyName: 'Islandesimi GSM',
 	},
-	'8935404': {
+	'35404': {
 		iin: 8935404,
 		countryCode: 354,
 		issuerIdentifierNumber: '04',
@@ -4754,7 +4754,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'IMC Island ehf',
 		companyURLs: ['http://worldcell.com'],
 	},
-	'8935501': {
+	'35501': {
 		iin: 8935501,
 		countryCode: 355,
 		issuerIdentifierNumber: '01',
@@ -4762,7 +4762,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Albania sh.a',
 		companyURLs: ['http://telekom.com.al'],
 	},
-	'8935502': {
+	'35502': {
 		iin: 8935502,
 		countryCode: 355,
 		issuerIdentifierNumber: '02',
@@ -4770,7 +4770,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Albania sh.a',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'8935503': {
+	'35503': {
 		iin: 8935503,
 		countryCode: 355,
 		issuerIdentifierNumber: '03',
@@ -4778,7 +4778,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Albtelecom sh.a',
 		companyURLs: ['http://albtelecom.al'],
 	},
-	'8935504': {
+	'35504': {
 		iin: 8935504,
 		countryCode: 355,
 		issuerIdentifierNumber: '04',
@@ -4786,7 +4786,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Plus Communications Sh.a',
 		companyURLs: ['http://plus.al'],
 	},
-	'8935601': {
+	'35601': {
 		iin: 8935601,
 		countryCode: 356,
 		issuerIdentifierNumber: '01',
@@ -4794,7 +4794,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'VODAFONE MALTA LIMITED',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'8935611': {
+	'35611': {
 		iin: 8935611,
 		countryCode: 356,
 		issuerIdentifierNumber: '11',
@@ -4802,7 +4802,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'YOM Ltd.',
 		companyURLs: ['http://yom.company'],
 	},
-	'8935621': {
+	'35621': {
 		iin: 8935621,
 		countryCode: 356,
 		issuerIdentifierNumber: '21',
@@ -4810,7 +4810,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GO p.l.c.',
 		companyURLs: ['http://go.com.mt'],
 	},
-	'8935677': {
+	'35677': {
 		iin: 8935677,
 		countryCode: 356,
 		issuerIdentifierNumber: '77',
@@ -4818,7 +4818,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Melita Ltd.',
 		companyURLs: ['http://melitaltd.com'],
 	},
-	'8935702': {
+	'35702': {
 		iin: 8935702,
 		countryCode: 357,
 		issuerIdentifierNumber: '02',
@@ -4826,7 +4826,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cyprus Telecommunications Authority (CYTA)',
 		companyURLs: ['http://cyta.com.cy'],
 	},
-	'8935710': {
+	'35710': {
 		iin: 8935710,
 		countryCode: 357,
 		issuerIdentifierNumber: '10',
@@ -4834,7 +4834,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Scancom (Cyprus) Ltd.',
 		companyURLs: ['http://investcomholding.com'],
 	},
-	'8935720': {
+	'35720': {
 		iin: 8935720,
 		countryCode: 357,
 		issuerIdentifierNumber: '20',
@@ -4842,7 +4842,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PrimeTel PLC',
 		companyURLs: ['http://prime-tel.com'],
 	},
-	'8935722': {
+	'35722': {
 		iin: 8935722,
 		countryCode: 357,
 		issuerIdentifierNumber: '22',
@@ -4850,14 +4850,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cablenet Communications Systems Ltd',
 		companyURLs: ['http://cablenetcy.net'],
 	},
-	'8935789': {
+	'35789': {
 		iin: 8935789,
 		countryCode: 357,
 		issuerIdentifierNumber: '89',
 		countryName: 'Cyprus',
 		companyName: 'Cyprus Telecommunications Authority (CYTA)',
 	},
-	'8935801': {
+	'35801': {
 		iin: 8935801,
 		countryCode: 358,
 		issuerIdentifierNumber: '01',
@@ -4865,7 +4865,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telia Finland Oyj',
 		companyURLs: ['http://telia.fi', 'http://teliacompany.com'],
 	},
-	'8935802': {
+	'35802': {
 		iin: 8935802,
 		countryCode: 358,
 		issuerIdentifierNumber: '02',
@@ -4873,7 +4873,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elisa Corporation',
 		companyURLs: ['http://elisa.fi'],
 	},
-	'8935803': {
+	'35803': {
 		iin: 8935803,
 		countryCode: 358,
 		issuerIdentifierNumber: '03',
@@ -4881,7 +4881,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elisa Corporation',
 		companyURLs: ['http://elisa.fi'],
 	},
-	'8935804': {
+	'35804': {
 		iin: 8935804,
 		countryCode: 358,
 		issuerIdentifierNumber: '04',
@@ -4889,7 +4889,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'DNA Oyj',
 		companyURLs: ['http://dna.fi'],
 	},
-	'8935805': {
+	'35805': {
 		iin: 8935805,
 		countryCode: 358,
 		issuerIdentifierNumber: '05',
@@ -4897,7 +4897,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elisa Corporation',
 		companyURLs: ['http://elisa.fi'],
 	},
-	'8935806': {
+	'35806': {
 		iin: 8935806,
 		countryCode: 358,
 		issuerIdentifierNumber: '06',
@@ -4905,7 +4905,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'DNA Oyj',
 		companyURLs: ['http://dna.fi'],
 	},
-	'8935807': {
+	'35807': {
 		iin: 8935807,
 		countryCode: 358,
 		issuerIdentifierNumber: '07',
@@ -4913,7 +4913,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ålands Telekommunikation Ab',
 		companyURLs: ['http://alcom.ax'],
 	},
-	'8935809': {
+	'35809': {
 		iin: 8935809,
 		countryCode: 358,
 		issuerIdentifierNumber: '09',
@@ -4921,7 +4921,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elisa Corporation',
 		companyURLs: ['http://elisa.fi'],
 	},
-	'8935811': {
+	'35811': {
 		iin: 8935811,
 		countryCode: 358,
 		issuerIdentifierNumber: '11',
@@ -4929,7 +4929,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ukkoverkot Oy',
 		companyURLs: ['http://ukkoverkot.fi'],
 	},
-	'8935812': {
+	'35812': {
 		iin: 8935812,
 		countryCode: 358,
 		issuerIdentifierNumber: '12',
@@ -4937,7 +4937,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Suomen Virveverkko Oy',
 		companyURLs: ['http://erillisverkot.fi'],
 	},
-	'8935901': {
+	'35901': {
 		iin: 8935901,
 		countryCode: 359,
 		issuerIdentifierNumber: '01',
@@ -4945,14 +4945,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'A1 Bulgaria EAD',
 		companyURLs: ['http://a1.bg'],
 	},
-	'8935905': {
+	'35905': {
 		iin: 8935905,
 		countryCode: 359,
 		issuerIdentifierNumber: '05',
 		countryName: 'Bulgaria',
 		companyName: 'Cosmo Bulgaria Mobile Ltd.',
 	},
-	'8935920': {
+	'35920': {
 		iin: 8935920,
 		countryCode: 359,
 		issuerIdentifierNumber: '20',
@@ -4960,7 +4960,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Intelligent Traffic Systems AD',
 		companyURLs: ['http://itsbulgaria.com'],
 	},
-	'8935922': {
+	'35922': {
 		iin: 8935922,
 		countryCode: 359,
 		issuerIdentifierNumber: '22',
@@ -4968,7 +4968,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'GPS Bulgaria AD',
 		companyURLs: ['http://gps.bg'],
 	},
-	'8935923': {
+	'35923': {
 		iin: 8935923,
 		countryCode: 359,
 		issuerIdentifierNumber: '23',
@@ -4976,7 +4976,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CONCORD SMART INFRASTRUCTURE',
 		companyURLs: ['http://gmail.com'],
 	},
-	'8937001': {
+	'37001': {
 		iin: 8937001,
 		countryCode: 370,
 		issuerIdentifierNumber: '01',
@@ -4984,7 +4984,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telia Lietuva, AB',
 		companyURLs: ['http://telia.lt'],
 	},
-	'8937002': {
+	'37002': {
 		iin: 8937002,
 		countryCode: 370,
 		issuerIdentifierNumber: '02',
@@ -4992,7 +4992,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'UAB “Bité Lietuva”',
 		companyURLs: ['http://bite.lt'],
 	},
-	'8937003': {
+	'37003': {
 		iin: 8937003,
 		countryCode: 370,
 		issuerIdentifierNumber: '03',
@@ -5000,14 +5000,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'UAB “Tele2”',
 		companyURLs: ['http://tele2.lt'],
 	},
-	'8937101': {
+	'37101': {
 		iin: 8937101,
 		countryCode: 371,
 		issuerIdentifierNumber: '01',
 		countryName: 'Latvia',
 		companyName: 'Latvian Mobile Telephone Co. Ltd.',
 	},
-	'8937201': {
+	'37201': {
 		iin: 8937201,
 		countryCode: 372,
 		issuerIdentifierNumber: '01',
@@ -5015,7 +5015,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telia Eesti AS',
 		companyURLs: ['http://telia.ee'],
 	},
-	'8937202': {
+	'37202': {
 		iin: 8937202,
 		countryCode: 372,
 		issuerIdentifierNumber: '02',
@@ -5023,7 +5023,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Elisa Eesti AS',
 		companyURLs: ['http://elisa.ee'],
 	},
-	'8937203': {
+	'37203': {
 		iin: 8937203,
 		countryCode: 372,
 		issuerIdentifierNumber: '03',
@@ -5031,7 +5031,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tele2 Eesti AS',
 		companyURLs: ['http://tele2.ee'],
 	},
-	'8937204': {
+	'37204': {
 		iin: 8937204,
 		countryCode: 372,
 		issuerIdentifierNumber: '04',
@@ -5039,7 +5039,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Top Connect OÜ',
 		companyURLs: ['http://topconnect.com'],
 	},
-	'8937206': {
+	'37206': {
 		iin: 8937206,
 		countryCode: 372,
 		issuerIdentifierNumber: '06',
@@ -5047,7 +5047,7 @@ export const e118IINList: IssuerList = {
 		companyName: '1oT OÜ',
 		companyURLs: ['http://1ot.com'],
 	},
-	'8937301': {
+	'37301': {
 		iin: 8937301,
 		countryCode: 373,
 		issuerIdentifierNumber: '01',
@@ -5055,7 +5055,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'JSC Orange Moldova',
 		companyURLs: ['http://orange.md'],
 	},
-	'8937302': {
+	'37302': {
 		iin: 8937302,
 		countryCode: 373,
 		issuerIdentifierNumber: '02',
@@ -5063,7 +5063,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Moldcell S.A.',
 		companyURLs: ['http://moldcell.md'],
 	},
-	'8937303': {
+	'37303': {
 		iin: 8937303,
 		countryCode: 373,
 		issuerIdentifierNumber: '03',
@@ -5071,7 +5071,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'J.S.C. MOLDTELECOM',
 		companyURLs: ['http://moldtelecom.md'],
 	},
-	'8937401': {
+	'37401': {
 		iin: 8937401,
 		countryCode: 374,
 		issuerIdentifierNumber: '01',
@@ -5079,14 +5079,14 @@ export const e118IINList: IssuerList = {
 		companyName: '“VEON Armenia” CJSC',
 		companyURLs: ['http://beeline.am'],
 	},
-	'8937404': {
+	'37404': {
 		iin: 8937404,
 		countryCode: 374,
 		issuerIdentifierNumber: '04',
 		countryName: 'Armenia',
 		companyName: 'PMF SAL',
 	},
-	'8937405': {
+	'37405': {
 		iin: 8937405,
 		countryCode: 374,
 		issuerIdentifierNumber: '05',
@@ -5094,7 +5094,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTS Armenia CJSC',
 		companyURLs: ['http://mts.am'],
 	},
-	'8937501': {
+	'37501': {
 		iin: 8937501,
 		countryCode: 375,
 		issuerIdentifierNumber: '01',
@@ -5102,7 +5102,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'FE Velcom',
 		companyURLs: ['http://velcom.by'],
 	},
-	'8937502': {
+	'37502': {
 		iin: 8937502,
 		countryCode: 375,
 		issuerIdentifierNumber: '02',
@@ -5110,7 +5110,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Joint Limited Liability Company "Mobile TeleSystems"',
 		companyURLs: ['http://mts.by'],
 	},
-	'8937503': {
+	'37503': {
 		iin: 8937503,
 		countryCode: 375,
 		issuerIdentifierNumber: '03',
@@ -5118,14 +5118,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Belarusian Telecommunication Network (ZAO BeST)',
 		companyURLs: ['http://best.by'],
 	},
-	'8937603': {
+	'37603': {
 		iin: 8937603,
 		countryCode: 376,
 		issuerIdentifierNumber: '03',
 		countryName: 'Andorra',
 		companyName: "Servei de Telecomunicacions d'Andorra",
 	},
-	'8938001': {
+	'38001': {
 		iin: 8938001,
 		countryCode: 380,
 		issuerIdentifierNumber: '01',
@@ -5133,7 +5133,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'PrJSC "VF-UKRAINE"',
 		companyURLs: ['http://vodafone.ua'],
 	},
-	'8938002': {
+	'38002': {
 		iin: 8938002,
 		countryCode: 380,
 		issuerIdentifierNumber: '02',
@@ -5141,7 +5141,7 @@ export const e118IINList: IssuerList = {
 		companyName: '"Kyivstar" PJSC',
 		companyURLs: ['http://kyivstar.net'],
 	},
-	'8938003': {
+	'38003': {
 		iin: 8938003,
 		countryCode: 380,
 		issuerIdentifierNumber: '03',
@@ -5149,7 +5149,7 @@ export const e118IINList: IssuerList = {
 		companyName: '"Kyivstar" PJSC',
 		companyURLs: ['http://kyivstar.net'],
 	},
-	'8938101': {
+	'38101': {
 		iin: 8938101,
 		countryCode: 381,
 		issuerIdentifierNumber: '01',
@@ -5157,7 +5157,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenor d.o.o.',
 		companyURLs: ['http://telenor.rs'],
 	},
-	'8938103': {
+	'38103': {
 		iin: 8938103,
 		countryCode: 381,
 		issuerIdentifierNumber: '03',
@@ -5165,7 +5165,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Preduzece za telekomunicacije "Telekom Srbija" a.d.',
 		companyURLs: ['http://telekom.rs'],
 	},
-	'8938105': {
+	'38105': {
 		iin: 8938105,
 		countryCode: 381,
 		issuerIdentifierNumber: '05',
@@ -5173,7 +5173,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vip mobile d.o.o.',
 		companyURLs: ['http://vipmobile.rs'],
 	},
-	'8938200': {
+	'38200': {
 		iin: 8938200,
 		countryCode: 382,
 		issuerIdentifierNumber: '00',
@@ -5181,7 +5181,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Crnogorski Telekom A.D.',
 		companyURLs: ['http://telekom.me'],
 	},
-	'8938201': {
+	'38201': {
 		iin: 8938201,
 		countryCode: 382,
 		issuerIdentifierNumber: '01',
@@ -5189,7 +5189,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telenor d.o.o. Podgorica',
 		companyURLs: ['http://telenor.me'],
 	},
-	'8938203': {
+	'38203': {
 		iin: 8938203,
 		countryCode: 382,
 		issuerIdentifierNumber: '03',
@@ -5197,21 +5197,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTEL d.o.o. Podgorica',
 		companyURLs: ['http://mtel.me'],
 	},
-	'8938591': {
+	'38591': {
 		iin: 8938591,
 		countryCode: 385,
 		issuerIdentifierNumber: '91',
 		countryName: 'Croatia',
 		companyName: 'VIPnet d.o.o.',
 	},
-	'8938598': {
+	'38598': {
 		iin: 8938598,
 		countryCode: 385,
 		issuerIdentifierNumber: '98',
 		countryName: 'Croatia',
 		companyName: 'Hrvatski Telekom d.d.',
 	},
-	'8938640': {
+	'38640': {
 		iin: 8938640,
 		countryCode: 386,
 		issuerIdentifierNumber: '40',
@@ -5219,7 +5219,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'A1 Slovenija d.d.',
 		companyURLs: ['http://a1.si'],
 	},
-	'8938641': {
+	'38641': {
 		iin: 8938641,
 		countryCode: 386,
 		issuerIdentifierNumber: '41',
@@ -5227,7 +5227,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Slovenije d.d.',
 		companyURLs: ['http://telekom.si'],
 	},
-	'8938664': {
+	'38664': {
 		iin: 8938664,
 		countryCode: 386,
 		issuerIdentifierNumber: '64',
@@ -5235,7 +5235,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-2 d.o.o.',
 		companyURLs: ['http://t-2.com'],
 	},
-	'8938670': {
+	'38670': {
 		iin: 8938670,
 		countryCode: 386,
 		issuerIdentifierNumber: '70',
@@ -5243,7 +5243,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telemach d.o.o.',
 		companyURLs: ['http://telemach.si'],
 	},
-	'8938701': {
+	'38701': {
 		iin: 8938701,
 		countryCode: 387,
 		issuerIdentifierNumber: '01',
@@ -5251,7 +5251,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'BH Telecom',
 		companyURLs: ['http://bih.net.ba'],
 	},
-	'8938703': {
+	'38703': {
 		iin: 8938703,
 		countryCode: 387,
 		issuerIdentifierNumber: '03',
@@ -5259,7 +5259,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'HT Mostar',
 		companyURLs: ['http://hteronet.ba'],
 	},
-	'8938705': {
+	'38705': {
 		iin: 8938705,
 		countryCode: 387,
 		issuerIdentifierNumber: '05',
@@ -5267,14 +5267,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekomunicaje RS, a.d. Banjaluka',
 		companyURLs: ['http://mtel.ba'],
 	},
-	'8938901': {
+	'38901': {
 		iin: 8938901,
 		countryCode: 389,
 		issuerIdentifierNumber: '01',
 		countryName: 'The Former Yugoslav Republic of Macedonia',
 		companyName: 'Makedonski telekomunikacii A.D.',
 	},
-	'8942001': {
+	'42001': {
 		iin: 8942001,
 		countryCode: 420,
 		issuerIdentifierNumber: '01',
@@ -5282,7 +5282,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'T-Mobile Czech Republic a.s.',
 		companyURLs: ['http://t-mobile.cz'],
 	},
-	'8942004': {
+	'42004': {
 		iin: 8942004,
 		countryCode: 420,
 		issuerIdentifierNumber: '04',
@@ -5290,7 +5290,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Nordic Telecom s.r.o.',
 		companyURLs: ['http://nordictelecom.cz'],
 	},
-	'8942005': {
+	'42005': {
 		iin: 8942005,
 		countryCode: 420,
 		issuerIdentifierNumber: '05',
@@ -5298,7 +5298,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'O2 Czech Republic a.s.',
 		companyURLs: ['http://o2.cz'],
 	},
-	'8942020': {
+	'42020': {
 		iin: 8942020,
 		countryCode: 420,
 		issuerIdentifierNumber: '20',
@@ -5306,7 +5306,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'O2 Czech Republic a.s.',
 		companyURLs: ['http://o2.cz'],
 	},
-	'8942031': {
+	'42031': {
 		iin: 8942031,
 		countryCode: 420,
 		issuerIdentifierNumber: '31',
@@ -5314,7 +5314,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Czech Republic a.s.',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'8942098': {
+	'42098': {
 		iin: 8942098,
 		countryCode: 420,
 		issuerIdentifierNumber: '98',
@@ -5322,7 +5322,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Správa Zeleznicni Dopravni Cesty, s.o.',
 		companyURLs: ['http://szdc.cz'],
 	},
-	'8942101': {
+	'42101': {
 		iin: 8942101,
 		countryCode: 421,
 		issuerIdentifierNumber: '01',
@@ -5330,7 +5330,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Slovensko a.s.',
 		companyURLs: ['http://orange.sk'],
 	},
-	'8942102': {
+	'42102': {
 		iin: 8942102,
 		countryCode: 421,
 		issuerIdentifierNumber: '02',
@@ -5338,7 +5338,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Slovak Telekom, a.s.',
 		companyURLs: ['http://t-com.sk'],
 	},
-	'8942103': {
+	'42103': {
 		iin: 8942103,
 		countryCode: 421,
 		issuerIdentifierNumber: '03',
@@ -5346,7 +5346,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Slovak Telekom, a.s.',
 		companyURLs: ['http://t-com.sk'],
 	},
-	'8942301': {
+	'42301': {
 		iin: 8942301,
 		countryCode: 423,
 		issuerIdentifierNumber: '01',
@@ -5354,7 +5354,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Swisscom Schweiz AG',
 		companyURLs: ['http://swisscom.com'],
 	},
-	'8942302': {
+	'42302': {
 		iin: 8942302,
 		countryCode: 423,
 		issuerIdentifierNumber: '02',
@@ -5362,7 +5362,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Salt (Liechtenstein) AG',
 		companyURLs: ['http://salt.li'],
 	},
-	'8942305': {
+	'42305': {
 		iin: 8942305,
 		countryCode: 423,
 		issuerIdentifierNumber: '05',
@@ -5370,7 +5370,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom Liechtenstein AG',
 		companyURLs: ['http://telecom.li'],
 	},
-	'8942306': {
+	'42306': {
 		iin: 8942306,
 		countryCode: 423,
 		issuerIdentifierNumber: '06',
@@ -5378,7 +5378,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cubic AG',
 		companyURLs: ['http://tva.li'],
 	},
-	'8942307': {
+	'42307': {
 		iin: 8942307,
 		countryCode: 423,
 		issuerIdentifierNumber: '07',
@@ -5386,7 +5386,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'First Mobile AG',
 		companyURLs: ['http://vitop.ch'],
 	},
-	'8942310': {
+	'42310': {
 		iin: 8942310,
 		countryCode: 423,
 		issuerIdentifierNumber: '10',
@@ -5394,7 +5394,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SORACOM LI, LTD.',
 		companyURLs: ['http://wirtschaftskanzlei.com'],
 	},
-	'8950001': {
+	'50001': {
 		iin: 8950001,
 		countryCode: 500,
 		issuerIdentifierNumber: '01',
@@ -5402,7 +5402,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cable and Wireless Falkland Islands',
 		companyURLs: ['http://cwfi.co.fk'],
 	},
-	'8950167': {
+	'50167': {
 		iin: 8950167,
 		countryCode: 501,
 		issuerIdentifierNumber: '67',
@@ -5410,7 +5410,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Belize Telemedia Ltd.',
 		companyURLs: ['http://belizetelemedia.net'],
 	},
-	'8950168': {
+	'50168': {
 		iin: 8950168,
 		countryCode: 501,
 		issuerIdentifierNumber: '68',
@@ -5418,21 +5418,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Intelco',
 		companyURLs: ['http://intelco.bz'],
 	},
-	'8950601': {
+	'50601': {
 		iin: 8950601,
 		countryCode: 506,
 		issuerIdentifierNumber: '01',
 		countryName: 'Costa Rica',
 		companyName: 'Instituto Costarricense de Electricidad - ICE',
 	},
-	'8950701': {
+	'50701': {
 		iin: 8950701,
 		countryCode: 507,
 		issuerIdentifierNumber: '01',
 		countryName: 'Panama',
 		companyName: 'Cable & Wireless Panama S.A.',
 	},
-	'8950801': {
+	'50801': {
 		iin: 8950801,
 		countryCode: 508,
 		issuerIdentifierNumber: '01',
@@ -5440,7 +5440,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SAS SPM Telecom',
 		companyURLs: ['http://spmtelecom.com'],
 	},
-	'8957002': {
+	'57002': {
 		iin: 8957002,
 		countryCode: 57,
 		issuerIdentifierNumber: '002',
@@ -5448,7 +5448,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Edatel S.A.',
 		companyURLs: ['http://edatel.com.co'],
 	},
-	'8957123': {
+	'57123': {
 		iin: 8957123,
 		countryCode: 57,
 		issuerIdentifierNumber: '123',
@@ -5456,7 +5456,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Colombia Telecomunicaciones SA ESP (Movistar)',
 		companyURLs: ['http://telefonica.com'],
 	},
-	'8959001': {
+	'59001': {
 		iin: 8959001,
 		countryCode: 590,
 		issuerIdentifierNumber: '01',
@@ -5464,7 +5464,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange Caraïbe',
 		companyURLs: ['http://orange.com'],
 	},
-	'8959003': {
+	'59003': {
 		iin: 8959003,
 		countryCode: 590,
 		issuerIdentifierNumber: '03',
@@ -5472,7 +5472,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'United telecommunications services Caraïbe',
 		companyURLs: ['http://uts.sx'],
 	},
-	'8959101': {
+	'59101': {
 		iin: 8959101,
 		countryCode: 591,
 		issuerIdentifierNumber: '01',
@@ -5480,7 +5480,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Nuevatel PCS de Bolivia S.A.',
 		companyURLs: ['http://neuvatel.com'],
 	},
-	'8959102': {
+	'59102': {
 		iin: 8959102,
 		countryCode: 591,
 		issuerIdentifierNumber: '02',
@@ -5488,7 +5488,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Empresa Nacional de Telecomunicaciones (ENTEL)',
 		companyURLs: ['http://entelsa.entelnet.bo'],
 	},
-	'8959202': {
+	'59202': {
 		iin: 8959202,
 		countryCode: 592,
 		issuerIdentifierNumber: '02',
@@ -5496,14 +5496,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Guyana Telephone and Telegraph Company Ltd. (GT&T)',
 		companyURLs: ['http://gtt.co.gy'],
 	},
-	'8959301': {
+	'59301': {
 		iin: 8959301,
 		countryCode: 593,
 		issuerIdentifierNumber: '01',
 		countryName: 'Ecuador',
 		companyName: 'Consorcio Ecuatoriano de Telecomunicaciones S.A. (Conecel)',
 	},
-	'8959501': {
+	'59501': {
 		iin: 8959501,
 		countryCode: 595,
 		issuerIdentifierNumber: '01',
@@ -5511,7 +5511,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hóla Paraguay S.A.',
 		companyURLs: ['http://vox.net.py'],
 	},
-	'8959502': {
+	'59502': {
 		iin: 8959502,
 		countryCode: 595,
 		issuerIdentifierNumber: '02',
@@ -5519,7 +5519,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AMX Paraguay S.A.',
 		companyURLs: ['http://claro.com.py'],
 	},
-	'8959505': {
+	'59505': {
 		iin: 8959505,
 		countryCode: 595,
 		issuerIdentifierNumber: '05',
@@ -5527,7 +5527,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Núcleo S.A.',
 		companyURLs: ['http://personal.com.py'],
 	},
-	'8959800': {
+	'59800': {
 		iin: 8959800,
 		countryCode: 598,
 		issuerIdentifierNumber: '00',
@@ -5535,7 +5535,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Administración Nacional de Telecomunicaciones (ANTEL)',
 		companyURLs: ['http://antel.com.uy'],
 	},
-	'8959801': {
+	'59801': {
 		iin: 8959801,
 		countryCode: 598,
 		issuerIdentifierNumber: '01',
@@ -5543,14 +5543,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Administración Nacional de Telecomunicaciones (ANTEL)',
 		companyURLs: ['http://antel.com.uy'],
 	},
-	'8959900': {
+	'59900': {
 		iin: 8959900,
 		countryCode: 599,
 		issuerIdentifierNumber: '00',
 		countryName: 'Curaçao',
 		companyName: 'ANTELECOM N.V.',
 	},
-	'8959978': {
+	'59978': {
 		iin: 8959978,
 		countryCode: 599,
 		issuerIdentifierNumber: '78',
@@ -5558,14 +5558,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telbo',
 		companyURLs: ['http://telbonet.an'],
 	},
-	'8959991': {
+	'59991': {
 		iin: 8959991,
 		countryCode: 599,
 		issuerIdentifierNumber: '91',
 		countryName: 'Curaçao',
 		companyName: 'UTS - SETEL',
 	},
-	'8959996': {
+	'59996': {
 		iin: 8959996,
 		countryCode: 599,
 		issuerIdentifierNumber: '96',
@@ -5573,7 +5573,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Curaçao Telecom N.V.',
 		companyURLs: ['http://digicelgroup.com'],
 	},
-	'8960153': {
+	'60153': {
 		iin: 8960153,
 		countryCode: 60,
 		issuerIdentifierNumber: '153',
@@ -5581,7 +5581,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'webe digital sdn bhd',
 		companyURLs: ['http://webe.com.my'],
 	},
-	'8967210': {
+	'67210': {
 		iin: 8967210,
 		countryCode: 672,
 		issuerIdentifierNumber: '10',
@@ -5589,7 +5589,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Norfolk Telecom',
 		companyURLs: ['http://telecom.gov.nf'],
 	},
-	'8967502': {
+	'67502': {
 		iin: 8967502,
 		countryCode: 675,
 		issuerIdentifierNumber: '02',
@@ -5597,7 +5597,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'TELIKOM PNG LIMITED',
 		companyURLs: ['http://telikompng.com.pg'],
 	},
-	'8967503': {
+	'67503': {
 		iin: 8967503,
 		countryCode: 675,
 		issuerIdentifierNumber: '03',
@@ -5605,7 +5605,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Digicel (PNG) Ltd',
 		companyURLs: ['http://digicelgroup.com'],
 	},
-	'8967601': {
+	'67601': {
 		iin: 8967601,
 		countryCode: 676,
 		issuerIdentifierNumber: '01',
@@ -5613,7 +5613,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tonga Communications Corporation Ltd. (TCC)',
 		companyURLs: ['http://kalianet.to'],
 	},
-	'8967801': {
+	'67801': {
 		iin: 8967801,
 		countryCode: 678,
 		issuerIdentifierNumber: '01',
@@ -5621,7 +5621,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom Vanuatu Ltd',
 		companyURLs: ['http://tvl.net.vu'],
 	},
-	'8967805': {
+	'67805': {
 		iin: 8967805,
 		countryCode: 678,
 		issuerIdentifierNumber: '05',
@@ -5629,7 +5629,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Digicel Vanuatu',
 		companyURLs: ['http://digicelgroup.com'],
 	},
-	'8967901': {
+	'67901': {
 		iin: 8967901,
 		countryCode: 679,
 		issuerIdentifierNumber: '01',
@@ -5637,14 +5637,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Fiji Pte Limited',
 		companyURLs: ['http://vodafone.com.fj'],
 	},
-	'8967902': {
+	'67902': {
 		iin: 8967902,
 		countryCode: 679,
 		issuerIdentifierNumber: '02',
 		countryName: 'Fiji',
 		companyName: 'Digicel (Fiji) Pte Limited',
 	},
-	'8968000': {
+	'68000': {
 		iin: 8968000,
 		countryCode: 680,
 		issuerIdentifierNumber: '00',
@@ -5653,7 +5653,7 @@ export const e118IINList: IssuerList = {
 			'Palau Communication and Electronics Company dba Palau Telecoms',
 		companyURLs: ['http://palautelecoms.com'],
 	},
-	'8968001': {
+	'68001': {
 		iin: 8968001,
 		countryCode: 680,
 		issuerIdentifierNumber: '01',
@@ -5661,7 +5661,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Palau National Communications Corporation',
 		companyURLs: ['http://pnccpalau.com'],
 	},
-	'8968099': {
+	'68099': {
 		iin: 8968099,
 		countryCode: 680,
 		issuerIdentifierNumber: '99',
@@ -5669,7 +5669,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Palau Mobile Communications Inc.',
 		companyURLs: ['http://pmci.pw'],
 	},
-	'8968502': {
+	'68502': {
 		iin: 8968502,
 		countryCode: 685,
 		issuerIdentifierNumber: '02',
@@ -5677,7 +5677,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Office of the Regulator',
 		companyURLs: ['http://regulator.gov.ws'],
 	},
-	'8968701': {
+	'68701': {
 		iin: 8968701,
 		countryCode: 687,
 		issuerIdentifierNumber: '01',
@@ -5685,14 +5685,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Office des Postes et des Télécommunications (OPT)',
 		companyURLs: ['http://opt.nc'],
 	},
-	'8968901': {
+	'68901': {
 		iin: 8968901,
 		countryCode: 689,
 		issuerIdentifierNumber: '01',
 		countryName: 'French Polynesia',
 		companyName: 'Tikiphone',
 	},
-	'8968915': {
+	'68915': {
 		iin: 8968915,
 		countryCode: 689,
 		issuerIdentifierNumber: '15',
@@ -5700,7 +5700,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Pacific Mobile Telecom',
 		companyURLs: ['http://pmtgrp.com'],
 	},
-	'8969101': {
+	'69101': {
 		iin: 8969101,
 		countryCode: 691,
 		issuerIdentifierNumber: '01',
@@ -5708,7 +5708,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'FSM Telecommunication Corporation',
 		companyURLs: ['http://telecom.fm'],
 	},
-	'8969201': {
+	'69201': {
 		iin: 8969201,
 		countryCode: 692,
 		issuerIdentifierNumber: '01',
@@ -5716,14 +5716,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Marshall Islands National Telecommunications Authority',
 		companyURLs: ['http://ntamar.net'],
 	},
-	'8985001': {
+	'85001': {
 		iin: 8985001,
 		countryCode: 850,
 		issuerIdentifierNumber: '01',
 		countryName: "Dem. People's Rep. of Korea",
 		companyName: 'North East Asia Telephone and Telecommunications Co. Ltd.',
 	},
-	'8985200': {
+	'85200': {
 		iin: 8985200,
 		countryCode: 852,
 		issuerIdentifierNumber: '00',
@@ -5731,7 +5731,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985201': {
+	'85201': {
 		iin: 8985201,
 		countryCode: 852,
 		issuerIdentifierNumber: '01',
@@ -5739,7 +5739,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'CITIC TELECOM INTERNATIONAL LIMITED',
 		companyURLs: ['http://citictel.com'],
 	},
-	'8985203': {
+	'85203': {
 		iin: 8985203,
 		countryCode: 852,
 		issuerIdentifierNumber: '03',
@@ -5747,7 +5747,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison Telephone Company Limited',
 		companyURLs: ['http://hthk.com'],
 	},
-	'8985204': {
+	'85204': {
 		iin: 8985204,
 		countryCode: 852,
 		issuerIdentifierNumber: '04',
@@ -5755,7 +5755,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison Telephone Company Limited',
 		companyURLs: ['http://hthk.com'],
 	},
-	'8985206': {
+	'85206': {
 		iin: 8985206,
 		countryCode: 852,
 		issuerIdentifierNumber: '06',
@@ -5763,7 +5763,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SmarTone Mobile Communications Limited',
 		companyURLs: ['http://smartone.com'],
 	},
-	'8985207': {
+	'85207': {
 		iin: 8985207,
 		countryCode: 852,
 		issuerIdentifierNumber: '07',
@@ -5771,7 +5771,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'China Unicom (Hong Kong) Operations Limited',
 		companyURLs: ['http://chinaunicom.cn'],
 	},
-	'8985210': {
+	'85210': {
 		iin: 8985210,
 		countryCode: 852,
 		issuerIdentifierNumber: '10',
@@ -5779,7 +5779,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985211': {
+	'85211': {
 		iin: 8985211,
 		countryCode: 852,
 		issuerIdentifierNumber: '11',
@@ -5787,7 +5787,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'China-Hongkong Telecom Limited',
 		companyURLs: ['http://chkt.hk'],
 	},
-	'8985212': {
+	'85212': {
 		iin: 8985212,
 		countryCode: 852,
 		issuerIdentifierNumber: '12',
@@ -5795,7 +5795,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'China Mobile Hong Kong Company Limited',
 		companyURLs: ['http://hk.chinamobile.com'],
 	},
-	'8985216': {
+	'85216': {
 		iin: 8985216,
 		countryCode: 852,
 		issuerIdentifierNumber: '16',
@@ -5803,7 +5803,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985218': {
+	'85218': {
 		iin: 8985218,
 		countryCode: 852,
 		issuerIdentifierNumber: '18',
@@ -5811,7 +5811,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985219': {
+	'85219': {
 		iin: 8985219,
 		countryCode: 852,
 		issuerIdentifierNumber: '19',
@@ -5819,7 +5819,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985221': {
+	'85221': {
 		iin: 8985221,
 		countryCode: 852,
 		issuerIdentifierNumber: '21',
@@ -5827,7 +5827,7 @@ export const e118IINList: IssuerList = {
 		companyName: '21Vianet Group Limited',
 		companyURLs: ['http://21vianet.com'],
 	},
-	'8985224': {
+	'85224': {
 		iin: 8985224,
 		countryCode: 852,
 		issuerIdentifierNumber: '24',
@@ -5835,7 +5835,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Multibyte Info Technology Limited',
 		companyURLs: ['http://multi-byte.com'],
 	},
-	'8985230': {
+	'85230': {
 		iin: 8985230,
 		countryCode: 852,
 		issuerIdentifierNumber: '30',
@@ -5844,7 +5844,7 @@ export const e118IINList: IssuerList = {
 			'PCCW-HKT Telephone Limited and Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985231': {
+	'85231': {
 		iin: 8985231,
 		countryCode: 852,
 		issuerIdentifierNumber: '31',
@@ -5852,7 +5852,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'China Telecom Global Limited',
 		companyURLs: ['http://chinatelecomglobal.com'],
 	},
-	'8985234': {
+	'85234': {
 		iin: 8985234,
 		countryCode: 852,
 		issuerIdentifierNumber: '34',
@@ -5860,7 +5860,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'China Mobile International Limited',
 		companyURLs: ['http://cmi.chinamobile.com'],
 	},
-	'8985235': {
+	'85235': {
 		iin: 8985235,
 		countryCode: 852,
 		issuerIdentifierNumber: '35',
@@ -5868,7 +5868,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Webbing Hong Kong Limited',
 		companyURLs: ['http://iamwebbing.com'],
 	},
-	'8985268': {
+	'85268': {
 		iin: 8985268,
 		countryCode: 852,
 		issuerIdentifierNumber: '68',
@@ -5876,7 +5876,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'HGC Global Communications Limited',
 		companyURLs: ['http://hgc.com.hk'],
 	},
-	'8985269': {
+	'85269': {
 		iin: 8985269,
 		countryCode: 852,
 		issuerIdentifierNumber: '69',
@@ -5884,7 +5884,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'HKBN Enterprise Solutions Limited',
 		companyURLs: ['http://hkbn.com.hk'],
 	},
-	'8985277': {
+	'85277': {
 		iin: 8985277,
 		countryCode: 852,
 		issuerIdentifierNumber: '77',
@@ -5892,7 +5892,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'WTT HK Limited',
 		companyURLs: ['http://wtthk.com'],
 	},
-	'8985280': {
+	'85280': {
 		iin: 8985280,
 		countryCode: 852,
 		issuerIdentifierNumber: '80',
@@ -5901,7 +5901,7 @@ export const e118IINList: IssuerList = {
 			'PCCW-HKT Telephone Limited and Hong Kong Telecommunications (HKT) Limited',
 		companyURLs: ['http://pccw.com'],
 	},
-	'8985300': {
+	'85300': {
 		iin: 8985300,
 		countryCode: 853,
 		issuerIdentifierNumber: '00',
@@ -5909,7 +5909,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'SmarTone – Comunicações Móveis, S.A.',
 		companyURLs: ['http://smartone.com'],
 	},
-	'8985301': {
+	'85301': {
 		iin: 8985301,
 		countryCode: 853,
 		issuerIdentifierNumber: '01',
@@ -5917,7 +5917,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Companhia de Telecomunicações de Macau, S.A.R.L.',
 		companyURLs: ['http://ctm.com.mo'],
 	},
-	'8985303': {
+	'85303': {
 		iin: 8985303,
 		countryCode: 853,
 		issuerIdentifierNumber: '03',
@@ -5925,14 +5925,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Hutchison – Telefone (Macau), Limitada',
 		companyURLs: ['http://htmac.com'],
 	},
-	'8985501': {
+	'85501': {
 		iin: 8985501,
 		countryCode: 855,
 		issuerIdentifierNumber: '01',
 		countryName: 'Cambodia',
 		companyName: 'CAMGSM',
 	},
-	'8985608': {
+	'85608': {
 		iin: 8985608,
 		countryCode: 856,
 		issuerIdentifierNumber: '08',
@@ -5940,7 +5940,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Millicom Lao Company Ltd',
 		companyURLs: ['http://bigpond.com.kh'],
 	},
-	'8987099': {
+	'87099': {
 		iin: 8987099,
 		countryCode: 870,
 		issuerIdentifierNumber: '99',
@@ -5948,35 +5948,35 @@ export const e118IINList: IssuerList = {
 		companyName: 'Inmarsat Ltd',
 		companyURLs: ['http://inmarsat.com'],
 	},
-	'8988210': {
+	'88210': {
 		iin: 8988210,
 		countryCode: 882,
 		issuerIdentifierNumber: '10',
 		countryName: 'International Network',
 		companyName: 'Global Office Application',
 	},
-	'8988212': {
+	'88212': {
 		iin: 8988212,
 		countryCode: 882,
 		issuerIdentifierNumber: '12',
 		countryName: 'International Network',
 		companyName: 'HyperStream International (HSI) Data Network',
 	},
-	'8988213': {
+	'88213': {
 		iin: 8988213,
 		countryCode: 882,
 		issuerIdentifierNumber: '13',
 		countryName: 'International Network',
 		companyName: 'EMS Regional Mobile Satellite System',
 	},
-	'8988215': {
+	'88215': {
 		iin: 8988215,
 		countryCode: 882,
 		issuerIdentifierNumber: '15',
 		countryName: 'International Network',
 		companyName: 'Global international ATM Network',
 	},
-	'8988216': {
+	'88216': {
 		iin: 8988216,
 		countryCode: 882,
 		issuerIdentifierNumber: '16',
@@ -5984,21 +5984,21 @@ export const e118IINList: IssuerList = {
 		companyName: 'Thuraya Satellite Telecommunications Company',
 		companyURLs: ['http://thuraya.com'],
 	},
-	'8988222': {
+	'88222': {
 		iin: 8988222,
 		countryCode: 882,
 		issuerIdentifierNumber: '22',
 		countryName: 'International Network',
 		companyName: 'Cable & Wireless Global Network',
 	},
-	'8988223': {
+	'88223': {
 		iin: 8988223,
 		countryCode: 882,
 		issuerIdentifierNumber: '23',
 		countryName: 'International Network',
 		companyName: 'Sita-Equant Network',
 	},
-	'8988228': {
+	'88228': {
 		iin: 8988228,
 		countryCode: 882,
 		issuerIdentifierNumber: '28',
@@ -6006,56 +6006,56 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telekom Deutschland GmbH',
 		companyURLs: ['http://telekom.de'],
 	},
-	'8988231': {
+	'88231': {
 		iin: 8988231,
 		countryCode: 882,
 		issuerIdentifierNumber: '31',
 		countryName: 'International Network',
 		companyName: 'Global International ATM Network',
 	},
-	'8988232': {
+	'88232': {
 		iin: 8988232,
 		countryCode: 882,
 		issuerIdentifierNumber: '32',
 		countryName: 'International Network',
 		companyName: 'MCP network',
 	},
-	'8988233': {
+	'88233': {
 		iin: 8988233,
 		countryCode: 882,
 		issuerIdentifierNumber: '33',
 		countryName: 'International Network',
 		companyName: 'Oration Technologies Network',
 	},
-	'8988234': {
+	'88234': {
 		iin: 8988234,
 		countryCode: 882,
 		issuerIdentifierNumber: '34',
 		countryName: 'International Network',
 		companyName: 'BebbiCell AG',
 	},
-	'8988235': {
+	'88235': {
 		iin: 8988235,
 		countryCode: 882,
 		issuerIdentifierNumber: '35',
 		countryName: 'International Network',
 		companyName: 'Cisco Systems, Inc.',
 	},
-	'8988236': {
+	'88236': {
 		iin: 8988236,
 		countryCode: 882,
 		issuerIdentifierNumber: '36',
 		countryName: 'International Network',
 		companyName: 'Jersey Telecom',
 	},
-	'8988237': {
+	'88237': {
 		iin: 8988237,
 		countryCode: 882,
 		issuerIdentifierNumber: '37',
 		countryName: 'International Network',
 		companyName: 'Cingular Wireless network',
 	},
-	'8988239': {
+	'88239': {
 		iin: 8988239,
 		countryCode: 882,
 		issuerIdentifierNumber: '39',
@@ -6063,56 +6063,56 @@ export const e118IINList: IssuerList = {
 		companyName: 'Vodafone Group Services Ltd',
 		companyURLs: ['http://vodafone.com'],
 	},
-	'8988241': {
+	'88241': {
 		iin: 8988241,
 		countryCode: 882,
 		issuerIdentifierNumber: '41',
 		countryName: 'International Network',
 		companyName: 'Intermatica',
 	},
-	'8988245': {
+	'88245': {
 		iin: 8988245,
 		countryCode: 882,
 		issuerIdentifierNumber: '45',
 		countryName: 'International Network',
 		companyName: 'Telecom Italia',
 	},
-	'8988246': {
+	'88246': {
 		iin: 8988246,
 		countryCode: 882,
 		issuerIdentifierNumber: '46',
 		countryName: 'International Network',
 		companyName: 'Tyntec Limited',
 	},
-	'8988247': {
+	'88247': {
 		iin: 8988247,
 		countryCode: 882,
 		issuerIdentifierNumber: '47',
 		countryName: 'International Network',
 		companyName: 'Transatel',
 	},
-	'8988248': {
+	'88248': {
 		iin: 8988248,
 		countryCode: 882,
 		issuerIdentifierNumber: '48',
 		countryName: 'International Network',
 		companyName: 'EchoStar Mobile Limited',
 	},
-	'8988249': {
+	'88249': {
 		iin: 8988249,
 		countryCode: 882,
 		issuerIdentifierNumber: '49',
 		countryName: 'International Network',
 		companyName: 'Monaco Telecom',
 	},
-	'8988250': {
+	'88250': {
 		iin: 8988250,
 		countryCode: 882,
 		issuerIdentifierNumber: '50',
 		countryName: 'International Network',
 		companyName: 'Phonegroup SA',
 	},
-	'8988280': {
+	'88280': {
 		iin: 8988280,
 		countryCode: 882,
 		issuerIdentifierNumber: '80',
@@ -6120,21 +6120,21 @@ export const e118IINList: IssuerList = {
 		companyName: '1NCE GmbH',
 		companyURLs: ['http://1nce.com'],
 	},
-	'8988297': {
+	'88297': {
 		iin: 8988297,
 		countryCode: 882,
 		issuerIdentifierNumber: '97',
 		countryName: 'International Network',
 		companyName: 'Smart Communications Inc',
 	},
-	'8988298': {
+	'88298': {
 		iin: 8988298,
 		countryCode: 882,
 		issuerIdentifierNumber: '98',
 		countryName: 'International Network',
 		companyName: 'Onair GSM services',
 	},
-	'8988299': {
+	'88299': {
 		iin: 8988299,
 		countryCode: 882,
 		issuerIdentifierNumber: '99',
@@ -6142,7 +6142,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'AeroMobile AS',
 		companyURLs: ['http://aeromobile.net'],
 	},
-	'8988301': {
+	'88301': {
 		iin: 8988301,
 		countryCode: 883,
 		issuerIdentifierNumber: '01',
@@ -6150,7 +6150,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Orange',
 		companyURLs: ['http://orange.com'],
 	},
-	'8988303': {
+	'88303': {
 		iin: 8988303,
 		countryCode: 883,
 		issuerIdentifierNumber: '03',
@@ -6158,7 +6158,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'EMnify GmbH',
 		companyURLs: ['http://emnify.com'],
 	},
-	'8988304': {
+	'88304': {
 		iin: 8988304,
 		countryCode: 883,
 		issuerIdentifierNumber: '04',
@@ -6166,7 +6166,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Com4 Sweden AB',
 		companyURLs: ['http://com4.se'],
 	},
-	'8988305': {
+	'88305': {
 		iin: 8988305,
 		countryCode: 883,
 		issuerIdentifierNumber: '05',
@@ -6174,7 +6174,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'MTX Connect Ltd',
 		companyURLs: ['http://mtxc.eu'],
 	},
-	'8988306': {
+	'88306': {
 		iin: 8988306,
 		countryCode: 883,
 		issuerIdentifierNumber: '06',
@@ -6182,28 +6182,28 @@ export const e118IINList: IssuerList = {
 		companyName: 'Telecom26 AG',
 		companyURLs: ['http://telecom26.ch'],
 	},
-	'8996001': {
+	'96001': {
 		iin: 8996001,
 		countryCode: 960,
 		issuerIdentifierNumber: '01',
 		countryName: 'Maldives',
 		companyName: 'Dhivehi Raajjey Ge Gulhun Private Ltd. (DHIRAAGU)',
 	},
-	'8996101': {
+	'96101': {
 		iin: 8996101,
 		countryCode: 961,
 		issuerIdentifierNumber: '01',
 		countryName: 'Lebanon',
 		companyName: 'FTML, S.A.L.',
 	},
-	'8996103': {
+	'96103': {
 		iin: 8996103,
 		countryCode: 961,
 		issuerIdentifierNumber: '03',
 		countryName: 'Lebanon',
 		companyName: 'Libancell',
 	},
-	'8996105': {
+	'96105': {
 		iin: 8996105,
 		countryCode: 961,
 		issuerIdentifierNumber: '05',
@@ -6211,7 +6211,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Ogero Telecom',
 		companyURLs: ['http://ogero.gov.lb'],
 	},
-	'8996277': {
+	'96277': {
 		iin: 8996277,
 		countryCode: 962,
 		issuerIdentifierNumber: '77',
@@ -6219,7 +6219,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Petra Jordanian Mobile Telecommunications Company - Orange',
 		companyURLs: ['http://orange.com'],
 	},
-	'8996405': {
+	'96405': {
 		iin: 8996405,
 		countryCode: 964,
 		issuerIdentifierNumber: '05',
@@ -6227,7 +6227,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Asiacell Communications LLC',
 		companyURLs: ['http://asiacell.com'],
 	},
-	'8996420': {
+	'96420': {
 		iin: 8996420,
 		countryCode: 964,
 		issuerIdentifierNumber: '20',
@@ -6235,7 +6235,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Zain Iraq (previously Atheer)',
 		companyURLs: ['http://iq.zain.com'],
 	},
-	'8996430': {
+	'96430': {
 		iin: 8996430,
 		countryCode: 964,
 		issuerIdentifierNumber: '30',
@@ -6243,7 +6243,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Zain Iraq (previously Iraqna)',
 		companyURLs: ['http://iq.zain.com'],
 	},
-	'8996440': {
+	'96440': {
 		iin: 8996440,
 		countryCode: 964,
 		issuerIdentifierNumber: '40',
@@ -6251,7 +6251,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Korek Telecom',
 		companyURLs: ['http://korektel.com'],
 	},
-	'8996504': {
+	'96504': {
 		iin: 8996504,
 		countryCode: 965,
 		issuerIdentifierNumber: '04',
@@ -6259,14 +6259,14 @@ export const e118IINList: IssuerList = {
 		companyName: 'Kuwait Telecom Company (VIVA)',
 		companyURLs: ['http://stc.com.sa'],
 	},
-	'8996800': {
+	'96800': {
 		iin: 8996800,
 		countryCode: 968,
 		issuerIdentifierNumber: '00',
 		countryName: 'Oman',
 		companyName: 'Oman Mobile Telecommunication Company LLC',
 	},
-	'8997202': {
+	'97202': {
 		iin: 8997202,
 		countryCode: 972,
 		issuerIdentifierNumber: '02',
@@ -6274,7 +6274,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cellcom Israel Ltd',
 		companyURLs: ['http://cellcom.co.il'],
 	},
-	'8997203': {
+	'97203': {
 		iin: 8997203,
 		countryCode: 972,
 		issuerIdentifierNumber: '03',
@@ -6282,7 +6282,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Cellcom Israel Ltd',
 		companyURLs: ['http://cellcom.co.il'],
 	},
-	'8997208': {
+	'97208': {
 		iin: 8997208,
 		countryCode: 972,
 		issuerIdentifierNumber: '08',
@@ -6290,7 +6290,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Golan Telecom Ltd',
 		companyURLs: ['http://golantelecom.co.il'],
 	},
-	'8997250': {
+	'97250': {
 		iin: 8997250,
 		countryCode: 972,
 		issuerIdentifierNumber: '50',
@@ -6298,7 +6298,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Pelephone Communications Ltd',
 		companyURLs: ['http://pelephone.co.il'],
 	},
-	'8997301': {
+	'97301': {
 		iin: 8997301,
 		countryCode: 973,
 		issuerIdentifierNumber: '01',
@@ -6306,7 +6306,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bahrain Telecommunications Company (BATELCO)',
 		companyURLs: ['http://btc.com.bh'],
 	},
-	'8997302': {
+	'97302': {
 		iin: 8997302,
 		countryCode: 973,
 		issuerIdentifierNumber: '02',
@@ -6314,7 +6314,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Zain Bahrain',
 		companyURLs: ['http://bh.zain.com'],
 	},
-	'8997400': {
+	'97400': {
 		iin: 8997400,
 		countryCode: 974,
 		issuerIdentifierNumber: '00',
@@ -6322,7 +6322,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Qatar Telecom Q.S.C.',
 		companyURLs: ['http://qtel.com.qa'],
 	},
-	'8997511': {
+	'97511': {
 		iin: 8997511,
 		countryCode: 975,
 		issuerIdentifierNumber: '11',
@@ -6330,7 +6330,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Bhutan Telecom Limited',
 		companyURLs: ['http://bt.bt'],
 	},
-	'8997577': {
+	'97577': {
 		iin: 8997577,
 		countryCode: 975,
 		issuerIdentifierNumber: '77',
@@ -6338,7 +6338,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Tashi Infocomm Ltd',
 		companyURLs: ['http://gmail.com', 'http://tashicell.com'],
 	},
-	'8997606': {
+	'97606': {
 		iin: 8997606,
 		countryCode: 976,
 		issuerIdentifierNumber: '06',
@@ -6346,7 +6346,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'G-Mobile Corporation',
 		companyURLs: ['http://g-mobile.mn'],
 	},
-	'8997702': {
+	'97702': {
 		iin: 8997702,
 		countryCode: 977,
 		issuerIdentifierNumber: '02',
@@ -6354,7 +6354,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Spice Nepal Private Ltd.',
 		companyURLs: ['http://mall.com.np'],
 	},
-	'8999401': {
+	'99401': {
 		iin: 8999401,
 		countryCode: 994,
 		issuerIdentifierNumber: '01',
@@ -6362,7 +6362,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Azercell Telecom LLC',
 		companyURLs: ['http://azercell.com'],
 	},
-	'8999403': {
+	'99403': {
 		iin: 8999403,
 		countryCode: 994,
 		issuerIdentifierNumber: '03',
@@ -6370,7 +6370,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Caspian American Telecom LLC',
 		companyURLs: ['http://catel.az'],
 	},
-	'8999404': {
+	'99404': {
 		iin: 8999404,
 		countryCode: 994,
 		issuerIdentifierNumber: '04',
@@ -6378,7 +6378,7 @@ export const e118IINList: IssuerList = {
 		companyName: 'Azerfon LLC',
 		companyURLs: ['http://azerfon.az'],
 	},
-	'8999405': {
+	'99405': {
 		iin: 8999405,
 		countryCode: 994,
 		issuerIdentifierNumber: '05',
@@ -6387,7 +6387,7 @@ export const e118IINList: IssuerList = {
 			'Special State Protection Service of the Republic of Azerbaijan',
 		companyURLs: ['http://dmx.gov.az'],
 	},
-	'8999406': {
+	'99406': {
 		iin: 8999406,
 		countryCode: 994,
 		issuerIdentifierNumber: '06',
@@ -6395,7 +6395,7 @@ export const e118IINList: IssuerList = {
 		companyName: '"Nakhtel" LLC',
 		companyURLs: ['http://nakhchivan.az'],
 	},
-	'8999501': {
+	'99501': {
 		iin: 8999501,
 		countryCode: 995,
 		issuerIdentifierNumber: '01',
@@ -6403,175 +6403,175 @@ export const e118IINList: IssuerList = {
 		companyName: 'Geocell LLC',
 		companyURLs: ['http://geocell.ge'],
 	},
-	'8999601': {
+	'99601': {
 		iin: 8999601,
 		countryCode: 996,
 		issuerIdentifierNumber: '01',
 		countryName: 'Kyrgyzstan',
 		companyName: 'Bitel Ltd',
 	},
-	'8999701': {
+	'99701': {
 		iin: 8999701,
 		countryCode: 997,
 		issuerIdentifierNumber: '01',
 		countryName: 'Kazakhstan',
 		companyName: 'Kar-Tel Ltd',
 	},
-	'8999801': {
+	'99801': {
 		iin: 8999801,
 		countryCode: 998,
 		issuerIdentifierNumber: '01',
 		countryName: 'Uzbekistan',
 		companyName: 'Buztel',
 	},
-	'8999804': {
+	'99804': {
 		iin: 8999804,
 		countryCode: 998,
 		issuerIdentifierNumber: '04',
 		countryName: 'Uzbekistan',
 		companyName: 'Daewoo Central Paging Company',
 	},
-	'89883100': {
+	'883100': {
 		iin: 89883100,
 		countryCode: 883,
 		issuerIdentifierNumber: '100',
 		countryName: 'International Network',
 		companyName: 'MediaLincc Ltd',
 	},
-	'89883110': {
+	'883110': {
 		iin: 89883110,
 		countryCode: 883,
 		issuerIdentifierNumber: '110',
 		countryName: 'International Network',
 		companyName: 'Syniverse Technologies, LLC',
 	},
-	'89883120': {
+	'883120': {
 		iin: 89883120,
 		countryCode: 883,
 		issuerIdentifierNumber: '120',
 		countryName: 'International Network',
 		companyName: 'Telenor Connexion AB',
 	},
-	'89883130': {
+	'883130': {
 		iin: 89883130,
 		countryCode: 883,
 		issuerIdentifierNumber: '130',
 		countryName: 'International Network',
 		companyName: 'Orange',
 	},
-	'89883140': {
+	'883140': {
 		iin: 89883140,
 		countryCode: 883,
 		issuerIdentifierNumber: '140',
 		countryName: 'International Network',
 		companyName: 'Multiregional TransitTelecom (MTT)',
 	},
-	'89883150': {
+	'883150': {
 		iin: 89883150,
 		countryCode: 883,
 		issuerIdentifierNumber: '150',
 		countryName: 'International Network',
 		companyName: 'One Network B.V.',
 	},
-	'89883160': {
+	'883160': {
 		iin: 89883160,
 		countryCode: 883,
 		issuerIdentifierNumber: '160',
 		countryName: 'International Network',
 		companyName: 'DCN Hub ehf',
 	},
-	'89883170': {
+	'883170': {
 		iin: 89883170,
 		countryCode: 883,
 		issuerIdentifierNumber: '170',
 		countryName: 'International Network',
 		companyName: 'EMnify GmbH',
 	},
-	'89883180': {
+	'883180': {
 		iin: 89883180,
 		countryCode: 883,
 		issuerIdentifierNumber: '180',
 		countryName: 'International Network',
 		companyName: 'Ooredoo',
 	},
-	'89883190': {
+	'883190': {
 		iin: 89883190,
 		countryCode: 883,
 		issuerIdentifierNumber: '190',
 		countryName: 'International Network',
 		companyName: 'Com4 Sweden AB',
 	},
-	'89883200': {
+	'883200': {
 		iin: 89883200,
 		countryCode: 883,
 		issuerIdentifierNumber: '200',
 		countryName: 'International Network',
 		companyName: 'Manx Telecom Trading Ltd.',
 	},
-	'89883210': {
+	'883210': {
 		iin: 89883210,
 		countryCode: 883,
 		issuerIdentifierNumber: '210',
 		countryName: 'International Network',
 		companyName: 'Telecom26 AG',
 	},
-	'89883220': {
+	'883220': {
 		iin: 89883220,
 		countryCode: 883,
 		issuerIdentifierNumber: '220',
 		countryName: 'International Network',
 		companyName: 'Beezz Communication Solutions Ltd.',
 	},
-	'89883230': {
+	'883230': {
 		iin: 89883230,
 		countryCode: 883,
 		issuerIdentifierNumber: '230',
 		countryName: 'International Network',
 		companyName: 'SAP',
 	},
-	'89883240': {
+	'883240': {
 		iin: 89883240,
 		countryCode: 883,
 		issuerIdentifierNumber: '240',
 		countryName: 'International Network',
 		companyName: 'BICS SA',
 	},
-	'89883250': {
+	'883250': {
 		iin: 89883250,
 		countryCode: 883,
 		issuerIdentifierNumber: '250',
 		countryName: 'International Network',
 		companyName: 'MessageBird B.V.',
 	},
-	'89883260': {
+	'883260': {
 		iin: 89883260,
 		countryCode: 883,
 		issuerIdentifierNumber: '260',
 		countryName: 'International Network',
 		companyName: 'Twilio Inc.',
 	},
-	'89883270': {
+	'883270': {
 		iin: 89883270,
 		countryCode: 883,
 		issuerIdentifierNumber: '270',
 		countryName: 'International Network',
 		companyName: 'GloTell B.V.',
 	},
-	'89883280': {
+	'883280': {
 		iin: 89883280,
 		countryCode: 883,
 		issuerIdentifierNumber: '280',
 		countryName: 'International Network',
 		companyName: 'Plintron Global Technology Solutions Private Limited',
 	},
-	'89883290': {
+	'883290': {
 		iin: 89883290,
 		countryCode: 883,
 		issuerIdentifierNumber: '290',
 		countryName: 'International Network',
 		companyName: 'Limitless Mobile, LLC',
 	},
-	'89883300': {
+	'883300': {
 		iin: 89883300,
 		countryCode: 883,
 		issuerIdentifierNumber: '300',
@@ -6579,70 +6579,70 @@ export const e118IINList: IssuerList = {
 		companyName: '1NCE GmbH',
 		companyURLs: ['http://1nce.com'],
 	},
-	'89883310': {
+	'883310': {
 		iin: 89883310,
 		countryCode: 883,
 		issuerIdentifierNumber: '310',
 		countryName: 'International Network',
 		companyName: 'Clementvale Baltic OÜ',
 	},
-	'898835100': {
+	'8835100': {
 		iin: 898835100,
 		countryCode: 883,
 		issuerIdentifierNumber: '5100',
 		countryName: 'International Network',
 		companyName: 'Voxbone SA',
 	},
-	'898835110': {
+	'8835110': {
 		iin: 898835110,
 		countryCode: 883,
 		issuerIdentifierNumber: '5110',
 		countryName: 'International Network',
 		companyName: 'Bandwidth.com Inc',
 	},
-	'898835120': {
+	'8835120': {
 		iin: 898835120,
 		countryCode: 883,
 		issuerIdentifierNumber: '5120',
 		countryName: 'International Network',
 		companyName: 'MTX Connect Ltd',
 	},
-	'898835130': {
+	'8835130': {
 		iin: 898835130,
 		countryCode: 883,
 		issuerIdentifierNumber: '5130',
 		countryName: 'International Network',
 		companyName: 'SIPME Ltd',
 	},
-	'898835140': {
+	'8835140': {
 		iin: 898835140,
 		countryCode: 883,
 		issuerIdentifierNumber: '5140',
 		countryName: 'International Network',
 		companyName: 'Ellipsat Inc',
 	},
-	'898835150': {
+	'8835150': {
 		iin: 898835150,
 		countryCode: 883,
 		issuerIdentifierNumber: '5150',
 		countryName: 'International Network',
 		companyName: 'Wins Limited',
 	},
-	'898835160': {
+	'8835160': {
 		iin: 898835160,
 		countryCode: 883,
 		issuerIdentifierNumber: '5160',
 		countryName: 'International Network',
 		companyName: 'Tel2tel kft.',
 	},
-	'898835170': {
+	'8835170': {
 		iin: 898835170,
 		countryCode: 883,
 		issuerIdentifierNumber: '5170',
 		countryName: 'International Network',
 		companyName: 'DIDWW',
 	},
-	'898835180': {
+	'8835180': {
 		iin: 898835180,
 		countryCode: 883,
 		issuerIdentifierNumber: '5180',
