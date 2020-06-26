@@ -41,4 +41,28 @@ describe('identifyIssuer', () => {
 	it('should not identify unknown issuers', () => {
 		expect(identifyIssuer('123456')).toEqual(none)
 	})
+	it('should identify US issuers which use leading 0', () => {
+		expect(identifyIssuer('8901260866666666666F')).toEqual(
+			some<Issuer>({
+				iin: 891260,
+				countryCode: 1,
+				issuerIdentifierNumber: '260',
+				countryName: 'United States',
+				companyName: 'T-Mobile USA',
+				companyURLs: ['http://t-mobile.com'],
+			}),
+		)
+	})
+	it('should identify US issuers without leading 0', () => {
+		expect(identifyIssuer('891260866666666666F')).toEqual(
+			some<Issuer>({
+				iin: 891260,
+				countryCode: 1,
+				issuerIdentifierNumber: '260',
+				countryName: 'United States',
+				companyName: 'T-Mobile USA',
+				companyURLs: ['http://t-mobile.com'],
+			}),
+		)
+	})
 })

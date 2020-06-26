@@ -52,17 +52,23 @@ fs.createReadStream('list.csv')
 						.map((email) => email.replace(/^.+@/, 'http://').toLowerCase())
 						.filter((url, k, urls) => urls.indexOf(url) === k)
 				}, undefined as undefined | string[])
-				return {
+				const cc = parseInt(countryCode, 10)
+				const result = {
 					...list,
 					[key]: [
 						iin,
 						issuerIdentifierNumber,
-						parseInt(countryCode, 10),
+						cc,
 						CountryGeographicalarea[0],
 						CompanyNameAddress[0],
 						companyURLs ?? [],
 					],
 				}
+				if (cc === 1) {
+					// USA: Some vendors prefix the 1 with a 0 in the ICCID
+					result[`0${key}`] = result[key]
+				}
+				return result as IssuerList
 			},
 			{} as IssuerList,
 		)
