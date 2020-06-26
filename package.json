@@ -28,20 +28,20 @@
   },
   "homepage": "https://github.com/cellprobe/e118-iin-list#readme",
   "dependencies": {
-    "fp-ts": "^2.5.4"
+    "fp-ts": "^2.6.6"
   },
   "devDependencies": {
-    "@bifravst/code-style": "^7.1.10",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-angular": "^8.3.4",
+    "@bifravst/code-style": "^8.0.3",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-angular": "^9.0.1",
     "@types/aws-sdk": "^2.7.0",
-    "@types/jest": "^25.2.1",
-    "@types/node": "^13.13.4",
-    "csv-parser": "^2.3.2",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "csv-parser": "^2.3.3",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "ts-jest": "^25.4.0",
-    "typescript": "^3.8.3"
+    "jest": "^26.1.0",
+    "ts-jest": "^26.1.1",
+    "typescript": "^3.9.5"
   },
   "husky": {
     "hooks": {
