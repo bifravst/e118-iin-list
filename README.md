@@ -58,6 +58,9 @@ You can identify issuers directly from your command line:
       "companyName": "Telia Sonera A/S"
     }
 
+> _Note:_ if your ICCID is not recognized, please open a new issue
+> [in this repository](https://github.com/cellprobe/e118-iin-list/issues/new).
+
 ## ITU-T Recommendation E.118 Card numbering structure ([Source](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items))
 
 The numbering of the card to be issued by OAs shall be as follows based on
