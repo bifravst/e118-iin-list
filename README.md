@@ -12,7 +12,7 @@ charge card
 ([ITU-T E.118](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items)).
 
 Up-to-date with
-[Operational Bulletin No. 1195 (1.V.2020)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1195-2020)
+[Operational Bulletin No. 1237 (1.II.2022)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1237-2022)
 and also includes
 [E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
 (which has some overlapping entries).
@@ -103,7 +103,8 @@ Process:
    and copy and past the table into a Google Spreadsheet
 2. Download the operational bulletins from https://www.itu.int/pub/T-SP-OB and
    incorporate the changes into the spreadsheet
-3. Export list of shared country codes (E.164) and filter out `CRS` records
-   (inactive), add to the spreadsheet
+3. Export list of shared country codes (E.164) from
+   http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883 and
+   filter out `CRS` records (inactive), add to the spreadsheet
 4. Export that to CSV and store it as `list.csv`
 5. Convert to JSON using `npm run convert`
