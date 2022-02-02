@@ -1,6 +1,5 @@
-import { Option, none, some } from 'fp-ts/lib/Option'
-import { Issuer } from './types'
-import { iinRegEx, e118IINList } from './list'
+import type { Issuer } from './types'
+import { iinRegEx, e118IINList } from './list.js'
 
 /**
  * Identifies a SIM card issuer by the given ICCID

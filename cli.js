@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-const { identifyIssuer } = require('./')
-const { isSome } = require('fp-ts/lib/Option')
+import { identifyIssuer } from './dist/identifyIssuer.js'
 
 const iccid = process.argv[process.argv.length - 1]
 

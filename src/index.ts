@@ -1,3 +1,2 @@
-export * from './list'
-export * from './types'
-export * from './identifyIssuer'
+export * from './identifyIssuer.js'
+export * from './list.js'

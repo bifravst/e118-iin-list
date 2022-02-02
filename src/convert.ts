@@ -1,8 +1,8 @@
-import * as csv from 'csv-parser'
+import csv from 'csv-parser'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as prettier from 'prettier'
-import { IssuerList } from './types'
+import type { IssuerList } from './types'
 
 type ParsedCSVEntry = {
 	CountryGeographicalarea: string[]
@@ -77,7 +77,7 @@ fs.createReadStream('list.csv')
 			prettier.format(
 				[
 					`/* Auto-generated file. Do not change! */`,
-					`import {IssuerList} from './types';`,
+					`import type { IssuerList } from './types';`,
 					`export const iinRegEx = /^89(${Object.keys(list).join('|')})/;`,
 					`export const e118IINList: IssuerList = ${JSON.stringify(
 						list,
