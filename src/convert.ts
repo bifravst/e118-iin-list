@@ -1,7 +1,7 @@
 import csv from 'csv-parser'
 import * as fs from 'fs'
 import * as path from 'path'
-import * as prettier from 'prettier'
+import prettier from 'prettier'
 import type { IssuerList } from './types'
 
 type ParsedCSVEntry = {
@@ -35,11 +35,8 @@ fs.createReadStream('list.csv')
 					Contact,
 				},
 			) => {
-				const [
-					,
-					countryCode,
-					issuerIdentifierNumber,
-				] = IssuerIdentifierNumber[0].split(' ')
+				const [, countryCode, issuerIdentifierNumber] =
+					IssuerIdentifierNumber[0].split(' ')
 				const iin = parseInt(IssuerIdentifierNumber[0].replace(/ /g, ''), 10)
 				const key = `${countryCode}${issuerIdentifierNumber}`
 				const emailRegEx = /e-mail ?: ?(.+)/i
