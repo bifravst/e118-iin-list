@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cellprobe/e118-iin-list.git"
+    "url": "git+https://github.com/NordicSemiconductor/e118-iin-list-js.git"
   },
   "keywords": [
-    "cellprobe",
+    "nrf-asset-tracker",
     "e.118",
     "ITU-T",
     "IIN",

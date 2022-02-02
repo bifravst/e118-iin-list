@@ -1,7 +1,7 @@
 # e118-iin-list [![npm version](https://img.shields.io/npm/v/e118-iin-list.svg)](https://www.npmjs.com/package/e118-iin-list)
 
-[![GitHub Actions](https://github.com/cellprobe/e118-iin-list/workflows/Test%20and%20Release/badge.svg)](https://github.com/cellprobe/e118-iin-list/actions)
-[![Mergify Status](https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/cellprobe/e118-iin-list&style=flat)](https://mergify.io)
+[![GitHub Actions](https://github.com/NordicSemiconductor/e118-iin-list-js/workflows/Test%20and%20Release/badge.svg)](https://github.com/NordicSemiconductor/e118-iin-list-js/actions)
+[![Mergify Status](https://img.shields.io/endpoint.svg?url=https://dashboard.mergify.io/badges/NordicSemiconductor/e118-iin-list-js&style=flat)](https://mergify.io)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
@@ -59,7 +59,7 @@ You can identify issuers directly from your command line:
     }
 
 > _Note:_ if your ICCID is not recognized, please open a new issue
-> [in this repository](https://github.com/cellprobe/e118-iin-list/issues/new).
+> [in this repository](https://github.com/NordicSemiconductor/e118-iin-list-js/issues/new).
 
 ## ITU-T Recommendation E.118 Card numbering structure ([Source](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items))
 
