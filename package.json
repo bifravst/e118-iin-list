@@ -10,7 +10,10 @@
   },
   "scripts": {
     "test": "jest",
-    "convert": "node dist/convert.js"
+    "convert": "node dist/convert.js",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "repository": {
     "type": "git",
@@ -27,30 +30,19 @@
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/cellprobe/e118-iin-list/issues"
+    "url": "https://github.com/NordicSemiconductor/e118-iin-list-js/issues"
   },
-  "homepage": "https://github.com/cellprobe/e118-iin-list#readme",
-  "dependencies": {
-    "fp-ts": "^2.6.6"
-  },
+  "homepage": "https://github.com/NordicSemiconductor/e118-iin-list-js#readme",
   "devDependencies": {
-    "@bifravst/code-style": "^8.0.3",
-    "@commitlint/cli": "^9.0.1",
-    "@commitlint/config-angular": "^9.0.1",
-    "@types/aws-sdk": "^2.7.0",
-    "@types/jest": "^26.0.3",
-    "@types/node": "^14.0.14",
-    "csv-parser": "^2.3.3",
-    "husky": "^4.2.5",
-    "jest": "^26.1.0",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.5"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e",
-      "pre-commit": "lint-staged && npx jest --onlyChanged"
-    }
+    "@commitlint/cli": "16.1.0",
+    "@commitlint/config-angular": "16.0.0",
+    "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.19",
+    "@types/jest": "27.4.0",
+    "@types/node": "17.0.14",
+    "csv-parser": "3.0.0",
+    "jest": "27.4.7",
+    "ts-jest": "27.1.3",
+    "typescript": "4.5.5"
   },
   "lint-staged": {
     "*.ts": [
@@ -62,8 +54,8 @@
     ]
   },
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+    "node": ">=16",
+    "npm": ">=8"
   },
   "release": {
     "branches": [
@@ -83,21 +75,16 @@
     "cli.js"
   ],
   "jest": {
-    "testURL": "http://localhost",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "json"
-    ],
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": ".+\\.spec\\.ts$",
+    "preset": "ts-jest/presets/default-esm",
     "globals": {
       "ts-jest": {
-        "diagnostics": true
+        "useESM": true
       }
-    }
-  }
+    },
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    },
+    "testRegex": ".+\\.spec\\.ts$"
+  },
+  "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc"
 }
