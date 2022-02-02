@@ -5,8 +5,8 @@ import { identifyIssuer } from './dist/identifyIssuer.js'
 const iccid = process.argv[process.argv.length - 1]
 
 const issuer = identifyIssuer(iccid)
-if (isSome(issuer)) {
-	console.log(JSON.stringify(issuer.value, null, 2))
+if (issuer !== undefined) {
+	console.log(JSON.stringify(issuer, null, 2))
 } else {
 	console.error(`The vendor of your ICCID "${iccid}" could not be identified!`)
 	console.error(

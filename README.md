@@ -37,11 +37,10 @@ determine the SIM issuer.
 
 ```typescript
 import { identifyIssuer } from "e118-iin-list";
-import { isSome } from "fp-ts/lib/Option";
 
 const issuer = identifyIssuer("89450421180216254864");
-if (isSome(issuer)) {
-  console.log(issuer.value.companyName); // Telia Sonera A/S
+if (issuer !== undefined) {
+  console.log(issuer.companyName); // Telia Sonera A/S
 }
 ```
 
