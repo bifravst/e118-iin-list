@@ -1,5 +1,7 @@
 {
-  "extends": ["@bifravst/eslint-config-typescript"],
+  "extends": [
+    "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript"
+  ],
   "rules": {
     "@typescript-eslint/indent": "off"
   }
