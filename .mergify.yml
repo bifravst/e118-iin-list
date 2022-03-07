@@ -1,16 +1,12 @@
 pull_request_rules:
-  - name: Automatic merge when all status checks pass
+  - name: Automatic merge security PRs when all status checks pass
     conditions:
-      - author~=^(snyk-bot|dependabot\[bot\])$
-      - status-success=security/snyk (Bifravst)
+      - author~=^(dependabot\[bot\]|renovate\[bot\])$
       - status-success=tests
     actions:
       merge:
         method: rebase
         rebase_fallback: squash
-        bot_account: bifravst-ci
       label:
         add:
           - mergify
-      rebase:
-        bot_account: bifravst-ci
