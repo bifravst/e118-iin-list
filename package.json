@@ -34,8 +34,8 @@
   },
   "homepage": "https://github.com/NordicSemiconductor/e118-iin-list-js#readme",
   "devDependencies": {
-    "@commitlint/cli": "16.2.3",
-    "@commitlint/config-angular": "16.2.3",
+    "@commitlint/cli": "16.2.4",
+    "@commitlint/config-angular": "16.2.4",
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.58",
     "@types/jest": "27.4.1",
     "@types/node": "17.0.14",
