@@ -1,0 +1,24 @@
+name: Sync issue labels from docs repository
+
+env:
+  GH_TOKEN: ${{ secrets.UPDATE_REPO_INFO_PAT }}
+
+on:
+  push:
+    branches: 
+      - saga
+    paths:
+      - ".github/workflows/sync-issue-labels.yaml"
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  sync_issue_labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Sync issue labels from docs repository
+        run: gh label clone NordicSemiconductor/asset-tracker-cloud-docs --force
