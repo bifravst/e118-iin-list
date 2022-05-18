@@ -5,11 +5,12 @@ env:
 
 on:
   push:
-    branches:
+    branches: 
       - saga
     paths:
       - "package.json"
       - ".github/workflows/update-repo-info.yaml"
+  workflow_dispatch:
 
 jobs:
   update_repo_info:
@@ -17,24 +18,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      # Currently ships with 2.3.0 which does not have repo edit
-      - name: Update GitHub CLI
-        run: |
-          curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-          echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-          sudo apt update
-          sudo apt install gh
-          gh --version
-
+        
       - name: Sync repository description
-        run:
-          gh repo edit --description "`cat package.json | jq -r '.description'`"
+        run: gh repo edit --description "`cat package.json | jq -r '.description'`"
 
       - name: Sync repository topics
-        run:
-          cat package.json | jq '.keywords[]' | xargs -I'{}' gh repo edit
-          --add-topic {}
+        run: cat package.json | jq '.keywords[]' | xargs -I'{}' gh repo edit --add-topic {}
 
       - name: Sync homepage
         run: gh repo edit --homepage "`cat package.json | jq -r '.homepage'`"
