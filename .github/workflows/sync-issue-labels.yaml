@@ -1,7 +1,10 @@
 name: Sync issue labels from docs repository
 
 env:
-  GH_TOKEN: ${{ secrets.UPDATE_REPO_INFO_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+permissions:
+  issues: write
 
 on:
   push:

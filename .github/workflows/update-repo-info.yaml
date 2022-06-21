@@ -1,7 +1,7 @@
 name: Sync repository info from package.json
 
 env:
-  GH_TOKEN: ${{ secrets.UPDATE_REPO_INFO_PAT }}
+  GITHUB_TOKEN: ${{ secrets.UPDATE_REPO_INFO_PAT }}
 
 on:
   push:
