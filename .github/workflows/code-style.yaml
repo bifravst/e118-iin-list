@@ -37,7 +37,7 @@ jobs:
         run: npx prettier --write ./
 
       - name: Check source code with eslint
-        run: npx eslint --fix --ext .js,.ts,.jsx,.tsx 'src/**'
+        run: npx eslint --fix --ext .js,.ts,.jsx,.tsx --ignore-path .gitignore ./
 
       - name: Commit changes
         run: |
