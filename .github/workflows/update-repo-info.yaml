@@ -5,7 +5,7 @@ env:
 
 on:
   push:
-    branches: 
+    branches:
       - saga
     paths:
       - "package.json"
@@ -18,12 +18,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Sync repository description
-        run: gh repo edit --description "`cat package.json | jq -r '.description'`"
+        run:
+          gh repo edit --description "`cat package.json | jq -r '.description'`"
 
       - name: Sync repository topics
-        run: cat package.json | jq '.keywords[]' | xargs -I'{}' gh repo edit --add-topic {}
+        run:
+          cat package.json | jq '.keywords[]' | xargs -I'{}' gh repo edit
+          --add-topic {}
 
       - name: Sync homepage
         run: gh repo edit --homepage "`cat package.json | jq -r '.homepage'`"

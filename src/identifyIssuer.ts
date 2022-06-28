@@ -1,5 +1,5 @@
+import { e118IINList, iinRegEx } from './list.js'
 import type { Issuer } from './types'
-import { iinRegEx, e118IINList } from './list.js'
 
 /**
  * Identifies a SIM card issuer by the given ICCID

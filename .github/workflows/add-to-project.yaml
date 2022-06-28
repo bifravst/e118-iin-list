@@ -1,7 +1,6 @@
 name: Add PRs to nRF Asset Tracker PR dashboard
 
 on:
-
   pull_request:
     types: opened
 env:
