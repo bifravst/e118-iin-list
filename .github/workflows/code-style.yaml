@@ -44,7 +44,7 @@ jobs:
           if ! git diff --exit-code --name-only; then
             echo "machine github.com login accesskey password ${{ secrets.GITHUB_TOKEN }}" > ~/.netrc
             git config --global user.email "actions@example.com"
-            git config --global user.name "GitHub Actions"
+            git config --global user.name "github-actions[bot]"
             git add -A
             git commit -m "style: auto-format source code"
             git push origin HEAD:${{ github.event.pull_request.head.ref }}
