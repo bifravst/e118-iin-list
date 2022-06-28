@@ -46,6 +46,6 @@ jobs:
             git config --global user.email "actions@example.com"
             git config --global user.name "GitHub Actions"
             git add -A
-            git commit -m "style: ensure source code is properly formatted"
+            git commit -m "style: auto-format source code"
             git push origin HEAD:${{ github.event.pull_request.head.ref }}
           fi
