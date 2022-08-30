@@ -38,7 +38,7 @@
     "@commitlint/config-angular": "17.1.0",
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.118",
     "@swc/jest": "0.2.22",
-    "@types/jest": "28.1.8",
+    "@types/jest": "29.0.0",
     "@types/node": "17.0.14",
     "csv-parser": "3.0.0",
     "jest": "29.0.1",
