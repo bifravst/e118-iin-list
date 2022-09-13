@@ -11,9 +11,7 @@
   "scripts": {
     "test": "jest",
     "convert": "node dist/convert.js",
-    "postinstall": "husky install",
-    "prepublishOnly": "pinst --disable",
-    "postpublish": "pinst --enable"
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
