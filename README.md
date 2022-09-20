@@ -11,11 +11,12 @@ List of issuer identification numbers for the international telecommunication
 charge card
 ([ITU-T E.118](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items)).
 
-Up-to-date with
-[Operational Bulletin No. 1237 (1.II.2022)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1237-2022)
-and also includes
-[E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
-(which has some overlapping entries).
+> **Note**  
+> Up-to-date with
+> [Operational Bulletin No. 1252 (15.IX.2022)](https://www.itu.int/pub/publications.aspx?parent=T-SP-OB.1252-2022)
+> and also includes
+> [E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
+> (which has some overlapping entries).
 
 Data source as
 [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing).
