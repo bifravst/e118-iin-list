@@ -6,7 +6,7 @@ on:
 
 jobs:
   assign_to_project:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Add to project
         uses: actions/add-to-project@main
