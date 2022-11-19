@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "17.2.0",
     "@commitlint/config-angular": "17.2.0",
-    "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.141",
+    "@nordicsemiconductor/asset-tracker-cloud-code-style": "11.0.142",
     "@swc/jest": "0.2.23",
     "@types/jest": "29.2.3",
     "@types/node": "18.11.9",
