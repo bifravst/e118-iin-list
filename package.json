@@ -40,7 +40,7 @@
     "@types/node": "18.15.11",
     "csv-parser": "3.0.0",
     "jest": "29.5.0",
-    "typescript": "5.0.2"
+    "typescript": "5.0.3"
   },
   "lint-staged": {
     "*.ts": [
