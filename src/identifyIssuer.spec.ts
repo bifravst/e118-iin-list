@@ -1,4 +1,4 @@
-import { identifyIssuer } from './identifyIssuer'
+import { identifyIssuer } from './identifyIssuer.js'
 
 describe('identifyIssuer', () => {
 	it.each([
