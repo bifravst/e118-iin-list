@@ -13,7 +13,7 @@ charge card
 
 > **Note**  
 > Up-to-date with
-> [Operational Bulletin No. 1263 (1.III.2023)](https://www.itu.int/pub/T-SP-OB.1263-2023)
+> [Operational Bulletin No. 1270 (15.VI.2023)](https://www.itu.int/pub/T-SP-OB.1270-2023)
 > and also includes
 > [E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
 > (which has some overlapping entries).
