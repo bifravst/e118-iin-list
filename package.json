@@ -9,7 +9,7 @@
     "import": "./dist/index.js"
   },
   "scripts": {
-    "test": "jest",
+    "test": "npx tsx --test src/*.spec.ts",
     "convert": "node dist/convert.js",
     "prepare": "husky install"
   },
@@ -34,12 +34,15 @@
   "devDependencies": {
     "@commitlint/cli": "18.4.3",
     "@commitlint/config-angular": "18.4.3",
-    "@nordicsemiconductor/asset-tracker-cloud-code-style": "12.0.50",
-    "@swc/jest": "0.2.29",
-    "@types/jest": "29.5.4",
+    "@nordicsemiconductor/asset-tracker-cloud-code-style": "13.0.0",
+    "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "17.0.0",
     "@types/node": "20.10.0",
+    "@typescript-eslint/eslint-plugin": "6.13.1",
     "csv-parser": "3.0.0",
-    "jest": "29.6.1",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+    "eslint-plugin-unicorn": "49.0.0",
     "typescript": "5.3.2"
   },
   "lint-staged": {
@@ -84,16 +87,5 @@
     "README.md",
     "cli.js"
   ],
-  "jest": {
-    "transform": {
-      "^.+\\.(t|j)sx?$": [
-        "@swc/jest"
-      ]
-    },
-    "moduleNameMapper": {
-      "^(\\.{1,2}/.*)\\.js$": "$1"
-    },
-    "testRegex": ".+\\.spec\\.ts$"
-  },
   "prettier": "@nordicsemiconductor/asset-tracker-cloud-code-style/.prettierrc"
 }

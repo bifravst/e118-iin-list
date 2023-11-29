@@ -1,7 +1,9 @@
 import { identifyIssuer } from './identifyIssuer.js'
+import { describe, it } from 'node:test'
+import assert from 'node:assert/strict'
 
-describe('identifyIssuer', () => {
-	it.each([
+void describe('identifyIssuer', () => {
+	for (const [iccid, issuer] of [
 		[
 			'89450421180216254864',
 			{
@@ -33,30 +35,28 @@ describe('identifyIssuer', () => {
 				companyURLs: ['http://1nce.com'],
 			},
 		],
-	])('should identify the issuer', (iccid, issuer) => {
-		expect(identifyIssuer(iccid)).toEqual(issuer)
-	})
-	it('should not identify unknown issuers', () => {
-		expect(identifyIssuer('123456')).toBeUndefined()
-	})
-	it('should identify US issuers which use leading 0', () => {
-		expect(identifyIssuer('8901260866666666666F')).toEqual({
+	] as [string, ReturnType<typeof identifyIssuer>][]) {
+		void it(`should identify the ICCID ${iccid} as ${issuer}`, () =>
+			assert.deepEqual(identifyIssuer(iccid), issuer))
+	}
+	void it('should not identify unknown issuers', () =>
+		assert.equal(identifyIssuer('123456'), undefined))
+	void it('should identify US issuers which use leading 0', () =>
+		assert.deepEqual(identifyIssuer('8901260866666666666F'), {
 			iin: 891260,
 			countryCode: 1,
 			issuerIdentifierNumber: '260',
 			countryName: 'United States',
 			companyName: 'T-Mobile USA',
 			companyURLs: ['http://t-mobile.com'],
-		})
-	})
-	it('should identify US issuers without leading 0', () => {
-		expect(identifyIssuer('891260866666666666F')).toEqual({
+		}))
+	void it('should identify US issuers without leading 0', () =>
+		assert.deepEqual(identifyIssuer('891260866666666666F'), {
 			iin: 891260,
 			countryCode: 1,
 			issuerIdentifierNumber: '260',
 			countryName: 'United States',
 			companyName: 'T-Mobile USA',
 			companyURLs: ['http://t-mobile.com'],
-		})
-	})
+		}))
 })

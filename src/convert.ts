@@ -24,7 +24,7 @@ fs.createReadStream('list.csv')
 		}),
 	)
 	.on('data', (data) => results.push(data))
-	.on('end', () => {
+	.on('end', async () => {
 		const list: IssuerList = results.reduce(
 			(
 				list,
@@ -40,15 +40,18 @@ fs.createReadStream('list.csv')
 				const iin = parseInt(IssuerIdentifierNumber[0].replace(/ /g, ''), 10)
 				const key = `${countryCode}${issuerIdentifierNumber}`
 				const emailRegEx = /e-mail ?: ?(.+)/i
-				const companyURLs = Contact.reduce((urls, s) => {
-					const m = emailRegEx.exec(s)
-					if (!m) return urls
-					return m[1]
-						.replace(/ /g, '')
-						.split(';')
-						.map((email) => email.replace(/^.+@/, 'http://').toLowerCase())
-						.filter((url, k, urls) => urls.indexOf(url) === k)
-				}, undefined as undefined | string[])
+				const companyURLs = Contact.reduce(
+					(urls, s) => {
+						const m = emailRegEx.exec(s)
+						if (!m) return urls
+						return m[1]
+							.replace(/ /g, '')
+							.split(';')
+							.map((email) => email.replace(/^.+@/, 'http://').toLowerCase())
+							.filter((url, k, urls) => urls.indexOf(url) === k)
+					},
+					undefined as undefined | string[],
+				)
 				const cc = parseInt(countryCode, 10)
 				const result = {
 					...list,
@@ -71,7 +74,7 @@ fs.createReadStream('list.csv')
 		)
 		fs.writeFileSync(
 			target,
-			prettier.format(
+			await prettier.format(
 				[
 					`/* Auto-generated file. Do not change! */`,
 					`import type { IssuerList } from './types';`,
