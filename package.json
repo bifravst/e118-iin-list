@@ -34,7 +34,7 @@
   "devDependencies": {
     "@commitlint/cli": "18.4.4",
     "@commitlint/config-conventional": "18.4.4",
-    "@nordicsemiconductor/asset-tracker-cloud-code-style": "13.1.9",
+    "@nordicsemiconductor/asset-tracker-cloud-code-style": "13.1.10",
     "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "17.0.0",
     "@types/node": "20.11.5",
     "@typescript-eslint/eslint-plugin": "6.19.0",
