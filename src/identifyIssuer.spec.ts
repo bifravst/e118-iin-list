@@ -35,6 +35,17 @@ void describe('identifyIssuer', () => {
 				companyURLs: ['http://1nce.com'],
 			},
 		],
+		[
+			'89852202401310123456',
+			{
+				iin: 8985220,
+				countryCode: 852,
+				issuerIdentifierNumber: '20',
+				countryName: 'Hong Kong, China',
+				companyName: 'Internet Initiative Japan Inc.',
+				companyURLs: ['http://iij.ad.jp'],
+			},
+		],
 	] as [string, ReturnType<typeof identifyIssuer>][]) {
 		void it(`should identify the ICCID ${iccid} as ${JSON.stringify(issuer)}`, () =>
 			assert.deepEqual(identifyIssuer(iccid), issuer))
