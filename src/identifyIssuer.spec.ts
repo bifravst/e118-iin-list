@@ -36,7 +36,7 @@ void describe('identifyIssuer', () => {
 			},
 		],
 	] as [string, ReturnType<typeof identifyIssuer>][]) {
-		void it(`should identify the ICCID ${iccid} as ${issuer}`, () =>
+		void it(`should identify the ICCID ${iccid} as ${JSON.stringify(issuer)}`, () =>
 			assert.deepEqual(identifyIssuer(iccid), issuer))
 	}
 	void it('should not identify unknown issuers', () =>
