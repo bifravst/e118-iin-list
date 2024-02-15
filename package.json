@@ -36,7 +36,7 @@
     "@commitlint/config-conventional": "18.6.2",
     "@nordicsemiconductor/asset-tracker-cloud-code-style": "13.1.16",
     "@nordicsemiconductor/eslint-config-asset-tracker-cloud-typescript": "17.0.0",
-    "@types/node": "20.11.18",
+    "@types/node": "20.11.19",
     "@typescript-eslint/eslint-plugin": "7.0.1",
     "csv-parser": "3.0.0",
     "eslint-config-prettier": "9.1.0",
