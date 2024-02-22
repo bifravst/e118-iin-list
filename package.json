@@ -36,7 +36,7 @@
     "@bifravst/prettier-config": "1.0.0",
     "@commitlint/cli": "18.6.1",
     "@commitlint/config-conventional": "18.6.2",
-    "@types/node": "20.11.19",
+    "@types/node": "20.11.20",
     "csv-parser": "3.0.0",
     "husky": "9.0.11"
   },
