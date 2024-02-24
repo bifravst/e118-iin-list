@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/NordicSemiconductor/e118-iin-list-js#readme",
   "devDependencies": {
-    "@bifravst/eslint-config-typescript": "6.0.5",
+    "@bifravst/eslint-config-typescript": "6.0.6",
     "@bifravst/prettier-config": "1.0.0",
     "@commitlint/cli": "18.6.1",
     "@commitlint/config-conventional": "18.6.2",
