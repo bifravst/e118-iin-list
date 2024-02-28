@@ -34,8 +34,8 @@
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "6.0.8",
     "@bifravst/prettier-config": "1.0.0",
-    "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.2",
+    "@commitlint/cli": "19.0.1",
+    "@commitlint/config-conventional": "19.0.0",
     "@types/node": "20.11.21",
     "csv-parser": "3.0.0",
     "husky": "9.0.11"
