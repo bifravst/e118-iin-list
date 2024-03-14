@@ -15,6 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20.x"
+          cache: "npm"
       - name: Install latest npm
         run: |
           sudo npm install -g npm@
@@ -22,11 +23,6 @@ jobs:
           sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
       - name: Authenticate with NPM registry
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-      - name: Keep npm cache around to speed up installs
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.OS }}-build-${{ env.cache-name }}-
             ${{ runner.OS }}-build-
