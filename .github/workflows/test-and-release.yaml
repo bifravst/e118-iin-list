@@ -23,10 +23,6 @@ jobs:
           sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
       - name: Authenticate with NPM registry
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
-          restore-keys: |
-            ${{ runner.OS }}-build-${{ env.cache-name }}-
-            ${{ runner.OS }}-build-
-            ${{ runner.OS }}-
       - name: Install dependencies
         run: npm ci --no-audit
       - name: Compile
