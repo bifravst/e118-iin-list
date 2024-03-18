@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "outDir": "dist/",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
     "module": "ES2020",
     "esModuleInterop": true
   }
