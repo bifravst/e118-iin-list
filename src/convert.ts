@@ -2,7 +2,7 @@ import csv from 'csv-parser'
 import * as fs from 'fs'
 import * as path from 'path'
 import prettier from 'prettier'
-import type { IssuerList } from './types'
+import type { IssuerList } from './types.js'
 
 type ParsedCSVEntry = {
 	CountryGeographicalarea: string[]
