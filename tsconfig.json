@@ -16,7 +16,7 @@
     "noImplicitAny": true,
     "outDir": "dist/",
     "moduleResolution": "nodenext",
-    "module": "ES2020",
+    "module": "nodenext",
     "esModuleInterop": true
   }
 }
