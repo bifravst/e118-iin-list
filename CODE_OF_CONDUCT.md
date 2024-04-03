@@ -1,2 +1,1 @@
-See
-https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/saga/CODE_OF_CONDUCT.html
+See <https://github.com/bifravst/.github/blob/saga/CODE_OF_CONDUCT.md>
