@@ -10,7 +10,7 @@ if (issuer !== undefined) {
 } else {
 	console.error(`The vendor of your ICCID "${iccid}" could not be identified!`)
 	console.error(
-		`Please open a new issue by following this link: https://github.com/NordicSemiconductor/e118-iin-list-js/issues/new?title=${encodeURIComponent(
+		`Please open a new issue by following this link: https://github.com/bifravst/e118-iin-list/issues/new?title=${encodeURIComponent(
 			`Could not identify ICCID ${iccid.replace(/.{6}$/, 'XXXXXX')}`,
 		)}&body=${encodeURIComponent(
 			'<!-- Please provide details about the SIM vendor. -->',

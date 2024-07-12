@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NordicSemiconductor/e118-iin-list-js.git"
+    "url": "git+https://github.com/bifravst/e118-iin-list.git"
   },
   "keywords": [
     "nrf-asset-tracker",
@@ -28,9 +28,9 @@
   "author": "Nordic Semiconductor ASA | nordicsemi.no",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/NordicSemiconductor/e118-iin-list-js/issues"
+    "url": "https://github.com/bifravst/e118-iin-list/issues"
   },
-  "homepage": "https://github.com/NordicSemiconductor/e118-iin-list-js#readme",
+  "homepage": "https://github.com/bifravst/e118-iin-list#readme",
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "6.1.8",
     "@bifravst/prettier-config": "1.0.3",
