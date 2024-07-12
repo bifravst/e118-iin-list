@@ -30,7 +30,6 @@ jobs:
       - name: Test
         run: npm test
       - name: Semantic release
-        continue-on-error: true
         run: |
           npm i --no-save semantic-release
           npx semantic-release
