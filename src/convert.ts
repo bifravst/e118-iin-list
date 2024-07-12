@@ -77,7 +77,7 @@ fs.createReadStream('list.csv')
 			await prettier.format(
 				[
 					`/* Auto-generated file. Do not change! */`,
-					`import type { IssuerList } from './types';`,
+					`import type { IssuerList } from './types.js';`,
 					`export const iinRegEx = /^89(${Object.keys(list).join('|')})/;`,
 					`export const e118IINList: IssuerList = ${JSON.stringify(
 						list,
