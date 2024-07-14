@@ -37,8 +37,10 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@types/node": "20.14.10",
+    "cat": "*",
     "csv-parser": "3.0.0",
     "husky": "9.0.11",
+    "package.json": "*",
     "tsx": "4.16.2"
   },
   "lint-staged": {
@@ -82,5 +84,9 @@
     "README.md",
     "cli.js"
   ],
-  "prettier": "@bifravst/prettier-config"
+  "prettier": "@bifravst/prettier-config",
+  "peerDependencies": {
+    "cat": "^0.2.0",
+    "package.json": "^2.0.1"
+  }
 }
