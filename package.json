@@ -38,7 +38,7 @@
     "@commitlint/config-conventional": "19.2.2",
     "@types/node": "20.14.13",
     "csv-parser": "3.0.0",
-    "husky": "9.1.3",
+    "husky": "9.1.4",
     "tsx": "4.16.2"
   },
   "lint-staged": {
