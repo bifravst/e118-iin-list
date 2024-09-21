@@ -33,7 +33,7 @@
   "homepage": "https://github.com/bifravst/e118-iin-list#readme",
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "6.1.16",
-    "@bifravst/prettier-config": "1.1.0",
+    "@bifravst/prettier-config": "1.1.1",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@types/node": "20.16.5",
