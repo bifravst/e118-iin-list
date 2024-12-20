@@ -56,6 +56,17 @@ void describe('identifyIssuer', () => {
 				companyName: 'Onomondo ApS',
 			},
 		],
+		[
+			'89550452000016123456',
+			{
+				iin: 89550452,
+				countryCode: 55,
+				issuerIdentifierNumber: '0452',
+				countryName: 'Brazil',
+				companyName: 'TIM',
+				companyURLs: ['http://www.tim.com.br/'],
+			},
+		],
 	] as [string, ReturnType<typeof identifyIssuer>][]) {
 		void it(`should identify the ICCID ${iccid} as ${JSON.stringify(issuer)}`, () =>
 			assert.deepEqual(identifyIssuer(iccid), issuer))

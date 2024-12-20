@@ -61,6 +61,13 @@ const darkIssuers: Array<{
 		country: 'Global',
 		company: 'Bandwidth.com Inc',
 	},
+	{
+		networkCode: '0452',
+		countryCode: 55,
+		country: 'Brazil',
+		company: 'TIM',
+		url: new URL('http://www.tim.com.br'),
+	},
 ]
 
 type Mutable<T> = {
