@@ -10,19 +10,18 @@ List of issuer identification numbers for the international telecommunication
 charge card
 ([ITU-T E.118](https://www.itu.int/rec/dologin_pub.asp?lang=e&id=T-REC-E.118-200605-I!!PDF-E&type=items)).
 
-> **Note**  
+> [!NOTE]  
+> Last update: 2024-12-20
+
+> [!IMPORTANT]  
 > Up-to-date with
-> [Operational Bulletin No. 1295 (1.VII.2024)](https://www.itu.int/pub/T-SP-OB.1295-2024)
+> [the ITU-T E.118 Issuer Identifier Numbers database](https://www.itu.int/net/itu-t/inrdb/secured/e118iin.aspx)
 > and also includes
 > [E.164 shared country code entries](http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883)
 > (which has some overlapping entries).
 
 Data source as
 [Google Spreadsheet](https://docs.google.com/spreadsheets/d/1ErJzksU5bF2YA8tQQ9QJleEZHsdvDRDk0Rvi0nf3fh4/edit?usp=sharing).
-
-> _Note:_ There is actually
-> [a database](https://www.itu.int/net/itu-t/inrdb/secured/e118iin.aspx) for
-> this information, but the access is restricted to ITU-T Sector Members. 🤷
 
 ## Motivation
 
@@ -93,18 +92,16 @@ The maximum length of the visible card number (primary account number) shall be
 
 Sources:
 
-- http://www.itu.int/pub/T-SP-E.118
-- https://www.itu.int/pub/T-SP-OB
+- https://www.itu.int/net/itu-t/inrdb/secured/e118iin.aspx
 - http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883
 
 Process:
 
-1. Download the latest Word Documents from http://www.itu.int/pub/T-SP-E.118,
-   and copy and past the table into a Google Spreadsheet
-2. Download the operational bulletins from https://www.itu.int/pub/T-SP-OB and
-   incorporate the changes into the spreadsheet
-3. Export list of shared country codes (E.164) from
+1. Export
+   [the database](https://www.itu.int/net/itu-t/inrdb/secured/e118iin.aspx) as
+   Excel spreadsheet and copy and past the table into a Google Spreadsheet
+2. Export list of shared country codes (E.164) from
    http://www.itu.int/net/itu-t/inrdb/e164_intlsharedcc.aspx?cc=881,882,883 and
    filter out `CRS` records (inactive), add to the spreadsheet
-4. Export that to CSV and store it as `list.csv`
-5. Convert to JSON using `npm run convert`
+3. Export that to CSV and store it as `list.csv`
+4. Convert to JSON using `npm run convert`

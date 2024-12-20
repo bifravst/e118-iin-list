@@ -1,6 +1,6 @@
-import { identifyIssuer } from './identifyIssuer.js'
-import { describe, it } from 'node:test'
 import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
+import { identifyIssuer } from './identifyIssuer.js'
 
 void describe('identifyIssuer', () => {
 	for (const [iccid, issuer] of [
@@ -32,7 +32,7 @@ void describe('identifyIssuer', () => {
 				issuerIdentifierNumber: '80',
 				countryName: 'Germany',
 				companyName: '1NCE GmbH',
-				companyURLs: ['http://1nce.com'],
+				companyURLs: ['http://1nce.com/'],
 			},
 		],
 		[
@@ -43,7 +43,7 @@ void describe('identifyIssuer', () => {
 				issuerIdentifierNumber: '20',
 				countryName: 'Hong Kong, China',
 				companyName: 'Internet Initiative Japan Inc.',
-				companyURLs: ['http://iij.ad.jp'],
+				companyURLs: ['http://iij.ad.jp/'],
 			},
 		],
 		[
