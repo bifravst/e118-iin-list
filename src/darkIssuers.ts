@@ -68,6 +68,13 @@ const darkIssuers: Array<{
 		company: 'TIM',
 		url: new URL('http://www.tim.com.br'),
 	},
+	{
+		networkCode: '610',
+		countryCode: 882,
+		country: 'Global',
+		company: 'Myriota',
+		url: new URL('https://myriota.com'),
+	},
 ]
 
 type Mutable<T> = {
