@@ -1,4 +1,4 @@
-import type { IssuerList } from './types.ts'
+import type { IssuerList } from './types.js'
 
 /**
  * This is a list of issuers, that we know operate, but they are not (yet) listed in the ITU-T E.118 database.

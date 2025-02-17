@@ -2,8 +2,8 @@ import csv from 'csv-parser'
 import * as fs from 'fs'
 import * as path from 'path'
 import prettier from 'prettier'
-import { darkIssuersList } from './darkIssuers.ts'
-import type { IssuerList } from './types.ts'
+import { darkIssuersList } from './darkIssuers.js'
+import type { IssuerList } from './types.js'
 
 type ParsedCSVEntry = {
 	CountryGeographicalarea: string

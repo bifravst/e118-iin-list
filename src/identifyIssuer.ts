@@ -1,5 +1,5 @@
-import { e118IINList, iinRegEx } from './list.ts'
-import type { Issuer } from './types.ts'
+import { e118IINList, iinRegEx } from './list.js'
+import type { Issuer } from './types.js'
 
 /**
  * Identifies a SIM card issuer by the given ICCID

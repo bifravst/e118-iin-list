@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { describe, it } from 'node:test'
-import { identifyIssuer } from './identifyIssuer.ts'
+import { identifyIssuer } from './identifyIssuer.js'
 
 void describe('identifyIssuer', () => {
 	for (const [iccid, issuer] of [

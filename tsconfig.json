@@ -17,8 +17,6 @@
     "outDir": "dist/",
     "moduleResolution": "nodenext",
     "module": "nodenext",
-    "esModuleInterop": true,
-    "allowImportingTsExtensions": true,
-    "emitDeclarationOnly": true
+    "esModuleInterop": true
   }
 }
