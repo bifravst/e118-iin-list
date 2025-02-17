@@ -1,3 +1,3 @@
-export * from './identifyIssuer.js'
-export * from './list.js'
-export * from './types.js'
+export * from './identifyIssuer.ts'
+export * from './list.ts'
+export * from './types.ts'
