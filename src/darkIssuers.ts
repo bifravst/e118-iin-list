@@ -75,6 +75,13 @@ const darkIssuers: Array<{
 		company: 'Myriota',
 		url: new URL('https://myriota.com'),
 	},
+	{
+		networkCode: '980',
+		countryCode: 901,
+		country: 'United States',
+		company: 'Skylo',
+		url: new URL('https://skylo.tech/'),
+	},
 ]
 
 type Mutable<T> = {
