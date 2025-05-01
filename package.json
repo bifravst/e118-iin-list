@@ -6,7 +6,7 @@
   "typings": "dist/index.d.ts",
   "bin": "cli.js",
   "exports": {
-    "import": "./dist/index.js"
+    ".": "./dist/index.js"
   },
   "scripts": {
     "test": "npx tsx --test src/*.spec.ts",
