@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: "22.x"
           cache: "npm"
+      - name: Install NPM version specified in package.json
+        uses: ./.github/actions/install-npm
       - name: Install latest npm
         run: |
           sudo npm install -g npm@
