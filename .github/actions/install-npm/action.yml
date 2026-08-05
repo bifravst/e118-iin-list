@@ -1,0 +1,14 @@
+name: Install NPM
+description: >
+  Installs the NPM version required by the `engines.npm` directive in
+  package.json, which is required for the project to build correctly.
+
+runs:
+  using: composite
+  steps:
+    - name: Install NPM
+      shell: bash
+      run: |
+        npmVersion="$(node -p 'require(`${process.env.GITHUB_WORKSPACE}/package.json`).engines.npm')"
+        echo "Installing npm@${npmVersion}"
+        npm install -g "npm@${npmVersion}"
