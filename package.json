@@ -41,7 +41,7 @@
     "csv-parser": "3.2.1",
     "husky": "9.1.7",
     "lint-staged": "15.5.2",
-    "tsx": "4.23.5"
+    "tsx": "4.23.7"
   },
   "lint-staged": {
     "*.ts": [
