@@ -9,8 +9,8 @@
     "types": "./dist/src/index.d.ts"
   },
   "scripts": {
-    "test": "npx tsx --test src/*.spec.ts",
-    "convert": "npx tsx src/convert.ts",
+    "test": "node --experimental-transform-types --no-warnings --test src/*.spec.ts",
+    "convert": "node --experimental-transform-types --no-warnings src/convert.ts",
     "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
     "prepublishOnly": "npx tsc --noEmit false -d"
   },
@@ -38,11 +38,12 @@
     "@commitlint/cli": "21.2.2",
     "@commitlint/config-conventional": "21.2.2",
     "@types/node": "26.2.0",
+    "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
     "csv-parser": "3.2.1",
     "husky": "9.1.7",
     "lint-staged": "17.3.0",
-    "tsx": "4.23.12"
+    "typescript": "npm:@typescript/typescript6@6.0.2"
   },
   "lint-staged": {
     "*.ts": [
