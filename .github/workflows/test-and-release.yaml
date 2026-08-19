@@ -4,27 +4,25 @@ on: push
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+permissions:
+  contents: write
+  issues: write
+  id-token: write
 
 jobs:
   tests:
     runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "22.x"
+          node-version: ">=24.19.0 <25"
           cache: "npm"
+          registry-url: "https://registry.npmjs.org"
       - name: Install NPM version specified in package.json
         uses: ./.github/actions/install-npm
-      - name: Install latest npm
-        run: |
-          sudo npm install -g npm@
-          npm config set update-notifier false
-          sudo chown -R $USER:$(id -gn $USER) /home/runner/.config
-      - name: Authenticate with NPM registry
-        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - name: Install dependencies
         run: npm ci --no-audit
       - name: Compile

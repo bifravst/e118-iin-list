@@ -1,8 +1,7 @@
 {
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "cli.ts"],
   "compilerOptions": {
-    "target": "es2019",
-    "lib": ["es2019"],
+    "target": "esnext",
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
@@ -14,9 +13,13 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
-    "outDir": "dist/",
+    "outDir": "./dist/",
     "moduleResolution": "nodenext",
     "module": "nodenext",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }

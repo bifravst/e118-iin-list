@@ -2,8 +2,8 @@ import csv from 'csv-parser'
 import * as fs from 'fs'
 import * as path from 'path'
 import prettier from 'prettier'
-import { darkIssuersList } from './darkIssuers.js'
-import type { IssuerList } from './types.js'
+import { darkIssuersList } from './darkIssuers.ts'
+import type { IssuerList } from './types.ts'
 
 type ParsedCSVEntry = {
 	CountryGeographicalarea: string
@@ -110,7 +110,7 @@ fs.writeFileSync(
 		[
 			`/* Auto-generated file. Do not change! */`,
 			`/* Generated: ${new Date().toISOString()} */`,
-			`import type { IssuerList } from './types.js';`,
+			`import type { IssuerList } from './types.ts';`,
 			`export const iinRegEx = /^89(${Object.keys(list).join('|')})/;`,
 			`export const e118IINList: IssuerList = ${JSON.stringify(
 				list,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { identifyIssuer } from './dist/identifyIssuer.js'
+import { identifyIssuer } from './src/identifyIssuer.ts'
 
 const iccid = process.argv[process.argv.length - 1]
 

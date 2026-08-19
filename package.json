@@ -3,15 +3,16 @@
   "version": "0.0.0-development",
   "description": "List of issuer identifier numbers for the international telecommunication charge card (ITU-T E.118)",
   "type": "module",
-  "typings": "dist/index.d.ts",
-  "bin": "cli.js",
+  "bin": "dist/cli.js",
   "exports": {
-    "import": "./dist/index.js"
+    "import": "./dist/src/index.js",
+    "types": "./dist/src/index.d.ts"
   },
   "scripts": {
     "test": "npx tsx --test src/*.spec.ts",
     "convert": "npx tsx src/convert.ts",
-    "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac"
+    "prepare": "husky && case \"$npm_command\" in install|ci) check-node-version --package ;; esac",
+    "prepublishOnly": "npx tsc --noEmit false -d"
   },
   "repository": {
     "type": "git",
@@ -32,15 +33,15 @@
   },
   "homepage": "https://github.com/bifravst/e118-iin-list#readme",
   "devDependencies": {
-    "@bifravst/eslint-config-typescript": "6.4.4",
-    "@bifravst/prettier-config": "1.1.17",
-    "@commitlint/cli": "19.8.1",
-    "@commitlint/config-conventional": "19.8.1",
-    "@types/node": "22.20.1",
+    "@bifravst/eslint-config-typescript": "8.0.0",
+    "@bifravst/prettier-config": "2.0.0",
+    "@commitlint/cli": "21.2.2",
+    "@commitlint/config-conventional": "21.2.2",
+    "@types/node": "26.2.0",
     "check-node-version": "4.2.1",
     "csv-parser": "3.2.1",
     "husky": "9.1.7",
-    "lint-staged": "15.5.2",
+    "lint-staged": "17.3.0",
     "tsx": "4.23.12"
   },
   "lint-staged": {
@@ -53,7 +54,7 @@
     ]
   },
   "engines": {
-    "node": ">=22",
+    "node": ">=24.19.0 <25",
     "npm": ">=12.0.2 <13"
   },
   "release": {
@@ -81,8 +82,7 @@
     "dist",
     "docs",
     "LICENSE",
-    "README.md",
-    "cli.js"
+    "README.md"
   ],
   "prettier": "@bifravst/prettier-config"
 }
