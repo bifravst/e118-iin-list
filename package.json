@@ -35,8 +35,8 @@
   "devDependencies": {
     "@bifravst/eslint-config-typescript": "8.0.13",
     "@bifravst/prettier-config": "2.0.4",
-    "@commitlint/cli": "21.2.3",
-    "@commitlint/config-conventional": "21.2.3",
+    "@commitlint/cli": "21.2.4",
+    "@commitlint/config-conventional": "21.2.4",
     "@types/node": "26.6.5",
     "@typescript/native": "npm:typescript@7.0.2",
     "check-node-version": "4.2.1",
