@@ -11,14 +11,20 @@ permissions:
   id-token: write
 
 jobs:
-  tests:
+  tests-matrix:
     runs-on: ubuntu-26.04
+
+    strategy:
+      matrix:
+        node-version:
+          - ">=24.22.1 <25"
+          - ">=26.12.1 <27"
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: ">=24.19.0 <25"
+          node-version: ${{ matrix.node-version }}
           cache: "npm"
           registry-url: "https://registry.npmjs.org"
       - name: Install NPM version specified in package.json
@@ -29,6 +35,38 @@ jobs:
         run: npx tsc
       - name: Test
         run: npm test
+
+  tests:
+    runs-on: ubuntu-latest
+
+    needs: [tests-matrix]
+
+    # Stable required status check for the repository rules, independent of
+    # the Node.js versions in the matrix.
+    if: ${{ always() }}
+
+    steps:
+      - name: All tests must have succeeded
+        env:
+          RESULT: ${{ needs.tests-matrix.result }}
+        run: test "$RESULT" = "success"
+
+  release:
+    runs-on: ubuntu-26.04
+
+    needs: [tests]
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ">=26.12.1 <27"
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+      - name: Install NPM version specified in package.json
+        uses: ./.github/actions/install-npm
+      - name: Install dependencies
+        run: npm ci --no-audit
       - name: Semantic release
         run: |
           npm i --no-save semantic-release
